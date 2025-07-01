@@ -1,10 +1,10 @@
-import useDropdown from "src/hooks/useDropdown"
+import styled from "@emotion/styled"
 import { useRouter } from "next/router"
 import React from "react"
 import { MdExpandMore } from "react-icons/md"
 import { DEFAULT_CATEGORY } from "src/constants"
-import styled from "@emotion/styled"
 import { useCategoriesQuery } from "src/hooks/useCategoriesQuery"
+import useDropdown from "src/hooks/useDropdown"
 
 type Props = {}
 
@@ -65,9 +65,10 @@ const StyledWrapper = styled.div`
     z-index: 40;
     padding: 0.25rem;
     border-radius: 0.75rem;
-    background-color: ${({ theme }) => theme.colors.gray2};
+    background-color: ${({ theme }) => theme.colors.blue2};
     color: ${({ theme }) => theme.colors.gray10};
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -1px rgba(0, 0, 0, 0.06);
     > .item {
       padding: 0.25rem;

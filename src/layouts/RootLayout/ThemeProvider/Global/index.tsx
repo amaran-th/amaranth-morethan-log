@@ -1,6 +1,5 @@
 import { Global as _Global, css, useTheme } from "@emotion/react"
 
-import { ThemeProvider as _ThemeProvider } from "@emotion/react"
 import { pretendard } from "src/assets"
 
 export const Global = () => {
@@ -13,7 +12,7 @@ export const Global = () => {
           margin: 0;
           padding: 0;
           color: ${theme.colors.gray12};
-          background-color: ${theme.colors.gray2};
+          background-color: ${theme.colors.blue2};
           font-family: ${pretendard.style.fontFamily};
           font-weight: ${pretendard.style.fontWeight};
           font-style: ${pretendard.style.fontStyle};

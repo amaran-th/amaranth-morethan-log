@@ -1,8 +1,8 @@
-import NavBar from "./NavBar"
-import Logo from "./Logo"
-import ThemeToggle from "./ThemeToggle"
 import styled from "@emotion/styled"
 import { zIndexes } from "src/styles/zIndexes"
+import Logo from "./Logo"
+import NavBar from "./NavBar"
+import ThemeToggle from "./ThemeToggle"
 
 type Props = {
   fullWidth: boolean
@@ -28,7 +28,7 @@ const StyledWrapper = styled.div`
   z-index: ${zIndexes.header};
   position: sticky;
   top: 0;
-  background-color: ${({ theme }) => theme.colors.gray2};
+  background-color: ${({ theme }) => theme.colors.blue2};
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 
   .container {

@@ -1,33 +1,27 @@
 import styled from "@emotion/styled"
 import React from "react"
+import { IoArrowBackCircle } from "react-icons/io5"
 import { CONFIG } from "site.config"
 import { Emoji } from "src/components/Emoji"
 
-const ServiceCard: React.FC = () => {
-  if (!CONFIG.projects) return null
+const OldBlogCard: React.FC = () => {
+  if (!CONFIG.oldBlog) return null
   return (
     <>
       <StyledTitle>
-        <Emoji>🌟</Emoji> Service
+        <Emoji>↩️</Emoji> Old Blog
       </StyledTitle>
       <StyledWrapper>
-        {/* {CONFIG.projects.map((project, idx) => (
-          <a
-            key={idx}
-            href={`${project.href}`}
-            rel="noreferrer"
-            target="_blank"
-          >
-            <AiFillCodeSandboxCircle className="icon" />
-            <div className="name">{project.name}</div>
-          </a>
-        ))} */}
+        <a href={`${CONFIG.oldBlog.href}`} rel="noreferrer" target="_blank">
+          <IoArrowBackCircle className="icon" />
+          <div className="name">{CONFIG.oldBlog.name}</div>
+        </a>
       </StyledWrapper>
     </>
   )
 }
 
-export default ServiceCard
+export default OldBlogCard
 
 const StyledTitle = styled.div`
   padding: 0.25rem;
@@ -37,12 +31,11 @@ const StyledTitle = styled.div`
 const StyledWrapper = styled.div`
   display: flex;
   padding: 0.25rem;
-  margin-bottom: 2.25rem;
   flex-direction: column;
   border-radius: 1rem;
   background-color: ${({ theme }) =>
     theme.scheme === "light" ? "white" : theme.colors.gray4};
-  > a {
+  a {
     display: flex;
     padding: 0.75rem;
     gap: 0.75rem;

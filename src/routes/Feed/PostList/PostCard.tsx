@@ -1,11 +1,11 @@
+import styled from "@emotion/styled"
+import Image from "next/image"
 import Link from "next/link"
 import { CONFIG } from "site.config"
 import { formatDate } from "src/libs/utils"
+import Category from "../../../components/Category"
 import Tag from "../../../components/Tag"
 import { TPost } from "../../../types"
-import Image from "next/image"
-import Category from "../../../components/Category"
-import styled from "@emotion/styled"
 
 type Props = {
   data: TPost
@@ -32,7 +32,11 @@ const PostCard: React.FC<Props> = ({ data }) => {
             />
           </div>
         )}
-        <div data-thumb={!!data.thumbnail} data-category={!!category} className="content">
+        <div
+          data-thumb={!!data.thumbnail}
+          data-category={!!category}
+          className="content"
+        >
           <header className="top">
             <h2>{data.title}</h2>
           </header>
@@ -78,7 +82,8 @@ const StyledWrapper = styled(Link)`
     }
 
     :hover {
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
         0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
     > .category {
@@ -91,7 +96,7 @@ const StyledWrapper = styled(Link)`
     > .thumbnail {
       position: relative;
       width: 100%;
-      background-color: ${({ theme }) => theme.colors.gray2};
+      background-color: ${({ theme }) => theme.colors.blue2};
       padding-bottom: 66%;
 
       @media (min-width: 1024px) {
