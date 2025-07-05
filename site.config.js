@@ -18,6 +18,7 @@ const CONFIG = {
   blog: {
     title: "amaranth-log",
     description: "(구) 아마란스 꽃밭",
+    image: "/jellyfish.png",
     scheme: "light", // 'light' | 'dark' | 'system'
   },
   oldBlog: {
