@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
+import Image from "next/image"
 import React from "react"
-import { IoArrowBackCircle } from "react-icons/io5"
 import { CONFIG } from "site.config"
 import { Emoji } from "src/components/Emoji"
 
@@ -9,11 +9,17 @@ const OldBlogCard: React.FC = () => {
   return (
     <>
       <StyledTitle>
-        <Emoji>↩️</Emoji> Old Blog
+        <Emoji>⬅</Emoji> Old Blog
       </StyledTitle>
       <StyledWrapper>
         <a href={`${CONFIG.oldBlog.href}`} rel="noreferrer" target="_blank">
-          <IoArrowBackCircle className="icon" />
+          <Image
+            src={`${CONFIG.oldBlog.image}`}
+            alt="구 블로그 마스코트"
+            className="icon"
+            width={24}
+            height={24}
+          />
           <div className="name">{CONFIG.oldBlog.name}</div>
         </a>
       </StyledWrapper>

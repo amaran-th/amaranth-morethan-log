@@ -24,6 +24,7 @@ const CONFIG = {
   oldBlog: {
     name: `아마란스 꽃밭`,
     href: "https://amaran-th.github.io",
+    image: "/old-character.png",
   },
   // CONFIG configration (required)
   link: "https://amaran-th.vercel.app",
@@ -38,19 +39,19 @@ const CONFIG = {
 
   // plugin configuration (optional)
   googleAnalytics: {
-    enable: false,
+    enable: true,
     config: {
       measurementId: process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID || "",
     },
   },
   googleSearchConsole: {
-    enable: false,
+    enable: true,
     config: {
       siteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
     },
   },
   naverSearchAdvisor: {
-    enable: false,
+    enable: true,
     config: {
       siteVerification: process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION || "",
     },
