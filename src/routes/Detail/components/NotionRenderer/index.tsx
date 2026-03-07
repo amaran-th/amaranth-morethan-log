@@ -99,4 +99,8 @@ const StyledWrapper = styled.div`
     max-width: 100%;
     height: auto;
   }
+  .notion-h {
+    display: block;
+    width: 100%;
+  }
 `
