@@ -3,6 +3,7 @@ import Image from "next/image"
 import React from "react"
 import { CONFIG } from "site.config"
 import { Emoji } from "src/components/Emoji"
+import ContactCard from "./ContactCard"
 
 type Props = {}
 
@@ -21,6 +22,7 @@ const ProfileCard: React.FC<Props> = () => {
           <div className="role">{CONFIG.profile.role}</div>
           <div className="mb-2 text-sm">{CONFIG.profile.bio}</div>
         </div>
+        <ContactCard/>
       </div>
     </StyledWrapper>
   )

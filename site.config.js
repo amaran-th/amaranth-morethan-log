@@ -3,9 +3,9 @@ const CONFIG = {
     name: "amaranth",
     image: "/jellyfish.png",
     role: "프론트엔드 개발자",
-    bio: "좋아하는 것이 많은 사람이 되자!",
+    bio: "인생을 좋아하는 것으로 가득 채우자",
     email: "songsy405@naver.com",
-    linkedin: "",
+    linkedin: "seyeon-song",
     github: "amaran-th",
     instagram: "",
   },
@@ -15,9 +15,18 @@ const CONFIG = {
   //     href: "https://github.com/morethanmin/morethan-log",
   //   },
   //],
+  friends:[{
+    name:"Chaeyeon",
+    thumbnail:"%2F유치원%20몰티즈.jpeg&w=3840&q=75",
+    link:"https://docs.chaeyeon.dev"
+  },{
+    name:"vvony",
+    thumbnail:"%2Fmaru-avatar.png&w=3840&q=75",
+    link:"https://vvony.vercel.app"
+  }],
   blog: {
-    title: "amaranth-log",
-    description: "(구) 아마란스 꽃밭",
+    title: "세록세록",
+    description: "개발 기록",
     image: "https://amaran-th.vercel.app/jellyfish.png",
     scheme: "light", // 'light' | 'dark' | 'system'
   },

@@ -1,9 +1,9 @@
 import { useState } from "react"
 
 import styled from "@emotion/styled"
-import ContactCard from "./ContactCard"
 import { FeedHeader } from "./FeedHeader"
 import Footer from "./Footer"
+import FriendCard from "./FriendCard"
 import MobileProfileCard from "./MobileProfileCard"
 import OldBlogCard from "./OldBlogCard"
 import PostList from "./PostList"
@@ -51,7 +51,7 @@ const Feed: React.FC<Props> = () => {
       >
         <ProfileCard />
         <ServiceCard />
-        <ContactCard />
+        <FriendCard/>
         <OldBlogCard />
         <div className="footer">
           <Footer />

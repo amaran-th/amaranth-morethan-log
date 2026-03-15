@@ -14,6 +14,14 @@ const nextConfig = {
         protocol: "https",
         hostname: "s3-us-west-2.amazonaws.com",
       },
+      {
+        protocol: "https",
+        hostname: "docs.chaeyeon.dev",
+      },
+      {
+        protocol: "https",
+        hostname: "vvony.vercel.app",
+      },
     ],
   },
 }
