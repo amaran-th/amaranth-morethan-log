@@ -12,9 +12,9 @@ import "prismjs/themes/prism-tomorrow.css"
 
 // used for rendering equations (optional)
 
+import styled from "@emotion/styled"
 import "katex/dist/katex.min.css"
 import { FC } from "react"
-import styled from "@emotion/styled"
 
 const _NotionRenderer = dynamic(
   () => import("react-notion-x").then((m) => m.NotionRenderer),
@@ -87,6 +87,20 @@ const StyledWrapper = styled.div`
     padding: 0;
   }
   .notion-list {
+    width: 100%;
+  }
+  .notion-asset-wrapper-video {
+    max-width: 100%;
+  }
+  .notion-asset-wrapper-video > div {
+    height: auto !important;
+  }
+  .notion-asset-wrapper video {
+    max-width: 100%;
+    height: auto;
+  }
+  .notion-h {
+    display: block;
     width: 100%;
   }
 `
