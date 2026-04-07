@@ -17,6 +17,31 @@ export const getPosts = async () => {
 
   const response = await api.getPage(id)
   id = idToUuid(id)
+
+  // notion-client v6 doesn't support Notion's CRDT v1 block format, where block
+  // data is nested under an extra .value layer. As a result, collection_query is
+  // never populated. We detect this and manually query the collection.
+  if (Object.keys(response.collection_query).length === 0) {
+    const rootEntry = response.block[id] as any
+    const rootBlock = rootEntry?.value?.value ?? rootEntry?.value
+    const collectionId: string = rootBlock?.collection_id
+    const viewIds: string[] = rootBlock?.view_ids ?? []
+    for (const viewId of viewIds) {
+      const viewEntry = (response.collection_view[viewId] as any)
+      const viewData = viewEntry?.value?.value ?? viewEntry?.value
+      try {
+        const result = await (api as any).getCollectionData(collectionId, viewId, viewData)
+        if (result?.recordMap?.block) Object.assign(response.block, result.recordMap.block)
+        response.collection_query[collectionId] = {
+          ...(response.collection_query[collectionId] ?? {}),
+          [viewId]: result?.result?.reducerResults,
+        }
+      } catch (e) {
+        console.warn("Failed to query collection:", e)
+      }
+    }
+  }
+
   const collectionValue = Object.values(response.collection)[0]?.value as any
   const collection = collectionValue?.value ?? collectionValue
   const block = response.block
