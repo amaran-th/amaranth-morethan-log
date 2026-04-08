@@ -1,30 +1,38 @@
 import { getPosts } from "../apis/notion-client/getPosts"
 import { CONFIG } from "site.config"
-import { getServerSideSitemap, ISitemapField } from "next-sitemap"
 import { GetServerSideProps } from "next"
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const posts = await getPosts()
-  const dynamicPaths = posts.map((post) => `${CONFIG.link}/${post.slug}`)
 
-  // Create an array of fields, each with a loc and lastmod
-  const fields: ISitemapField[] = dynamicPaths.map((path) => ({
-    loc: path,
-    lastmod: new Date().toISOString(),
-    priority: 0.7,
-    changefreq: "daily",
-  }))
+  const urls = [
+    { loc: CONFIG.link, priority: "1.0" },
+    ...posts.map((post) => ({
+      loc: `${CONFIG.link}/${post.slug}`,
+      priority: "0.7",
+    })),
+  ]
 
-  // Include the site root separately
-  fields.unshift({
-    loc: CONFIG.link,
-    lastmod: new Date().toISOString(),
-    priority: 1.0,
-    changefreq: "daily",
-  })
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls
+  .map(
+    ({ loc, priority }) => `  <url>
+    <loc>${loc}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>${priority}</priority>
+  </url>`
+  )
+  .join("\n")}
+</urlset>`
 
-  return getServerSideSitemap(ctx, fields)
+  res.setHeader("Content-Type", "application/xml")
+  res.write(sitemap)
+  res.end()
+
+  return { props: {} }
 }
 
-// Default export to prevent next.js errors
-export default () => {}
+const SitemapPage = () => null
+export default SitemapPage
