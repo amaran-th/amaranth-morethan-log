@@ -10,8 +10,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "postbuild": "next-sitemap --config next-sitemap.config.js",
-    "lint": "next lint"
+"lint": "next lint"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
