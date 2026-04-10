@@ -3,46 +3,33 @@ import { CONFIG } from "site.config"
 import { getPosts } from "../apis/notion-client/getPosts"
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-  let urls: { loc: string; priority: string }[] = [
-    { loc: CONFIG.link, priority: "1.0" },
+  const posts = await getPosts()
+  const validPosts = posts.filter(
+    (post) => post.slug && post.slug.trim() !== ""
+  )
+
+  const urls = [
+    `<url>
+      <loc>${CONFIG.link}</loc>
+      <lastmod>${new Date().toISOString()}</lastmod>
+    </url>`,
+    ...validPosts.map(
+      (post) => `<url>
+        <loc>${CONFIG.link}/${encodeURIComponent(post.slug)}</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+      </url>`
+    ),
   ]
 
-  try {
-    const posts = await getPosts()
-    const postUrls = posts
-      .filter((post) => post.slug && post.slug.trim() !== "")
-      .map((post) => ({
-        loc: `${CONFIG.link}/${encodeURIComponent(post.slug)}`,
-        priority: "0.7",
-      }))
-    urls = [...urls, ...postUrls]
-  } catch (e) {
-    console.error("sitemap: getPosts failed", e)
-    // Return a minimal sitemap with just the root URL on error
-  }
-
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls
-  .map(
-    ({ loc, priority }) => `  <url>
-    <loc>${loc}</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>${priority}</priority>
-  </url>`
-  )
-  .join("\n")}
-</urlset>`
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  ${urls.join("")}
+  </urlset>`
 
-  res.setHeader("Content-Type", "application/xml")
-  // Cache on Vercel CDN for 5 min, serve stale up to 10 min while revalidating
-  res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=300, stale-while-revalidate=600"
-  )
-  res.write(sitemap)
-  res.end()
+  res.setHeader("Content-Type", "text/xml")
+  res.setHeader("Cache-Control", "public, s-maxage=300")
+
+  res.end(sitemap) // 🔥 write 제거
 
   return { props: {} }
 }
