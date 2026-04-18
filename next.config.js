@@ -1,5 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: "/sitemap.xml",
+        destination: "/sitemap.xml", // 실제 파일 경로가 pages/sitemap.xml.tsx인 경우
+      },
+    ]
+  },
   images: {
     remotePatterns: [
       {
