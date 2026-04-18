@@ -26,8 +26,8 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   ${urls.join("")}
   </urlset>`
 
-  res.setHeader("Content-Type", "text/xml")
-  res.setHeader("Cache-Control", "public, s-maxage=300")
+  res.setHeader("Content-Type", "application/xml")
+  res.setHeader("Cache-Control", "public, max-age=0, must-revalidate")
 
   res.end(sitemap) // 🔥 write 제거
 
