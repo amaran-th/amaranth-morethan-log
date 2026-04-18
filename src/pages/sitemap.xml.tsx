@@ -16,7 +16,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     ...validPosts.map(
       (post) => `<url>
         <loc>${CONFIG.link}/${encodeURIComponent(post.slug)}</loc>
-        <lastmod>${new Date().toISOString()}</lastmod>
+        <lastmod>${new Date(post.date.start_date).toISOString()}</lastmod>
       </url>`
     ),
   ]
