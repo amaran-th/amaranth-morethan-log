@@ -17,8 +17,7 @@ import "katex/dist/katex.min.css"
 import { FC } from "react"
 
 const _NotionRenderer = dynamic(
-  () => import("react-notion-x").then((m) => m.NotionRenderer),
-  { ssr: false }
+  () => import("react-notion-x").then((m) => m.NotionRenderer)
 )
 
 const Code = dynamic(() =>
