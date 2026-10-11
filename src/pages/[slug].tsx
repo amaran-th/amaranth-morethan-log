@@ -6,6 +6,7 @@ import CustomError from "src/routes/Error"
 import { getRecordMap, getPosts } from "src/apis"
 import MetaConfig from "src/components/MetaConfig"
 import { GetStaticProps } from "next"
+import Head from "next/head"
 import { queryClient } from "src/libs/react-query"
 import { queryKey } from "src/constants/queryKey"
 import { dehydrate } from "@tanstack/react-query"
@@ -58,24 +59,51 @@ const DetailPage: NextPageWithLayout = () => {
   if (!post) return <CustomError />
 
   const image =
-    post.thumbnail ??
-    CONFIG.ogImageGenerateURL ??
+    post.thumbnail ||
     `${CONFIG.ogImageGenerateURL}/${encodeURIComponent(post.title)}.png`
 
   const date = post.date?.start_date || post.createdTime || ""
+  const isArticle = post.type[0] === "Post"
 
   const meta = {
     title: post.title,
     date: new Date(date).toISOString(),
     image: image,
     description: post.summary || "",
-    type: post.type[0],
-    url: `${CONFIG.link}/${post.slug}`,
+    type: isArticle ? "article" : "website",
+    url: `${CONFIG.link}/${encodeURIComponent(post.slug)}`,
+  } as const
+
+  const blogPostingJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: meta.title,
+    description: meta.description,
+    datePublished: meta.date,
+    author: {
+      "@type": "Person",
+      name: CONFIG.profile.name,
+      url: CONFIG.link,
+    },
+    image: meta.image,
+    url: meta.url,
+    mainEntityOfPage: meta.url,
+    inLanguage: CONFIG.lang,
   }
 
   return (
     <>
       <MetaConfig {...meta} />
+      {isArticle && (
+        <Head>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(blogPostingJsonLd),
+            }}
+          />
+        </Head>
+      )}
       <Detail />
     </>
   )

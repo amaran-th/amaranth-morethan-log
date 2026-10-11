@@ -37,7 +37,7 @@ const FeedPage: NextPageWithLayout = () => {
     image: CONFIG.blog.image,
     type: "website",
     url: CONFIG.link,
-  }
+  } as const
 
   return (
     <>
