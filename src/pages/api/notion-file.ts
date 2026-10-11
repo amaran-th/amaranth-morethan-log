@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next"
-import { NotionAPI } from "notion-client"
+import { createNotionAPI } from "src/libs/utils/notion/createNotionAPI"
 
 export default async function handler(
   req: NextApiRequest,
@@ -17,7 +17,7 @@ export default async function handler(
   }
 
   try {
-    const api = new NotionAPI()
+    const api = createNotionAPI()
     const { signedUrls } = await api.getSignedFileUrls([
       {
         permissionRecord: {

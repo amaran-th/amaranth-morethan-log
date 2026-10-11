@@ -1,4 +1,4 @@
-import { NotionAPI } from "notion-client"
+import { createNotionAPI } from "src/libs/utils/notion/createNotionAPI"
 import { getPageContentBlockIds } from "notion-utils"
 
 // Flatten CRDT v1 block format: newer Notion API wraps block data under an
@@ -14,7 +14,7 @@ function normalizeBlocks(recordMap: any) {
 }
 
 export const getRecordMap = async (pageId: string) => {
-  const api = new NotionAPI()
+  const api = createNotionAPI()
   const recordMap = await api.getPage(pageId)
 
   // Step 1: normalize all already-fetched blocks

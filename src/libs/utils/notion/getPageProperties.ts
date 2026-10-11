@@ -1,5 +1,5 @@
 import { getTextContent, getDateValue } from "notion-utils"
-import { NotionAPI } from "notion-client"
+import { createNotionAPI } from "src/libs/utils/notion/createNotionAPI"
 import { BlockMap, CollectionPropertySchemaMap } from "notion-types"
 import { customMapImageUrl } from "./customMapImageUrl"
 
@@ -8,7 +8,7 @@ async function getPageProperties(
   block: BlockMap,
   schema: CollectionPropertySchemaMap
 ) {
-  const api = new NotionAPI()
+  const api = createNotionAPI()
   const blockEntry = block?.[id]?.value as any
   const blockValue = blockEntry?.value ?? blockEntry
   const rawProperties = Object.entries(blockValue?.properties || [])
