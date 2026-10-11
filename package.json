@@ -11,7 +11,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "node --import tsx --test \"src/**/*.test.ts\""
+    "test": "node --import tsx --test \"src/**/*.test.ts\"",
+    "migrate": "tsx --env-file=.env scripts/migrate-legacy/index.ts",
+    "migrate:test": "node --import tsx --test \"scripts/migrate-legacy/**/*.test.ts\""
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -33,6 +35,8 @@
     "react-notion-x": "^6.16.0"
   },
   "devDependencies": {
+    "@notionhq/client": "^4.0.2",
+    "@tryfabric/martian": "^1.2.4",
     "@types/gtag.js": "^0.0.12",
     "@types/node": "^18.11.15",
     "@types/react": "^18.0.26",
@@ -40,6 +44,7 @@
     "autoprefixer": "^10.4.21",
     "eslint": "^8.39.0",
     "eslint-config-next": "^13.4.7",
+    "gray-matter": "^4.0.3",
     "next-sitemap": "^3.1.32",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",

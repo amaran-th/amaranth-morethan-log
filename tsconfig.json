@@ -19,5 +19,5 @@
     "baseUrl": "."
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "site.config.js"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "scripts"]
 }

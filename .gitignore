@@ -37,3 +37,5 @@ yarn-error.log*
 # public/sitemap.xml
 
 /.firebase
+# legacy migration
+/scripts/migrate-legacy/.cache/
