@@ -16,7 +16,9 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     ...validPosts.map(
       (post) => `<url>
         <loc>${CONFIG.link}/${encodeURIComponent(post.slug)}</loc>
-        <lastmod>${new Date(post.date.start_date).toISOString()}</lastmod>
+        <lastmod>${new Date(
+          post.date?.start_date || post.createdTime
+        ).toISOString()}</lastmod>
       </url>`
     ),
   ]
@@ -27,7 +29,13 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   </urlset>`
 
   res.setHeader("Content-Type", "application/xml")
-  res.setHeader("Cache-Control", "public, max-age=0, must-revalidate")
+  // Building the sitemap queries Notion, which is slow and sometimes fails or
+  // rate-limits. Cache it on the CDN and keep serving the last good copy while
+  // it refreshes, so crawlers don't hit a 500 when Notion is having trouble.
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=3600, stale-while-revalidate=86400"
+  )
 
   res.end(sitemap) // 🔥 write 제거
 

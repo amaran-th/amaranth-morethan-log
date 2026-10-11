@@ -3,6 +3,32 @@ import { createNotionAPI } from "src/libs/utils/notion/createNotionAPI"
 import { BlockMap, CollectionPropertySchemaMap } from "notion-types"
 import { customMapImageUrl } from "./customMapImageUrl"
 
+// Every post shares the same few authors, so fetching the author per post sent
+// one Notion request per post and invited rate limiting (429). Fetch each user
+// once per server instance; a failed fetch is evicted so it can be retried.
+const userCache = new Map<string, Promise<any>>()
+
+function getUser(api: ReturnType<typeof createNotionAPI>, userId: any) {
+  const key = JSON.stringify(userId)
+  if (!userCache.has(key)) {
+    const promise = api.getUsers(userId).then((res: any) => {
+      const resEntry = res?.recordMapWithRoles?.notion_user?.[userId[1]]?.value
+      const resValue = resEntry?.value ?? resEntry
+      return {
+        id: resValue?.id,
+        name:
+          resValue?.name ||
+          `${resValue?.family_name}${resValue?.given_name}` ||
+          undefined,
+        profile_photo: resValue?.profile_photo || null,
+      }
+    })
+    promise.catch(() => userCache.delete(key))
+    userCache.set(key, promise)
+  }
+  return userCache.get(key)
+}
+
 async function getPageProperties(
   id: string,
   block: BlockMap,
@@ -59,19 +85,7 @@ async function getPageProperties(
           for (let i = 0; i < rawUsers.length; i++) {
             if (rawUsers[i][0][1]) {
               const userId = rawUsers[i][0]
-              const res: any = await api.getUsers(userId)
-              const resEntry =
-                res?.recordMapWithRoles?.notion_user?.[userId[1]]?.value
-              const resValue = resEntry?.value ?? resEntry
-              const user = {
-                id: resValue?.id,
-                name:
-                  resValue?.name ||
-                  `${resValue?.family_name}${resValue?.given_name}` ||
-                  undefined,
-                profile_photo: resValue?.profile_photo || null,
-              }
-              users.push(user)
+              users.push(await getUser(api, userId))
             }
           }
           properties[schema[key].name] = users
