@@ -1,10 +1,13 @@
 import { GetServerSideProps } from "next"
 import { CONFIG } from "site.config"
 import { getPosts } from "../apis/notion-client/getPosts"
+import { filterPosts } from "src/libs/utils/notion/filterPosts"
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const posts = await getPosts()
-  const validPosts = posts.filter(
+  // Only list posts that are publicly listed; PublicOnDetail and Private posts
+  // (e.g. migration drafts) must not be advertised to crawlers.
+  const validPosts = filterPosts(posts).filter(
     (post) => post.slug && post.slug.trim() !== ""
   )
 
