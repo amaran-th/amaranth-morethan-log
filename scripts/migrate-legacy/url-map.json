@@ -1,0 +1,1202 @@
+{
+  "프론트엔드 라이브러리/dependenciesVSdevDependencies": {
+    "title": "dependencies vs devDependencies",
+    "slug": "dependencies-vs-devdependencies",
+    "legacyUrl": "https://amaran-th.github.io/프론트엔드 라이브러리/dependenciesVSdevDependencies/",
+    "newUrl": "https://amaran-th.vercel.app/dependencies-vs-devdependencies"
+  },
+  "데이터베이스/데이터베이스 정규화": {
+    "title": "데이터베이스 정규화 - 1",
+    "slug": "데이터베이스-정규화-1",
+    "legacyUrl": "https://amaran-th.github.io/데이터베이스/데이터베이스 정규화/",
+    "newUrl": "https://amaran-th.vercel.app/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%A0%95%EA%B7%9C%ED%99%94-1"
+  },
+  "프론트엔드 라이브러리/Recoil 사용하기": {
+    "title": "Recoil 사용하기",
+    "slug": "recoil-사용하기",
+    "legacyUrl": "https://amaran-th.github.io/프론트엔드 라이브러리/Recoil 사용하기/",
+    "newUrl": "https://amaran-th.vercel.app/recoil-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0"
+  },
+  "데이터베이스/Partition": {
+    "title": "Partition",
+    "slug": "partition",
+    "legacyUrl": "https://amaran-th.github.io/데이터베이스/Partition/",
+    "newUrl": "https://amaran-th.vercel.app/partition"
+  },
+  "데이터베이스/데이터베이스 정규화 - 2": {
+    "title": "데이터베이스 정규화 - 2",
+    "slug": "데이터베이스-정규화-2",
+    "legacyUrl": "https://amaran-th.github.io/데이터베이스/데이터베이스 정규화 - 2/",
+    "newUrl": "https://amaran-th.vercel.app/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%A0%95%EA%B7%9C%ED%99%94-2"
+  },
+  "데이터베이스/Transaction과 Locking": {
+    "title": "Transaction과 Locking",
+    "slug": "transaction과-locking",
+    "legacyUrl": "https://amaran-th.github.io/데이터베이스/Transaction과 Locking/",
+    "newUrl": "https://amaran-th.vercel.app/transaction%EA%B3%BC-locking"
+  },
+  "Unity/Random 사용하기": {
+    "title": "Random 사용하기",
+    "slug": "random-사용하기",
+    "legacyUrl": "https://amaran-th.github.io/Unity/Random 사용하기/",
+    "newUrl": "https://amaran-th.vercel.app/random-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0"
+  },
+  "Unity/List&Dictionary 사용법": {
+    "title": "List&Dictionary 사용법",
+    "slug": "list-dictionary-사용법",
+    "legacyUrl": "https://amaran-th.github.io/Unity/List&Dictionary 사용법/",
+    "newUrl": "https://amaran-th.vercel.app/list-dictionary-%EC%82%AC%EC%9A%A9%EB%B2%95"
+  },
+  "Unity/ScrollView를 사용하여 리스트 구현하기": {
+    "title": "ScrollView를 사용하여 리스트 구현하기",
+    "slug": "scrollview를-사용하여-리스트-구현하기",
+    "legacyUrl": "https://amaran-th.github.io/Unity/ScrollView를 사용하여 리스트 구현하기/",
+    "newUrl": "https://amaran-th.vercel.app/scrollview%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0"
+  },
+  "React/Gatsby 블로그 태그 추가하기": {
+    "title": "Gatsby 블로그 태그 추가하기",
+    "slug": "gatsby-블로그-태그-추가하기",
+    "legacyUrl": "https://amaran-th.github.io/React/Gatsby 블로그 태그 추가하기/",
+    "newUrl": "https://amaran-th.vercel.app/gatsby-%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%83%9C%EA%B7%B8-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0"
+  },
+  "프론트엔드 라이브러리/Three.js 예제 - 대상 주변을 360도 회전하는 광원": {
+    "title": "Three.js 예제 - 대상 주변을 360도 회전하는 광원",
+    "slug": "threejs-예제-대상-주변을-360도-회전하는-광원",
+    "legacyUrl": "https://amaran-th.github.io/프론트엔드 라이브러리/Three.js 예제 - 대상 주변을 360도 회전하는 광원/",
+    "newUrl": "https://amaran-th.vercel.app/threejs-%EC%98%88%EC%A0%9C-%EB%8C%80%EC%83%81-%EC%A3%BC%EB%B3%80%EC%9D%84-360%EB%8F%84-%ED%9A%8C%EC%A0%84%ED%95%98%EB%8A%94-%EA%B4%91%EC%9B%90"
+  },
+  "프론트엔드 라이브러리/Three.js 예제 - 방사형으로 오브젝트 정렬하는 예제": {
+    "title": "Three.js 예제 - 방사형으로 오브젝트 정렬하는 예제",
+    "slug": "threejs-예제-방사형으로-오브젝트-정렬하는-예제",
+    "legacyUrl": "https://amaran-th.github.io/프론트엔드 라이브러리/Three.js 예제 - 방사형으로 오브젝트 정렬하는 예제/",
+    "newUrl": "https://amaran-th.vercel.app/threejs-%EC%98%88%EC%A0%9C-%EB%B0%A9%EC%82%AC%ED%98%95%EC%9C%BC%EB%A1%9C-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EC%A0%95%EB%A0%AC%ED%95%98%EB%8A%94-%EC%98%88%EC%A0%9C"
+  },
+  "딥러닝/Ch0. 머신러닝 workflow": {
+    "title": "Ch0. 머신러닝 workflow",
+    "slug": "ch0-머신러닝-workflow",
+    "legacyUrl": "https://amaran-th.github.io/딥러닝/Ch0. 머신러닝 workflow/",
+    "newUrl": "https://amaran-th.vercel.app/ch0-%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-workflow"
+  },
+  "딥러닝/Ch2. 텍스트 전처리(1)": {
+    "title": "Ch2. 텍스트 전처리(1)",
+    "slug": "ch2-텍스트-전처리-1",
+    "legacyUrl": "https://amaran-th.github.io/딥러닝/Ch2. 텍스트 전처리(1)/",
+    "newUrl": "https://amaran-th.vercel.app/ch2-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%A0%84%EC%B2%98%EB%A6%AC-1"
+  },
+  "딥러닝/Ch2. 텍스트 전처리(2)": {
+    "title": "Ch2. 텍스트 전처리(2)",
+    "slug": "ch2-텍스트-전처리-2",
+    "legacyUrl": "https://amaran-th.github.io/딥러닝/Ch2. 텍스트 전처리(2)/",
+    "newUrl": "https://amaran-th.vercel.app/ch2-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%A0%84%EC%B2%98%EB%A6%AC-2"
+  },
+  "딥러닝/Ch3. 언어모델": {
+    "title": "Ch3. 언어모델",
+    "slug": "ch3-언어모델",
+    "legacyUrl": "https://amaran-th.github.io/딥러닝/Ch3. 언어모델/",
+    "newUrl": "https://amaran-th.vercel.app/ch3-%EC%96%B8%EC%96%B4%EB%AA%A8%EB%8D%B8"
+  },
+  "딥러닝/Ch4. 카운트 기반의 단어 표현": {
+    "title": "Ch4. 카운트 기반의 단어 표현",
+    "slug": "ch4-카운트-기반의-단어-표현",
+    "legacyUrl": "https://amaran-th.github.io/딥러닝/Ch4. 카운트 기반의 단어 표현/",
+    "newUrl": "https://amaran-th.vercel.app/ch4-%EC%B9%B4%EC%9A%B4%ED%8A%B8-%EA%B8%B0%EB%B0%98%EC%9D%98-%EB%8B%A8%EC%96%B4-%ED%91%9C%ED%98%84"
+  },
+  "딥러닝/Ch5. 벡터의 유사도": {
+    "title": "Ch5. 벡터의 유사도",
+    "slug": "ch5-벡터의-유사도",
+    "legacyUrl": "https://amaran-th.github.io/딥러닝/Ch5. 벡터의 유사도/",
+    "newUrl": "https://amaran-th.vercel.app/ch5-%EB%B2%A1%ED%84%B0%EC%9D%98-%EC%9C%A0%EC%82%AC%EB%8F%84"
+  },
+  "Github/README 파일 만들기": {
+    "title": "README 파일 만들기",
+    "slug": "readme-파일-만들기",
+    "legacyUrl": "https://amaran-th.github.io/Github/README 파일 만들기/",
+    "newUrl": "https://amaran-th.vercel.app/readme-%ED%8C%8C%EC%9D%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0"
+  },
+  "Github/Github Repository를 Template으로 만드는 방법": {
+    "title": "Github Repository를 Template으로 만드는 방법",
+    "slug": "github-repository를-template으로-만드는-방법",
+    "legacyUrl": "https://amaran-th.github.io/Github/Github Repository를 Template으로 만드는 방법/",
+    "newUrl": "https://amaran-th.vercel.app/github-repository%EB%A5%BC-template%EC%9C%BC%EB%A1%9C-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B0%A9%EB%B2%95"
+  },
+  "주저리주저리/페어 프로그래밍(Pair Programming)이란": {
+    "title": "페어 프로그래밍(Pair Programming)이란",
+    "slug": "페어-프로그래밍-pair-programming-이란",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/페어 프로그래밍(Pair Programming)이란/",
+    "newUrl": "https://amaran-th.vercel.app/%ED%8E%98%EC%96%B4-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-pair-programming-%EC%9D%B4%EB%9E%80"
+  },
+  "Java/테스트 코드의 가독성을 높이기 위한 팁": {
+    "title": "테스트 코드의 가독성을 높이기 위한 팁",
+    "slug": "테스트-코드의-가독성을-높이기-위한-팁",
+    "legacyUrl": "https://amaran-th.github.io/Java/테스트 코드의 가독성을 높이기 위한 팁/",
+    "newUrl": "https://amaran-th.vercel.app/%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%BD%94%EB%93%9C%EC%9D%98-%EA%B0%80%EB%8F%85%EC%84%B1%EC%9D%84-%EB%86%92%EC%9D%B4%EA%B8%B0-%EC%9C%84%ED%95%9C-%ED%8C%81"
+  },
+  "소프트웨어 설계/[디자인 패턴] Strategy Pattern(전략 패턴)": {
+    "title": "[디자인 패턴] Strategy Pattern(전략 패턴)",
+    "slug": "디자인-패턴-strategy-pattern-전략-패턴",
+    "legacyUrl": "https://amaran-th.github.io/소프트웨어 설계/[디자인 패턴] Strategy Pattern(전략 패턴)/",
+    "newUrl": "https://amaran-th.vercel.app/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-strategy-pattern-%EC%A0%84%EB%9E%B5-%ED%8C%A8%ED%84%B4"
+  },
+  "Java/[Java] String Pool과 StringBuilder": {
+    "title": "[Java] String Pool과 StringBuilder",
+    "slug": "java-string-pool과-stringbuilder",
+    "legacyUrl": "https://amaran-th.github.io/Java/[Java] String Pool과 StringBuilder/",
+    "newUrl": "https://amaran-th.vercel.app/java-string-pool%EA%B3%BC-stringbuilder"
+  },
+  "JavaScript/구조분해할당(destructuring-assignment)이란": {
+    "title": "구조분해할당(destructuring-assignment)이란?",
+    "slug": "구조분해할당-destructuring-assignment-이란",
+    "legacyUrl": "https://amaran-th.github.io/JavaScript/구조분해할당(destructuring-assignment)이란/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B5%AC%EC%A1%B0%EB%B6%84%ED%95%B4%ED%95%A0%EB%8B%B9-destructuring-assignment-%EC%9D%B4%EB%9E%80"
+  },
+  "JavaScript/[TS] satisfies 키워드": {
+    "title": "[TS] satisfies 키워드",
+    "slug": "ts-satisfies-키워드",
+    "legacyUrl": "https://amaran-th.github.io/JavaScript/[TS] satisfies 키워드/",
+    "newUrl": "https://amaran-th.vercel.app/ts-satisfies-%ED%82%A4%EC%9B%8C%EB%93%9C"
+  },
+  "소프트웨어 설계/[디자인 패턴] Template Method Pattern": {
+    "title": "[디자인 패턴] Template Method Pattern",
+    "slug": "디자인-패턴-template-method-pattern",
+    "legacyUrl": "https://amaran-th.github.io/소프트웨어 설계/[디자인 패턴] Template Method Pattern/",
+    "newUrl": "https://amaran-th.vercel.app/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-template-method-pattern"
+  },
+  "Java/[Java] 제네릭(Generic)": {
+    "title": "[Java] 제네릭(Generic)",
+    "slug": "java-제네릭-generic",
+    "legacyUrl": "https://amaran-th.github.io/Java/[Java] 제네릭(Generic)/",
+    "newUrl": "https://amaran-th.vercel.app/java-%EC%A0%9C%EB%84%A4%EB%A6%AD-generic"
+  },
+  "Java/[Java] 정적 팩토리 메서드란": {
+    "title": "[Java] 정적 팩토리 메서드란",
+    "slug": "java-정적-팩토리-메서드란",
+    "legacyUrl": "https://amaran-th.github.io/Java/[Java] 정적 팩토리 메서드란/",
+    "newUrl": "https://amaran-th.vercel.app/java-%EC%A0%95%EC%A0%81-%ED%8C%A9%ED%86%A0%EB%A6%AC-%EB%A9%94%EC%84%9C%EB%93%9C%EB%9E%80"
+  },
+  "소프트웨어 설계/[디자인 패턴] Factory Method Pattern(팩토리 메서드 패턴)": {
+    "title": "[디자인 패턴] Factory Method Pattern(팩토리 메서드 패턴)",
+    "slug": "디자인-패턴-factory-method-pattern-팩토리-메서드-패턴",
+    "legacyUrl": "https://amaran-th.github.io/소프트웨어 설계/[디자인 패턴] Factory Method Pattern(팩토리 메서드 패턴)/",
+    "newUrl": "https://amaran-th.vercel.app/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-factory-method-pattern-%ED%8C%A9%ED%86%A0%EB%A6%AC-%EB%A9%94%EC%84%9C%EB%93%9C-%ED%8C%A8%ED%84%B4"
+  },
+  "Java/[Java] VO(Value Object)란": {
+    "title": "[Java] VO(Value Object)란?",
+    "slug": "java-vo-value-object-란",
+    "legacyUrl": "https://amaran-th.github.io/Java/[Java] VO(Value Object)란/",
+    "newUrl": "https://amaran-th.vercel.app/java-vo-value-object-%EB%9E%80"
+  },
+  "소프트웨어 설계/[Markdown] mermaid로 UML 만들기": {
+    "title": "[Markdown] mermaid로 UML 만들기",
+    "slug": "markdown-mermaid로-uml-만들기",
+    "legacyUrl": "https://amaran-th.github.io/소프트웨어 설계/[Markdown] mermaid로 UML 만들기/",
+    "newUrl": "https://amaran-th.vercel.app/markdown-mermaid%EB%A1%9C-uml-%EB%A7%8C%EB%93%A4%EA%B8%B0"
+  },
+  "소프트웨어 설계/[디자인 패턴] State Pattern(상태 패턴)": {
+    "title": "[디자인 패턴] State Pattern(상태 패턴)",
+    "slug": "디자인-패턴-state-pattern-상태-패턴",
+    "legacyUrl": "https://amaran-th.github.io/소프트웨어 설계/[디자인 패턴] State Pattern(상태 패턴)/",
+    "newUrl": "https://amaran-th.vercel.app/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-state-pattern-%EC%83%81%ED%83%9C-%ED%8C%A8%ED%84%B4"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨1 - 6주차": {
+    "title": "[기술부채] 우테코 5기 레벨1 - 6주차",
+    "slug": "기술부채-우테코-5기-레벨1-6주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨1 - 6주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A81-6%EC%A3%BC%EC%B0%A8"
+  },
+  "소프트웨어 설계/[디자인 패턴] Command Pattern(명령 패턴)": {
+    "title": "[디자인 패턴] Command Pattern(명령 패턴)",
+    "slug": "디자인-패턴-command-pattern-명령-패턴",
+    "legacyUrl": "https://amaran-th.github.io/소프트웨어 설계/[디자인 패턴] Command Pattern(명령 패턴)/",
+    "newUrl": "https://amaran-th.vercel.app/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-command-pattern-%EB%AA%85%EB%A0%B9-%ED%8C%A8%ED%84%B4"
+  },
+  "Java/[Java] 함수형 인터페이스(Functional Interface)": {
+    "title": "[Java] 함수형 인터페이스(Functional Interface)",
+    "slug": "java-함수형-인터페이스-functional-interface",
+    "legacyUrl": "https://amaran-th.github.io/Java/[Java] 함수형 인터페이스(Functional Interface)/",
+    "newUrl": "https://amaran-th.vercel.app/java-%ED%95%A8%EC%88%98%ED%98%95-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-functional-interface"
+  },
+  "Java/[Java] DB 변경사항 롤백하기": {
+    "title": "[Java] DB 변경사항 롤백하기",
+    "slug": "java-db-변경사항-롤백하기",
+    "legacyUrl": "https://amaran-th.github.io/Java/[Java] DB 변경사항 롤백하기/",
+    "newUrl": "https://amaran-th.vercel.app/java-db-%EB%B3%80%EA%B2%BD%EC%82%AC%ED%95%AD-%EB%A1%A4%EB%B0%B1%ED%95%98%EA%B8%B0"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨1 - 7주차": {
+    "title": "[기술부채] 우테코 5기 레벨1 - 7주차",
+    "slug": "기술부채-우테코-5기-레벨1-7주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨1 - 7주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A81-7%EC%A3%BC%EC%B0%A8"
+  },
+  "우테코 5기/레벨1 레벨 로그": {
+    "title": "레벨1 레벨 로그",
+    "slug": "레벨1-레벨-로그",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/레벨1 레벨 로그/",
+    "newUrl": "https://amaran-th.vercel.app/%EB%A0%88%EB%B2%A81-%EB%A0%88%EB%B2%A8-%EB%A1%9C%EA%B7%B8"
+  },
+  "우테코 5기/[글쓰기 미션] 우테코 한 달 생활기": {
+    "title": "[글쓰기 미션] 우테코 한 달 생활기",
+    "slug": "글쓰기-미션-우테코-한-달-생활기",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[글쓰기 미션] 우테코 한 달 생활기/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%80%EC%93%B0%EA%B8%B0-%EB%AF%B8%EC%85%98-%EC%9A%B0%ED%85%8C%EC%BD%94-%ED%95%9C-%EB%8B%AC-%EC%83%9D%ED%99%9C%EA%B8%B0"
+  },
+  "소프트웨어 설계/[디자인 패턴] Builder Pattern(빌더 패턴)": {
+    "title": "[디자인 패턴] Builder Pattern(빌더 패턴)",
+    "slug": "디자인-패턴-builder-pattern-빌더-패턴",
+    "legacyUrl": "https://amaran-th.github.io/소프트웨어 설계/[디자인 패턴] Builder Pattern(빌더 패턴)/",
+    "newUrl": "https://amaran-th.vercel.app/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-builder-pattern-%EB%B9%8C%EB%8D%94-%ED%8C%A8%ED%84%B4"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨1 - 8주차": {
+    "title": "[기술부채] 우테코 5기 레벨1 - 8주차",
+    "slug": "기술부채-우테코-5기-레벨1-8주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨1 - 8주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A81-8%EC%A3%BC%EC%B0%A8"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨2 - 1주차": {
+    "title": "[기술부채] 우테코 5기 레벨2 - 1주차",
+    "slug": "기술부채-우테코-5기-레벨2-1주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨2 - 1주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A82-1%EC%A3%BC%EC%B0%A8"
+  },
+  "Spring/[Spring] IoC Container": {
+    "title": "[Spring] IoC Container",
+    "slug": "spring-ioc-container",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] IoC Container/",
+    "newUrl": "https://amaran-th.vercel.app/spring-ioc-container"
+  },
+  "React/Gatsby 댓글 기능 추가하기": {
+    "title": "Gatsby 댓글 기능 추가하기",
+    "slug": "gatsby-댓글-기능-추가하기",
+    "legacyUrl": "https://amaran-th.github.io/React/Gatsby 댓글 기능 추가하기/",
+    "newUrl": "https://amaran-th.vercel.app/gatsby-%EB%8C%93%EA%B8%80-%EA%B8%B0%EB%8A%A5-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0"
+  },
+  "React/Gatsby 블로그 검색엔진 최적화(SEO)하기": {
+    "title": "Gatsby 블로그 검색엔진 최적화(SEO)하기",
+    "slug": "gatsby-블로그-검색엔진-최적화-seo-하기",
+    "legacyUrl": "https://amaran-th.github.io/React/Gatsby 블로그 검색엔진 최적화(SEO)하기/",
+    "newUrl": "https://amaran-th.vercel.app/gatsby-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B2%80%EC%83%89%EC%97%94%EC%A7%84-%EC%B5%9C%EC%A0%81%ED%99%94-seo-%ED%95%98%EA%B8%B0"
+  },
+  "Spring/[Spring] Bean": {
+    "title": "[Spring] Bean",
+    "slug": "spring-bean",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] Bean/",
+    "newUrl": "https://amaran-th.vercel.app/spring-bean"
+  },
+  "Spring/[Spring] Component Scan": {
+    "title": "[Spring] Component Scan",
+    "slug": "spring-component-scan",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] Component Scan/",
+    "newUrl": "https://amaran-th.vercel.app/spring-component-scan"
+  },
+  "소프트웨어 설계/Layered Architecture(계층화 구조)": {
+    "title": "Layered Architecture(계층화 구조)",
+    "slug": "layered-architecture-계층화-구조",
+    "legacyUrl": "https://amaran-th.github.io/소프트웨어 설계/Layered Architecture(계층화 구조)/",
+    "newUrl": "https://amaran-th.vercel.app/layered-architecture-%EA%B3%84%EC%B8%B5%ED%99%94-%EA%B5%AC%EC%A1%B0"
+  },
+  "Java/[Java] Mockito 사용법(기본)": {
+    "title": "[Java] Mockito 사용법(기본)",
+    "slug": "java-mockito-사용법-기본",
+    "legacyUrl": "https://amaran-th.github.io/Java/[Java] Mockito 사용법(기본)/",
+    "newUrl": "https://amaran-th.vercel.app/java-mockito-%EC%82%AC%EC%9A%A9%EB%B2%95-%EA%B8%B0%EB%B3%B8"
+  },
+  "소프트웨어 설계/[IntelliJ] 코드 커버리지 확인하기": {
+    "title": "[IntelliJ] 코드 커버리지 확인하기",
+    "slug": "intellij-코드-커버리지-확인하기",
+    "legacyUrl": "https://amaran-th.github.io/소프트웨어 설계/[IntelliJ] 코드 커버리지 확인하기/",
+    "newUrl": "https://amaran-th.vercel.app/intellij-%EC%BD%94%EB%93%9C-%EC%BB%A4%EB%B2%84%EB%A6%AC%EC%A7%80-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0"
+  },
+  "Spring/[Spring] DB에 생성시간&수정된 시간 자동 셋팅하기": {
+    "title": "[Spring] DB에 생성시간&수정된 시간 자동 셋팅하기",
+    "slug": "spring-db에-생성시간-수정된-시간-자동-셋팅하기",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] DB에 생성시간&수정된 시간 자동 셋팅하기/",
+    "newUrl": "https://amaran-th.vercel.app/spring-db%EC%97%90-%EC%83%9D%EC%84%B1%EC%8B%9C%EA%B0%84-%EC%88%98%EC%A0%95%EB%90%9C-%EC%8B%9C%EA%B0%84-%EC%9E%90%EB%8F%99-%EC%85%8B%ED%8C%85%ED%95%98%EA%B8%B0"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨2 - 2주차": {
+    "title": "[기술부채] 우테코 5기 레벨2 - 2주차",
+    "slug": "기술부채-우테코-5기-레벨2-2주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨2 - 2주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A82-2%EC%A3%BC%EC%B0%A8"
+  },
+  "Spring/[Spring] Test": {
+    "title": "[Spring] Test",
+    "slug": "spring-test",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] Test/",
+    "newUrl": "https://amaran-th.vercel.app/spring-test"
+  },
+  "보안/[Web] Cookie, Session, Token": {
+    "title": "[Web] Cookie, Session, Token",
+    "slug": "web-cookie-session-token",
+    "legacyUrl": "https://amaran-th.github.io/보안/[Web] Cookie, Session, Token/",
+    "newUrl": "https://amaran-th.vercel.app/web-cookie-session-token"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨2 - 3주차": {
+    "title": "[기술부채] 우테코 5기 레벨2 - 3주차",
+    "slug": "기술부채-우테코-5기-레벨2-3주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨2 - 3주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A82-3%EC%A3%BC%EC%B0%A8"
+  },
+  "Spring/[Spring] @SpringBootTest와 DB DLL 쿼리 충돌": {
+    "title": "[Spring] @SpringBootTest와 DB DLL 쿼리 충돌",
+    "slug": "spring-springboottest와-db-dll-쿼리-충돌",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] @SpringBootTest와 DB DLL 쿼리 충돌/",
+    "newUrl": "https://amaran-th.vercel.app/spring-springboottest%EC%99%80-db-dll-%EC%BF%BC%EB%A6%AC-%EC%B6%A9%EB%8F%8C"
+  },
+  "Spring/[Spring] Annotated Controller": {
+    "title": "[Spring] Annotated Controller",
+    "slug": "spring-annotated-controller",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] Annotated Controller/",
+    "newUrl": "https://amaran-th.vercel.app/spring-annotated-controller"
+  },
+  "Spring/[Spring] MVC Configuration 학습테스트": {
+    "title": "[Spring] MVC Configuration 학습테스트",
+    "slug": "spring-mvc-configuration-학습테스트",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] MVC Configuration 학습테스트/",
+    "newUrl": "https://amaran-th.vercel.app/spring-mvc-configuration-%ED%95%99%EC%8A%B5%ED%85%8C%EC%8A%A4%ED%8A%B8"
+  },
+  "프론트엔드 라이브러리/Axios 사용하기": {
+    "title": "Axios 사용하기",
+    "slug": "axios-사용하기",
+    "legacyUrl": "https://amaran-th.github.io/프론트엔드 라이브러리/Axios 사용하기/",
+    "newUrl": "https://amaran-th.vercel.app/axios-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨2 - 5주차": {
+    "title": "[기술부채] 우테코 5기 레벨2 - 5주차",
+    "slug": "기술부채-우테코-5기-레벨2-5주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨2 - 5주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A82-5%EC%A3%BC%EC%B0%A8"
+  },
+  "Spring/[Spring] Dispatcher Servlet": {
+    "title": "[Spring] Dispatcher Servlet",
+    "slug": "spring-dispatcher-servlet",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] Dispatcher Servlet/",
+    "newUrl": "https://amaran-th.vercel.app/spring-dispatcher-servlet"
+  },
+  "Java/[Mockito] verify()로 행위 검증하기": {
+    "title": "[Mockito] verify()로 행위 검증하기",
+    "slug": "mockito-verify-로-행위-검증하기",
+    "legacyUrl": "https://amaran-th.github.io/Java/[Mockito] verify()로 행위 검증하기/",
+    "newUrl": "https://amaran-th.vercel.app/mockito-verify-%EB%A1%9C-%ED%96%89%EC%9C%84-%EA%B2%80%EC%A6%9D%ED%95%98%EA%B8%B0"
+  },
+  "Spring/[Spring] View Resolver": {
+    "title": "[Spring] View Resolver",
+    "slug": "spring-view-resolver",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] View Resolver/",
+    "newUrl": "https://amaran-th.vercel.app/spring-view-resolver"
+  },
+  "주저리주저리/HTTP 상태코드 적절하게 사용하기": {
+    "title": "HTTP 상태코드 적절하게 사용하기",
+    "slug": "http-상태코드-적절하게-사용하기",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/HTTP 상태코드 적절하게 사용하기/",
+    "newUrl": "https://amaran-th.vercel.app/http-%EC%83%81%ED%83%9C%EC%BD%94%EB%93%9C-%EC%A0%81%EC%A0%88%ED%95%98%EA%B2%8C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0"
+  },
+  "Java/[Java] jgrapht 사용법": {
+    "title": "[Java] jgrapht 사용법",
+    "slug": "java-jgrapht-사용법",
+    "legacyUrl": "https://amaran-th.github.io/Java/[Java] jgrapht 사용법/",
+    "newUrl": "https://amaran-th.vercel.app/java-jgrapht-%EC%82%AC%EC%9A%A9%EB%B2%95"
+  },
+  "Spring/[Spring] Spring Web MVC": {
+    "title": "[Spring] Spring Web MVC",
+    "slug": "spring-spring-web-mvc",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] Spring Web MVC/",
+    "newUrl": "https://amaran-th.vercel.app/spring-spring-web-mvc"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨2 - 6주차": {
+    "title": "[기술부채] 우테코 5기 레벨2 - 6주차",
+    "slug": "기술부채-우테코-5기-레벨2-6주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨2 - 6주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A82-6%EC%A3%BC%EC%B0%A8"
+  },
+  "Java/[MySQL] MySQL과 Java의 데이터 타입": {
+    "title": "[MySQL] MySQL과 Java의 데이터 타입",
+    "slug": "mysql-mysql과-java의-데이터-타입",
+    "legacyUrl": "https://amaran-th.github.io/Java/[MySQL] MySQL과 Java의 데이터 타입/",
+    "newUrl": "https://amaran-th.vercel.app/mysql-mysql%EA%B3%BC-java%EC%9D%98-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85"
+  },
+  "Spring/[Spring] CORS의 개념과 CORS 설정하기": {
+    "title": "[Spring] CORS의 개념과 CORS 설정하기",
+    "slug": "spring-cors의-개념과-cors-설정하기",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] CORS의 개념과 CORS 설정하기/",
+    "newUrl": "https://amaran-th.vercel.app/spring-cors%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-cors-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0"
+  },
+  "Spring/[Spring] Response Header에 접근할 수 없는 문제 해결하기": {
+    "title": "[Spring] Response Header에 접근할 수 없는 문제 해결하기",
+    "slug": "spring-response-header에-접근할-수-없는-문제-해결하기",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] Response Header에 접근할 수 없는 문제 해결하기/",
+    "newUrl": "https://amaran-th.vercel.app/spring-response-header%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%A0-%EC%88%98-%EC%97%86%EB%8A%94-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0"
+  },
+  "인프라/[Linux] 서버에 프로젝트 배포 & 배포 스크립트 작성하기": {
+    "title": "[Linux] 서버에 프로젝트 배포 & 배포 스크립트 작성하기",
+    "slug": "linux-서버에-프로젝트-배포-배포-스크립트-작성하기",
+    "legacyUrl": "https://amaran-th.github.io/인프라/[Linux] 서버에 프로젝트 배포 & 배포 스크립트 작성하기/",
+    "newUrl": "https://amaran-th.vercel.app/linux-%EC%84%9C%EB%B2%84%EC%97%90-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B0%B0%ED%8F%AC-%EB%B0%B0%ED%8F%AC-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0"
+  },
+  "Spring/[Spring] Github 소셜 로그인 구현하기": {
+    "title": "[Spring] Github 소셜 로그인 구현하기",
+    "slug": "spring-github-소셜-로그인-구현하기",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] Github 소셜 로그인 구현하기/",
+    "newUrl": "https://amaran-th.vercel.app/spring-github-%EC%86%8C%EC%85%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0"
+  },
+  "Spring/[Spring] Actuator": {
+    "title": "[Spring] Actuator",
+    "slug": "spring-actuator",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] Actuator/",
+    "newUrl": "https://amaran-th.vercel.app/spring-actuator"
+  },
+  "Spring/[Spring] Server Health Checking": {
+    "title": "[Spring] Server Health Checking",
+    "slug": "spring-server-health-checking",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] Server Health Checking/",
+    "newUrl": "https://amaran-th.vercel.app/spring-server-health-checking"
+  },
+  "Spring/[Spring] RESTDocs로 API 명세서 만들기": {
+    "title": "[Spring] RESTDocs로 API 명세서 만들기",
+    "slug": "spring-restdocs로-api-명세서-만들기",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] RESTDocs로 API 명세서 만들기/",
+    "newUrl": "https://amaran-th.vercel.app/spring-restdocs%EB%A1%9C-api-%EB%AA%85%EC%84%B8%EC%84%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0"
+  },
+  "인프라/[Spring] Spring 프로젝트 CICD 적용하기": {
+    "title": "[Spring] Spring 프로젝트 CI/CD 적용하기",
+    "slug": "spring-spring-프로젝트-ci-cd-적용하기",
+    "legacyUrl": "https://amaran-th.github.io/인프라/[Spring] Spring 프로젝트 CICD 적용하기/",
+    "newUrl": "https://amaran-th.vercel.app/spring-spring-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-ci-cd-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0"
+  },
+  "소프트웨어 설계/요구 공학 프로세스": {
+    "title": "요구 공학 프로세스",
+    "slug": "요구-공학-프로세스",
+    "legacyUrl": "https://amaran-th.github.io/소프트웨어 설계/요구 공학 프로세스/",
+    "newUrl": "https://amaran-th.vercel.app/%EC%9A%94%EA%B5%AC-%EA%B3%B5%ED%95%99-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4"
+  },
+  "Java/[OS] 프로세스와 스레드": {
+    "title": "[OS] 프로세스와 스레드",
+    "slug": "os-프로세스와-스레드",
+    "legacyUrl": "https://amaran-th.github.io/Java/[OS] 프로세스와 스레드/",
+    "newUrl": "https://amaran-th.vercel.app/os-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-%EC%8A%A4%EB%A0%88%EB%93%9C"
+  },
+  "소프트웨어 설계/[디자인 패턴] Proxy Pattern(프록시 패턴)": {
+    "title": "[디자인 패턴] Proxy Pattern(프록시 패턴)",
+    "slug": "디자인-패턴-proxy-pattern-프록시-패턴",
+    "legacyUrl": "https://amaran-th.github.io/소프트웨어 설계/[디자인 패턴] Proxy Pattern(프록시 패턴)/",
+    "newUrl": "https://amaran-th.vercel.app/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-proxy-pattern-%ED%94%84%EB%A1%9D%EC%8B%9C-%ED%8C%A8%ED%84%B4"
+  },
+  "우테코 5기/레벨2 레벨 로그": {
+    "title": "레벨2 레벨 로그",
+    "slug": "레벨2-레벨-로그",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/레벨2 레벨 로그/",
+    "newUrl": "https://amaran-th.vercel.app/%EB%A0%88%EB%B2%A82-%EB%A0%88%EB%B2%A8-%EB%A1%9C%EA%B7%B8"
+  },
+  "인프라/[CICD] Self-hosted Runner로 서버 배포 자동화하기": {
+    "title": "[CICD] Self-hosted Runner로 서버 배포 자동화하기",
+    "slug": "cicd-self-hosted-runner로-서버-배포-자동화하기",
+    "legacyUrl": "https://amaran-th.github.io/인프라/[CICD] Self-hosted Runner로 서버 배포 자동화하기/",
+    "newUrl": "https://amaran-th.vercel.app/cicd-self-hosted-runner%EB%A1%9C-%EC%84%9C%EB%B2%84-%EB%B0%B0%ED%8F%AC-%EC%9E%90%EB%8F%99%ED%99%94%ED%95%98%EA%B8%B0"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨2 - 8주차": {
+    "title": "[기술부채] 우테코 5기 레벨2 - 8주차",
+    "slug": "기술부채-우테코-5기-레벨2-8주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨2 - 8주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A82-8%EC%A3%BC%EC%B0%A8"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨2 - 9주차": {
+    "title": "[기술부채] 우테코 5기 레벨2 - 9주차",
+    "slug": "기술부채-우테코-5기-레벨2-9주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨2 - 9주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A82-9%EC%A3%BC%EC%B0%A8"
+  },
+  "Spring/[Spring] AOP": {
+    "title": "[Spring] AOP",
+    "slug": "spring-aop",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] AOP/",
+    "newUrl": "https://amaran-th.vercel.app/spring-aop"
+  },
+  "데이터베이스/[MySQL] 트랜잭션과 격리수준": {
+    "title": "[MySQL] 트랜잭션과 격리수준",
+    "slug": "mysql-트랜잭션과-격리수준",
+    "legacyUrl": "https://amaran-th.github.io/데이터베이스/[MySQL] 트랜잭션과 격리수준/",
+    "newUrl": "https://amaran-th.vercel.app/mysql-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%EA%B3%BC-%EA%B2%A9%EB%A6%AC%EC%88%98%EC%A4%80"
+  },
+  "소프트웨어 설계/Hexagonal Architecture(헥사고날 아키텍처)": {
+    "title": "Hexagonal Architecture(헥사고날 아키텍처)",
+    "slug": "hexagonal-architecture-헥사고날-아키텍처",
+    "legacyUrl": "https://amaran-th.github.io/소프트웨어 설계/Hexagonal Architecture(헥사고날 아키텍처)/",
+    "newUrl": "https://amaran-th.vercel.app/hexagonal-architecture-%ED%97%A5%EC%82%AC%EA%B3%A0%EB%82%A0-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨2 - 7주차": {
+    "title": "[기술부채] 우테코 5기 레벨2 - 7주차",
+    "slug": "기술부채-우테코-5기-레벨2-7주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨2 - 7주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A82-7%EC%A3%BC%EC%B0%A8"
+  },
+  "Github/[Github] Git Commit Convention": {
+    "title": "[Github] Git Commit Convention",
+    "slug": "github-git-commit-convention",
+    "legacyUrl": "https://amaran-th.github.io/Github/[Github] Git Commit Convention/",
+    "newUrl": "https://amaran-th.vercel.app/github-git-commit-convention"
+  },
+  "Github/[Github] Git 브랜치 전략": {
+    "title": "[Github] Git 브랜치 전략",
+    "slug": "github-git-브랜치-전략",
+    "legacyUrl": "https://amaran-th.github.io/Github/[Github] Git 브랜치 전략/",
+    "newUrl": "https://amaran-th.vercel.app/github-git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EC%A0%84%EB%9E%B5"
+  },
+  "Github/[Github] Issue & PR Template 설정하기": {
+    "title": "[Github] Issue & PR Template 설정하기",
+    "slug": "github-issue-pr-template-설정하기",
+    "legacyUrl": "https://amaran-th.github.io/Github/[Github] Issue & PR Template 설정하기/",
+    "newUrl": "https://amaran-th.vercel.app/github-issue-pr-template-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0"
+  },
+  "Spring/[JPA] 기본적인 어노테이션 정리": {
+    "title": "[JPA] 기본적인 어노테이션",
+    "slug": "jpa-기본적인-어노테이션",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[JPA] 기본적인 어노테이션 정리/",
+    "newUrl": "https://amaran-th.vercel.app/jpa-%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9D%B8-%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98"
+  },
+  "Spring/[JPA] 연관 관계 매핑": {
+    "title": "[JPA] 연관 관계 매핑",
+    "slug": "jpa-연관-관계-매핑",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[JPA] 연관 관계 매핑/",
+    "newUrl": "https://amaran-th.vercel.app/jpa-%EC%97%B0%EA%B4%80-%EA%B4%80%EA%B3%84-%EB%A7%A4%ED%95%91"
+  },
+  "Java/[Java] jsoup을 사용한 자바 크롤링 구현": {
+    "title": "[Java] jsoup을 사용한 자바 크롤링 구현",
+    "slug": "java-jsoup을-사용한-자바-크롤링-구현",
+    "legacyUrl": "https://amaran-th.github.io/Java/[Java] jsoup을 사용한 자바 크롤링 구현/",
+    "newUrl": "https://amaran-th.vercel.app/java-jsoup%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%9C-%EC%9E%90%EB%B0%94-%ED%81%AC%EB%A1%A4%EB%A7%81-%EA%B5%AC%ED%98%84"
+  },
+  "데이터베이스/flyway": {
+    "title": "flyway",
+    "slug": "flyway",
+    "legacyUrl": "https://amaran-th.github.io/데이터베이스/flyway/",
+    "newUrl": "https://amaran-th.vercel.app/flyway"
+  },
+  "인프라/[AWS] VPC": {
+    "title": "[AWS] VPC",
+    "slug": "aws-vpc",
+    "legacyUrl": "https://amaran-th.github.io/인프라/[AWS] VPC/",
+    "newUrl": "https://amaran-th.vercel.app/aws-vpc"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨3 - 3주차": {
+    "title": "[기술부채] 우테코 5기 레벨3 - 3주차",
+    "slug": "기술부채-우테코-5기-레벨3-3주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨3 - 3주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A83-3%EC%A3%BC%EC%B0%A8"
+  },
+  "인프라/[CICD] Github Actions와 슬랙 알람 연동하기": {
+    "title": "[CICD] Github Actions와 슬랙 알람 연동하기",
+    "slug": "cicd-github-actions와-슬랙-알람-연동하기",
+    "legacyUrl": "https://amaran-th.github.io/인프라/[CICD] Github Actions와 슬랙 알람 연동하기/",
+    "newUrl": "https://amaran-th.vercel.app/cicd-github-actions%EC%99%80-%EC%8A%AC%EB%9E%99-%EC%95%8C%EB%9E%8C-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0"
+  },
+  "Spring/[JPA] 다대다 관계에서 FetchJoin으로 N+1 문제 해결하기": {
+    "title": "[JPA] 다대다 관계에서 FetchJoin으로 N+1 문제 해결하기",
+    "slug": "jpa-다대다-관계에서-fetchjoin으로-n-1-문제-해결하기",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[JPA] 다대다 관계에서 FetchJoin으로 N+1 문제 해결하기/",
+    "newUrl": "https://amaran-th.vercel.app/jpa-%EB%8B%A4%EB%8C%80%EB%8B%A4-%EA%B4%80%EA%B3%84%EC%97%90%EC%84%9C-fetchjoin%EC%9C%BC%EB%A1%9C-n-1-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0"
+  },
+  "Spring/[Spring] Logback에서 Appender, Filter 커스텀하기": {
+    "title": "[Spring] Logback에서 Appender, Filter 커스텀하기",
+    "slug": "spring-logback에서-appender-filter-커스텀하기",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] Logback에서 Appender, Filter 커스텀하기/",
+    "newUrl": "https://amaran-th.vercel.app/spring-logback%EC%97%90%EC%84%9C-appender-filter-%EC%BB%A4%EC%8A%A4%ED%85%80%ED%95%98%EA%B8%B0"
+  },
+  "Github/[Github] Submodule로 민감 정보 관리하기": {
+    "title": "[Github] Submodule로 민감 정보 관리하기",
+    "slug": "github-submodule로-민감-정보-관리하기",
+    "legacyUrl": "https://amaran-th.github.io/Github/[Github] Submodule로 민감 정보 관리하기/",
+    "newUrl": "https://amaran-th.vercel.app/github-submodule%EB%A1%9C-%EB%AF%BC%EA%B0%90-%EC%A0%95%EB%B3%B4-%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0"
+  },
+  "인프라/[CICD] 스프링 jar 파일을 Docker로 배포하는 Github Actions 배포 스크립트 작성하기": {
+    "title": "[CICD] 스프링 jar 파일을 Docker로 배포하는 Github Actions 배포 스크립트 작성하기",
+    "slug": "cicd-스프링-jar-파일을-docker로-배포하는-github-actions-배포-스크립트-작성하기",
+    "legacyUrl": "https://amaran-th.github.io/인프라/[CICD] 스프링 jar 파일을 Docker로 배포하는 Github Actions 배포 스크립트 작성하기/",
+    "newUrl": "https://amaran-th.vercel.app/cicd-%EC%8A%A4%ED%94%84%EB%A7%81-jar-%ED%8C%8C%EC%9D%BC%EC%9D%84-docker%EB%A1%9C-%EB%B0%B0%ED%8F%AC%ED%95%98%EB%8A%94-github-actions-%EB%B0%B0%ED%8F%AC-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0"
+  },
+  "주저리주저리/Kerdy 프로젝트의 인프라에 대한 논의": {
+    "title": "Kerdy 프로젝트의 인프라에 대한 논의",
+    "slug": "kerdy-프로젝트의-인프라에-대한-논의",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/Kerdy 프로젝트의 인프라에 대한 논의/",
+    "newUrl": "https://amaran-th.vercel.app/kerdy-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%9D%98-%EC%9D%B8%ED%94%84%EB%9D%BC%EC%97%90-%EB%8C%80%ED%95%9C-%EB%85%BC%EC%9D%98"
+  },
+  "Spring/[JPA] 영속성 관리와 영속성 컨텍스트": {
+    "title": "[JPA] 영속성 관리와 영속성 컨텍스트",
+    "slug": "jpa-영속성-관리와-영속성-컨텍스트",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[JPA] 영속성 관리와 영속성 컨텍스트/",
+    "newUrl": "https://amaran-th.vercel.app/jpa-%EC%98%81%EC%86%8D%EC%84%B1-%EA%B4%80%EB%A6%AC%EC%99%80-%EC%98%81%EC%86%8D%EC%84%B1-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8"
+  },
+  "Spring/[JPA] Specification으로 동적 쿼리 작성하기": {
+    "title": "[JPA] Specification으로 동적 쿼리 작성하기",
+    "slug": "jpa-specification으로-동적-쿼리-작성하기",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[JPA] Specification으로 동적 쿼리 작성하기/",
+    "newUrl": "https://amaran-th.vercel.app/jpa-specification%EC%9C%BC%EB%A1%9C-%EB%8F%99%EC%A0%81-%EC%BF%BC%EB%A6%AC-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0"
+  },
+  "주저리주저리/[Android] 구글 플레이스토어 UGC 정책": {
+    "title": "[Android] 구글 플레이스토어 UGC 정책",
+    "slug": "android-구글-플레이스토어-ugc-정책",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[Android] 구글 플레이스토어 UGC 정책/",
+    "newUrl": "https://amaran-th.vercel.app/android-%EA%B5%AC%EA%B8%80-%ED%94%8C%EB%A0%88%EC%9D%B4%EC%8A%A4%ED%86%A0%EC%96%B4-ugc-%EC%A0%95%EC%B1%85"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨3 - 7주차": {
+    "title": "[기술부채] 우테코 5기 레벨3 - 7주차",
+    "slug": "기술부채-우테코-5기-레벨3-7주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨3 - 7주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A83-7%EC%A3%BC%EC%B0%A8"
+  },
+  "Spring/[JPA] EntityGraph": {
+    "title": "[JPA] EntityGraph",
+    "slug": "jpa-entitygraph",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[JPA] EntityGraph/",
+    "newUrl": "https://amaran-th.vercel.app/jpa-entitygraph"
+  },
+  "Spring/[JPA] 고급 매핑": {
+    "title": "[JPA] 고급 매핑",
+    "slug": "jpa-고급-매핑",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[JPA] 고급 매핑/",
+    "newUrl": "https://amaran-th.vercel.app/jpa-%EA%B3%A0%EA%B8%89-%EB%A7%A4%ED%95%91"
+  },
+  "주저리주저리/스크럼": {
+    "title": "스크럼",
+    "slug": "스크럼",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/스크럼/",
+    "newUrl": "https://amaran-th.vercel.app/%EC%8A%A4%ED%81%AC%EB%9F%BC"
+  },
+  "Spring/[Spring] Logback으로 로깅(Logging)하기": {
+    "title": "[Spring] Logback으로 로깅(Logging)하기",
+    "slug": "spring-logback으로-로깅-logging-하기",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] Logback으로 로깅(Logging)하기/",
+    "newUrl": "https://amaran-th.vercel.app/spring-logback%EC%9C%BC%EB%A1%9C-%EB%A1%9C%EA%B9%85-logging-%ED%95%98%EA%B8%B0"
+  },
+  "React/방학 기념 블로그 UI 뜯어고치기": {
+    "title": "방학 기념 블로그 UI 뜯어고치기",
+    "slug": "방학-기념-블로그-ui-뜯어고치기",
+    "legacyUrl": "https://amaran-th.github.io/React/방학 기념 블로그 UI 뜯어고치기/",
+    "newUrl": "https://amaran-th.vercel.app/%EB%B0%A9%ED%95%99-%EA%B8%B0%EB%85%90-%EB%B8%94%EB%A1%9C%EA%B7%B8-ui-%EB%9C%AF%EC%96%B4%EA%B3%A0%EC%B9%98%EA%B8%B0"
+  },
+  "주저리주저리/[회고] 2023년 8월의 회고록": {
+    "title": "[회고] 2023년 8월의 회고록",
+    "slug": "회고-2023년-8월의-회고록",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[회고] 2023년 8월의 회고록/",
+    "newUrl": "https://amaran-th.vercel.app/%ED%9A%8C%EA%B3%A0-2023%EB%85%84-8%EC%9B%94%EC%9D%98-%ED%9A%8C%EA%B3%A0%EB%A1%9D"
+  },
+  "주저리주저리/Github Discussion 주간 통계 자동화 시스템 구축하기 - 1": {
+    "title": "Github Discussion 주간 통계 자동화 시스템 구축하기 - 1",
+    "slug": "github-discussion-주간-통계-자동화-시스템-구축하기-1",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/Github Discussion 주간 통계 자동화 시스템 구축하기 - 1/",
+    "newUrl": "https://amaran-th.vercel.app/github-discussion-%EC%A3%BC%EA%B0%84-%ED%86%B5%EA%B3%84-%EC%9E%90%EB%8F%99%ED%99%94-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0-1"
+  },
+  "Spring/[Spring] Server-Sent Events(SSE)": {
+    "title": "[Spring] Server-Sent Events(SSE)",
+    "slug": "spring-server-sent-events-sse",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] Server-Sent Events(SSE)/",
+    "newUrl": "https://amaran-th.vercel.app/spring-server-sent-events-sse"
+  },
+  "소프트웨어 설계/Vertical Slice Architecture(버티컬 슬라이스 아키텍처)": {
+    "title": "Vertical Slice Architecture(버티컬 슬라이스 아키텍처)",
+    "slug": "vertical-slice-architecture-버티컬-슬라이스-아키텍처",
+    "legacyUrl": "https://amaran-th.github.io/소프트웨어 설계/Vertical Slice Architecture(버티컬 슬라이스 아키텍처)/",
+    "newUrl": "https://amaran-th.vercel.app/vertical-slice-architecture-%EB%B2%84%ED%8B%B0%EC%BB%AC-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98"
+  },
+  "주저리주저리/[회고] 2023.08.20~08.26 - 내가 되고 싶은 개발자": {
+    "title": "[회고] 2023/08/20~08/26 - 내가 되고 싶은 개발자",
+    "slug": "회고-2023-08-20-08-26-내가-되고-싶은-개발자",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[회고] 2023.08.20~08.26 - 내가 되고 싶은 개발자/",
+    "newUrl": "https://amaran-th.vercel.app/%ED%9A%8C%EA%B3%A0-2023-08-20-08-26-%EB%82%B4%EA%B0%80-%EB%90%98%EA%B3%A0-%EC%8B%B6%EC%9D%80-%EA%B0%9C%EB%B0%9C%EC%9E%90"
+  },
+  "Spring/[AOP] 쿼리 카운터 제작기": {
+    "title": "[AOP] 쿼리 카운터 제작기",
+    "slug": "aop-쿼리-카운터-제작기",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[AOP] 쿼리 카운터 제작기/",
+    "newUrl": "https://amaran-th.vercel.app/aop-%EC%BF%BC%EB%A6%AC-%EC%B9%B4%EC%9A%B4%ED%84%B0-%EC%A0%9C%EC%9E%91%EA%B8%B0"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨3 - 1주차": {
+    "title": "[기술부채] 우테코 5기 레벨3 - 1주차",
+    "slug": "기술부채-우테코-5기-레벨3-1주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨3 - 1주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A83-1%EC%A3%BC%EC%B0%A8"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨3 - 6주차": {
+    "title": "[기술부채] 우테코 5기 레벨3 - 6주차",
+    "slug": "기술부채-우테코-5기-레벨3-6주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨3 - 6주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A83-6%EC%A3%BC%EC%B0%A8"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨3 - 8주차": {
+    "title": "[기술부채] 우테코 5기 레벨3 - 8주차",
+    "slug": "기술부채-우테코-5기-레벨3-8주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨3 - 8주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A83-8%EC%A3%BC%EC%B0%A8"
+  },
+  "Java/[Java] Input&Output Stream과 File": {
+    "title": "[Java] Input & Output Stream",
+    "slug": "java-input-output-stream",
+    "legacyUrl": "https://amaran-th.github.io/Java/[Java] Input&Output Stream과 File/",
+    "newUrl": "https://amaran-th.vercel.app/java-input-output-stream"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨4 - 1주차": {
+    "title": "[기술부채] 우테코 5기 레벨4 - 1주차",
+    "slug": "기술부채-우테코-5기-레벨4-1주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨4 - 1주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A84-1%EC%A3%BC%EC%B0%A8"
+  },
+  "주저리주저리/[회고] 2023.08.27~09.02 - 현대 사회에서의 경쟁력 있는 삶이란": {
+    "title": "[회고] 2023/08/27~09/02 - 현대 사회에서의 경쟁력 있는 삶이란",
+    "slug": "회고-2023-08-27-09-02-현대-사회에서의-경쟁력-있는-삶이란",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[회고] 2023.08.27~09.02 - 현대 사회에서의 경쟁력 있는 삶이란/",
+    "newUrl": "https://amaran-th.vercel.app/%ED%9A%8C%EA%B3%A0-2023-08-27-09-02-%ED%98%84%EB%8C%80-%EC%82%AC%ED%9A%8C%EC%97%90%EC%84%9C%EC%9D%98-%EA%B2%BD%EC%9F%81%EB%A0%A5-%EC%9E%88%EB%8A%94-%EC%82%B6%EC%9D%B4%EB%9E%80"
+  },
+  "Java/[Java] Thread(스레드)": {
+    "title": "[Java] Thread(스레드)",
+    "slug": "java-thread-스레드",
+    "legacyUrl": "https://amaran-th.github.io/Java/[Java] Thread(스레드)/",
+    "newUrl": "https://amaran-th.vercel.app/java-thread-%EC%8A%A4%EB%A0%88%EB%93%9C"
+  },
+  "Spring/[Spring] CloudFront & S3 API로 이미지 저장 및 삭제 기능 구현하기": {
+    "title": "[Spring] CloudFront & S3 API로 이미지 저장 및 삭제 기능 구현하기",
+    "slug": "spring-cloudfront-s3-api로-이미지-저장-및-삭제-기능-구현하기",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] CloudFront & S3 API로 이미지 저장 및 삭제 기능 구현하기/",
+    "newUrl": "https://amaran-th.vercel.app/spring-cloudfront-s3-api%EB%A1%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A0%80%EC%9E%A5-%EB%B0%8F-%EC%82%AD%EC%A0%9C-%EA%B8%B0%EB%8A%A5-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨4 - 2주차": {
+    "title": "[기술부채] 우테코 5기 레벨4 - 2주차",
+    "slug": "기술부채-우테코-5기-레벨4-2주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨4 - 2주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A84-2%EC%A3%BC%EC%B0%A8"
+  },
+  "Spring/[HTTP] HTTP 최적화와 캐싱": {
+    "title": "[HTTP] HTTP 최적화와 캐싱",
+    "slug": "http-http-최적화와-캐싱",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[HTTP] HTTP 최적화와 캐싱/",
+    "newUrl": "https://amaran-th.vercel.app/http-http-%EC%B5%9C%EC%A0%81%ED%99%94%EC%99%80-%EC%BA%90%EC%8B%B1"
+  },
+  "Java/[Java] Thread-Safety Collection": {
+    "title": "[Java] Thread-Safety Collection",
+    "slug": "java-thread-safety-collection",
+    "legacyUrl": "https://amaran-th.github.io/Java/[Java] Thread-Safety Collection/",
+    "newUrl": "https://amaran-th.vercel.app/java-thread-safety-collection"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨4 - 3주차": {
+    "title": "[기술부채] 우테코 5기 레벨4 - 3주차",
+    "slug": "기술부채-우테코-5기-레벨4-3주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨4 - 3주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A84-3%EC%A3%BC%EC%B0%A8"
+  },
+  "주저리주저리/[Kerdy] Multipart 요청 데이터 매핑 문제 해결": {
+    "title": "[Kerdy] Multipart 요청 데이터 매핑 문제 해결",
+    "slug": "kerdy-multipart-요청-데이터-매핑-문제-해결",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[Kerdy] Multipart 요청 데이터 매핑 문제 해결/",
+    "newUrl": "https://amaran-th.vercel.app/kerdy-multipart-%EC%9A%94%EC%B2%AD-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%A7%A4%ED%95%91-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0"
+  },
+  "데이터베이스/[MySQL] 트랜잭션 격리수준과 MVCC": {
+    "title": "[MySQL] 트랜잭션 격리수준과 MVCC",
+    "slug": "mysql-트랜잭션-격리수준과-mvcc",
+    "legacyUrl": "https://amaran-th.github.io/데이터베이스/[MySQL] 트랜잭션 격리수준과 MVCC/",
+    "newUrl": "https://amaran-th.vercel.app/mysql-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B2%A9%EB%A6%AC%EC%88%98%EC%A4%80%EA%B3%BC-mvcc"
+  },
+  "데이터베이스/인덱스로 쿼리 최적화하기": {
+    "title": "인덱스로 쿼리 최적화하기",
+    "slug": "인덱스로-쿼리-최적화하기",
+    "legacyUrl": "https://amaran-th.github.io/데이터베이스/인덱스로 쿼리 최적화하기/",
+    "newUrl": "https://amaran-th.vercel.app/%EC%9D%B8%EB%8D%B1%EC%8A%A4%EB%A1%9C-%EC%BF%BC%EB%A6%AC-%EC%B5%9C%EC%A0%81%ED%99%94%ED%95%98%EA%B8%B0"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨4 - 4주차": {
+    "title": "[기술부채] 우테코 5기 레벨4 - 4주차",
+    "slug": "기술부채-우테코-5기-레벨4-4주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨4 - 4주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A84-4%EC%A3%BC%EC%B0%A8"
+  },
+  "주저리주저리/[회고] 2023.09.17~09.23 - 데모데이 회고와 새로운 다짐": {
+    "title": "[회고] 2023/09/17~09/24 - 데모데이 회고와 새로운 다짐",
+    "slug": "회고-2023-09-17-09-24-데모데이-회고와-새로운-다짐",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[회고] 2023.09.17~09.23 - 데모데이 회고와 새로운 다짐/",
+    "newUrl": "https://amaran-th.vercel.app/%ED%9A%8C%EA%B3%A0-2023-09-17-09-24-%EB%8D%B0%EB%AA%A8%EB%8D%B0%EC%9D%B4-%ED%9A%8C%EA%B3%A0%EC%99%80-%EC%83%88%EB%A1%9C%EC%9A%B4-%EB%8B%A4%EC%A7%90"
+  },
+  "주저리주저리/[HTTP] Multipart 요청": {
+    "title": "[HTTP] Multipart 요청",
+    "slug": "http-multipart-요청",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[HTTP] Multipart 요청/",
+    "newUrl": "https://amaran-th.vercel.app/http-multipart-%EC%9A%94%EC%B2%AD"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨4 - 5주차": {
+    "title": "[기술부채] 우테코 5기 레벨4 - 5주차",
+    "slug": "기술부채-우테코-5기-레벨4-5주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨4 - 5주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A84-5%EC%A3%BC%EC%B0%A8"
+  },
+  "Java/[JDBC] JDBC 라이브러리 구현하기(1)": {
+    "title": "[JDBC] JDBC 라이브러리 구현하기(1)",
+    "slug": "jdbc-jdbc-라이브러리-구현하기-1",
+    "legacyUrl": "https://amaran-th.github.io/Java/[JDBC] JDBC 라이브러리 구현하기(1)/",
+    "newUrl": "https://amaran-th.vercel.app/jdbc-jdbc-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-1"
+  },
+  "Java/[DB] Transaction과 Spring Transaction": {
+    "title": "[DB] Transaction과 Spring Transaction",
+    "slug": "db-transaction과-spring-transaction",
+    "legacyUrl": "https://amaran-th.github.io/Java/[DB] Transaction과 Spring Transaction/",
+    "newUrl": "https://amaran-th.vercel.app/db-transaction%EA%B3%BC-spring-transaction"
+  },
+  "데이터베이스/[Kerdy] 행사 검색 기능 구현하기": {
+    "title": "[Kerdy] 행사 검색 기능 구현하기",
+    "slug": "kerdy-행사-검색-기능-구현하기",
+    "legacyUrl": "https://amaran-th.github.io/데이터베이스/[Kerdy] 행사 검색 기능 구현하기/",
+    "newUrl": "https://amaran-th.vercel.app/kerdy-%ED%96%89%EC%82%AC-%EA%B2%80%EC%83%89-%EA%B8%B0%EB%8A%A5-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0"
+  },
+  "주저리주저리/[Kerdy] 5차 데모데이 회고": {
+    "title": "[Kerdy] 5차 데모데이 회고",
+    "slug": "kerdy-5차-데모데이-회고",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[Kerdy] 5차 데모데이 회고/",
+    "newUrl": "https://amaran-th.vercel.app/kerdy-5%EC%B0%A8-%EB%8D%B0%EB%AA%A8%EB%8D%B0%EC%9D%B4-%ED%9A%8C%EA%B3%A0"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨4 - 6주차": {
+    "title": "[기술부채] 우테코 5기 레벨4 - 6주차",
+    "slug": "기술부채-우테코-5기-레벨4-6주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨4 - 6주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A84-6%EC%A3%BC%EC%B0%A8"
+  },
+  "우테코 5기/레벨3 레벨 로그": {
+    "title": "레벨3 레벨 로그",
+    "slug": "레벨3-레벨-로그",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/레벨3 레벨 로그/",
+    "newUrl": "https://amaran-th.vercel.app/%EB%A0%88%EB%B2%A83-%EB%A0%88%EB%B2%A8-%EB%A1%9C%EA%B7%B8"
+  },
+  "데이터베이스/[DB] DB Connection Pool": {
+    "title": "[DB] DB Connection Pool",
+    "slug": "db-db-connection-pool",
+    "legacyUrl": "https://amaran-th.github.io/데이터베이스/[DB] DB Connection Pool/",
+    "newUrl": "https://amaran-th.vercel.app/db-db-connection-pool"
+  },
+  "데이터베이스/DataSource와 DriverManager": {
+    "title": "DataSource와 DriverManager",
+    "slug": "datasource와-drivermanager",
+    "legacyUrl": "https://amaran-th.github.io/데이터베이스/DataSource와 DriverManager/",
+    "newUrl": "https://amaran-th.vercel.app/datasource%EC%99%80-drivermanager"
+  },
+  "인프라/[CICD] 무중단 배포 - 이론": {
+    "title": "[CICD] 무중단 배포 - 이론",
+    "slug": "cicd-무중단-배포-이론",
+    "legacyUrl": "https://amaran-th.github.io/인프라/[CICD] 무중단 배포 - 이론/",
+    "newUrl": "https://amaran-th.vercel.app/cicd-%EB%AC%B4%EC%A4%91%EB%8B%A8-%EB%B0%B0%ED%8F%AC-%EC%9D%B4%EB%A1%A0"
+  },
+  "우테코 5기/[기술부채] 우테코 5기 레벨4 - 7주차": {
+    "title": "[기술부채] 우테코 5기 레벨4 - 7주차",
+    "slug": "기술부채-우테코-5기-레벨4-7주차",
+    "legacyUrl": "https://amaran-th.github.io/우테코 5기/[기술부채] 우테코 5기 레벨4 - 7주차/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B8%B0%EC%88%A0%EB%B6%80%EC%B1%84-%EC%9A%B0%ED%85%8C%EC%BD%94-5%EA%B8%B0-%EB%A0%88%EB%B2%A84-7%EC%A3%BC%EC%B0%A8"
+  },
+  "인프라/JMeter 사용해보기": {
+    "title": "JMeter 사용해보기",
+    "slug": "jmeter-사용해보기",
+    "legacyUrl": "https://amaran-th.github.io/인프라/JMeter 사용해보기/",
+    "newUrl": "https://amaran-th.vercel.app/jmeter-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0"
+  },
+  "주저리주저리/[회고] 2023.10.08~10.14 - 해야 할 테스크가 많을 때 효율적으로 처리하는 방법": {
+    "title": "[회고] 2023.10.08~10.14 - 해야 할 테스크가 많을 때 효율적으로 처리하는 방법",
+    "slug": "회고-20231008-1014-해야-할-테스크가-많을-때-효율적으로-처리하는-방법",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[회고] 2023.10.08~10.14 - 해야 할 테스크가 많을 때 효율적으로 처리하는 방법/",
+    "newUrl": "https://amaran-th.vercel.app/%ED%9A%8C%EA%B3%A0-20231008-1014-%ED%95%B4%EC%95%BC-%ED%95%A0-%ED%85%8C%EC%8A%A4%ED%81%AC%EA%B0%80-%EB%A7%8E%EC%9D%84-%EB%95%8C-%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%B2%98%EB%A6%AC%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95"
+  },
+  "인프라/[CICD] 무중단 배포 - 실습(feat. Docker)": {
+    "title": "[CICD] 무중단 배포 - 실습(feat.Docker)",
+    "slug": "cicd-무중단-배포-실습-featdocker",
+    "legacyUrl": "https://amaran-th.github.io/인프라/[CICD] 무중단 배포 - 실습(feat. Docker)/",
+    "newUrl": "https://amaran-th.vercel.app/cicd-%EB%AC%B4%EC%A4%91%EB%8B%A8-%EB%B0%B0%ED%8F%AC-%EC%8B%A4%EC%8A%B5-featdocker"
+  },
+  "소프트웨어 설계/DDD 이해하기(개념편)": {
+    "title": "DDD 이해하기(개념편)",
+    "slug": "ddd-이해하기-개념편",
+    "legacyUrl": "https://amaran-th.github.io/소프트웨어 설계/DDD 이해하기(개념편)/",
+    "newUrl": "https://amaran-th.vercel.app/ddd-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-%EA%B0%9C%EB%85%90%ED%8E%B8"
+  },
+  "소프트웨어 설계/DDD 이해하기(설계편)": {
+    "title": "DDD 이해하기(설계편)",
+    "slug": "ddd-이해하기-설계편",
+    "legacyUrl": "https://amaran-th.github.io/소프트웨어 설계/DDD 이해하기(설계편)/",
+    "newUrl": "https://amaran-th.vercel.app/ddd-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-%EC%84%A4%EA%B3%84%ED%8E%B8"
+  },
+  "주저리주저리/[회고] 2023.11.02 - 블로그 작성에 대한 회고": {
+    "title": "[회고] 2023.11.02 - 블로그 작성에 대한 회고",
+    "slug": "회고-20231102-블로그-작성에-대한-회고",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[회고] 2023.11.02 - 블로그 작성에 대한 회고/",
+    "newUrl": "https://amaran-th.vercel.app/%ED%9A%8C%EA%B3%A0-20231102-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%9E%91%EC%84%B1%EC%97%90-%EB%8C%80%ED%95%9C-%ED%9A%8C%EA%B3%A0"
+  },
+  "알고리즘/[Java] 알고리즘 문제풀이를 위한 입력값 처리": {
+    "title": "[Java] 알고리즘 문제풀이를 위한 입력값 처리",
+    "slug": "java-알고리즘-문제풀이를-위한-입력값-처리",
+    "legacyUrl": "https://amaran-th.github.io/알고리즘/[Java] 알고리즘 문제풀이를 위한 입력값 처리/",
+    "newUrl": "https://amaran-th.vercel.app/java-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%9E%85%EB%A0%A5%EA%B0%92-%EC%B2%98%EB%A6%AC"
+  },
+  "알고리즘/[알고리즘] 이진 탐색": {
+    "title": "[알고리즘] 이진 탐색",
+    "slug": "알고리즘-이진-탐색",
+    "legacyUrl": "https://amaran-th.github.io/알고리즘/[알고리즘] 이진 탐색/",
+    "newUrl": "https://amaran-th.vercel.app/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89"
+  },
+  "주저리주저리/[회고] 2023.10.29~11.04 - 앞으로의 학습 계획 세우기": {
+    "title": "[회고] 2023.10.29~11.04 - 앞으로의 학습 계획 세우기",
+    "slug": "회고-20231029-1104-앞으로의-학습-계획-세우기",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[회고] 2023.10.29~11.04 - 앞으로의 학습 계획 세우기/",
+    "newUrl": "https://amaran-th.vercel.app/%ED%9A%8C%EA%B3%A0-20231029-1104-%EC%95%9E%EC%9C%BC%EB%A1%9C%EC%9D%98-%ED%95%99%EC%8A%B5-%EA%B3%84%ED%9A%8D-%EC%84%B8%EC%9A%B0%EA%B8%B0"
+  },
+  "Java/[Java] Reflection": {
+    "title": "[Java] Reflection",
+    "slug": "java-reflection",
+    "legacyUrl": "https://amaran-th.github.io/Java/[Java] Reflection/",
+    "newUrl": "https://amaran-th.vercel.app/java-reflection"
+  },
+  "주저리주저리/[BDD] 스프링 스터디 운영 일지 - 1": {
+    "title": "[BDD] 스프링 스터디 운영 일지 - 1",
+    "slug": "bdd-스프링-스터디-운영-일지-1",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[BDD] 스프링 스터디 운영 일지 - 1/",
+    "newUrl": "https://amaran-th.vercel.app/bdd-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8A%A4%ED%84%B0%EB%94%94-%EC%9A%B4%EC%98%81-%EC%9D%BC%EC%A7%80-1"
+  },
+  "주저리주저리/[BDD] 개발 소모임 커뮤니티 BDD를 만들게 된 과정": {
+    "title": "[BDD] 개발 소모임 커뮤니티 BDD를 만들게 된 과정",
+    "slug": "bdd-개발-소모임-커뮤니티-bdd를-만들게-된-과정",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[BDD] 개발 소모임 커뮤니티 BDD를 만들게 된 과정/",
+    "newUrl": "https://amaran-th.vercel.app/bdd-%EA%B0%9C%EB%B0%9C-%EC%86%8C%EB%AA%A8%EC%9E%84-%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0-bdd%EB%A5%BC-%EB%A7%8C%EB%93%A4%EA%B2%8C-%EB%90%9C-%EA%B3%BC%EC%A0%95"
+  },
+  "주저리주저리/[BDD] 스프링 스터디 운영 일지 - 2": {
+    "title": "[BDD] 스프링 스터디 운영 일지 - 2",
+    "slug": "bdd-스프링-스터디-운영-일지-2",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[BDD] 스프링 스터디 운영 일지 - 2/",
+    "newUrl": "https://amaran-th.vercel.app/bdd-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8A%A4%ED%84%B0%EB%94%94-%EC%9A%B4%EC%98%81-%EC%9D%BC%EC%A7%80-2"
+  },
+  "알고리즘/[자료구조] 스택, 큐": {
+    "title": "[자료구조] 스택, 큐",
+    "slug": "자료구조-스택-큐",
+    "legacyUrl": "https://amaran-th.github.io/알고리즘/[자료구조] 스택, 큐/",
+    "newUrl": "https://amaran-th.vercel.app/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EC%8A%A4%ED%83%9D-%ED%81%90"
+  },
+  "알고리즘/[자료구조] 힙, 우선순위 큐": {
+    "title": "[자료구조] 힙, 우선순위 큐",
+    "slug": "자료구조-힙-우선순위-큐",
+    "legacyUrl": "https://amaran-th.github.io/알고리즘/[자료구조] 힙, 우선순위 큐/",
+    "newUrl": "https://amaran-th.vercel.app/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%ED%9E%99-%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84-%ED%81%90"
+  },
+  "독후감/객체지향의 사실과 오해": {
+    "title": "객체지향의 사실과 오해",
+    "slug": "객체지향의-사실과-오해",
+    "legacyUrl": "https://amaran-th.github.io/독후감/객체지향의 사실과 오해/",
+    "newUrl": "https://amaran-th.vercel.app/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98-%EC%82%AC%EC%8B%A4%EA%B3%BC-%EC%98%A4%ED%95%B4"
+  },
+  "인프라/[AWS] S3 이관하기": {
+    "title": "[AWS] S3 이관하기",
+    "slug": "aws-s3-이관하기",
+    "legacyUrl": "https://amaran-th.github.io/인프라/[AWS] S3 이관하기/",
+    "newUrl": "https://amaran-th.vercel.app/aws-s3-%EC%9D%B4%EA%B4%80%ED%95%98%EA%B8%B0"
+  },
+  "주저리주저리/[BDD] 스프링 스터디 운영 일지 - 3": {
+    "title": "[BDD] 스프링 스터디 운영 일지 - 3",
+    "slug": "bdd-스프링-스터디-운영-일지-3",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[BDD] 스프링 스터디 운영 일지 - 3/",
+    "newUrl": "https://amaran-th.vercel.app/bdd-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8A%A4%ED%84%B0%EB%94%94-%EC%9A%B4%EC%98%81-%EC%9D%BC%EC%A7%80-3"
+  },
+  "Spring/[Spring] 컨텍스트 캐싱(Context Caching)": {
+    "title": "[Spring] 컨텍스트 캐싱(Context Caching)",
+    "slug": "spring-컨텍스트-캐싱-context-caching",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] 컨텍스트 캐싱(Context Caching)/",
+    "newUrl": "https://amaran-th.vercel.app/spring-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%BA%90%EC%8B%B1-context-caching"
+  },
+  "Spring/[Spring] Spring DTO의 데이터 바인딩과 직렬화": {
+    "title": "[Spring] Spring DTO의 데이터 바인딩과 직렬화",
+    "slug": "spring-spring-dto의-데이터-바인딩과-직렬화",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] Spring DTO의 데이터 바인딩과 직렬화/",
+    "newUrl": "https://amaran-th.vercel.app/spring-spring-dto%EC%9D%98-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B0%94%EC%9D%B8%EB%94%A9%EA%B3%BC-%EC%A7%81%EB%A0%AC%ED%99%94"
+  },
+  "인프라/[AWS] AWS Lambda로 주기적으로 S3에만 저장된 파일 제거하기": {
+    "title": "[AWS] AWS Lambda로 주기적으로 S3에만 저장된 파일 제거하기",
+    "slug": "aws-aws-lambda로-주기적으로-s3에만-저장된-파일-제거하기",
+    "legacyUrl": "https://amaran-th.github.io/인프라/[AWS] AWS Lambda로 주기적으로 S3에만 저장된 파일 제거하기/",
+    "newUrl": "https://amaran-th.vercel.app/aws-aws-lambda%EB%A1%9C-%EC%A3%BC%EA%B8%B0%EC%A0%81%EC%9C%BC%EB%A1%9C-s3%EC%97%90%EB%A7%8C-%EC%A0%80%EC%9E%A5%EB%90%9C-%ED%8C%8C%EC%9D%BC-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0"
+  },
+  "주저리주저리/[Kerdy] Image 처리 작업 성능 개선기": {
+    "title": "[Kerdy] Image 처리 작업 성능 개선기",
+    "slug": "kerdy-image-처리-작업-성능-개선기",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[Kerdy] Image 처리 작업 성능 개선기/",
+    "newUrl": "https://amaran-th.vercel.app/kerdy-image-%EC%B2%98%EB%A6%AC-%EC%9E%91%EC%97%85-%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0%EA%B8%B0"
+  },
+  "주저리주저리/[BDD] 스프링 스터디 운영 일지 - 4": {
+    "title": "[BDD] 스프링 스터디 운영 일지 - 4",
+    "slug": "bdd-스프링-스터디-운영-일지-4",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[BDD] 스프링 스터디 운영 일지 - 4/",
+    "newUrl": "https://amaran-th.vercel.app/bdd-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8A%A4%ED%84%B0%EB%94%94-%EC%9A%B4%EC%98%81-%EC%9D%BC%EC%A7%80-4"
+  },
+  "Spring/[Spring] 테스트 격리": {
+    "title": "[Spring] 테스트 격리",
+    "slug": "spring-테스트-격리",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] 테스트 격리/",
+    "newUrl": "https://amaran-th.vercel.app/spring-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B2%A9%EB%A6%AC"
+  },
+  "주저리주저리/[회고] 2024 새해 계획 세우기": {
+    "title": "[회고] 2024 새해 계획 세우기",
+    "slug": "회고-2024-새해-계획-세우기",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[회고] 2024 새해 계획 세우기/",
+    "newUrl": "https://amaran-th.vercel.app/%ED%9A%8C%EA%B3%A0-2024-%EC%83%88%ED%95%B4-%EA%B3%84%ED%9A%8D-%EC%84%B8%EC%9A%B0%EA%B8%B0"
+  },
+  "Java/[Test] Test Fixture": {
+    "title": "[Test] Test Fixture",
+    "slug": "test-test-fixture",
+    "legacyUrl": "https://amaran-th.github.io/Java/[Test] Test Fixture/",
+    "newUrl": "https://amaran-th.vercel.app/test-test-fixture"
+  },
+  "Spring/[Spring] 구글 소셜 로그인 구현하기": {
+    "title": "[Spring] 구글 소셜 로그인 구현하기",
+    "slug": "spring-구글-소셜-로그인-구현하기",
+    "legacyUrl": "https://amaran-th.github.io/Spring/[Spring] 구글 소셜 로그인 구현하기/",
+    "newUrl": "https://amaran-th.vercel.app/spring-%EA%B5%AC%EA%B8%80-%EC%86%8C%EC%85%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0"
+  },
+  "인프라/[AWS] VPC를 통해 RDS를 private하게 관리하기": {
+    "title": "[AWS] VPC를 통해 RDS를 private하게 관리하기",
+    "slug": "aws-vpc를-통해-rds를-private하게-관리하기",
+    "legacyUrl": "https://amaran-th.github.io/인프라/[AWS] VPC를 통해 RDS를 private하게 관리하기/",
+    "newUrl": "https://amaran-th.vercel.app/aws-vpc%EB%A5%BC-%ED%86%B5%ED%95%B4-rds%EB%A5%BC-private%ED%95%98%EA%B2%8C-%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0"
+  },
+  "인프라/[Infra] Nginx 셋팅 & 도메인, HTTPS 연동하기": {
+    "title": "[Infra] Nginx 셋팅 & 도메인, HTTPS 연동하기",
+    "slug": "infra-nginx-셋팅-도메인-https-연동하기",
+    "legacyUrl": "https://amaran-th.github.io/인프라/[Infra] Nginx 셋팅 & 도메인, HTTPS 연동하기/",
+    "newUrl": "https://amaran-th.vercel.app/infra-nginx-%EC%85%8B%ED%8C%85-%EB%8F%84%EB%A9%94%EC%9D%B8-https-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0"
+  },
+  "인프라/[Infra] 두레 운영서버 CICD 구축하기": {
+    "title": "[Infra] 두레 운영서버 CICD 구축하기",
+    "slug": "infra-두레-운영서버-cicd-구축하기",
+    "legacyUrl": "https://amaran-th.github.io/인프라/[Infra] 두레 운영서버 CICD 구축하기/",
+    "newUrl": "https://amaran-th.vercel.app/infra-%EB%91%90%EB%A0%88-%EC%9A%B4%EC%98%81%EC%84%9C%EB%B2%84-cicd-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0"
+  },
+  "주저리주저리/[회고] 2024년 1~2월의 회고록": {
+    "title": "[회고] 2024년 1~2월의 회고록",
+    "slug": "회고-2024년-1-2월의-회고록",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[회고] 2024년 1~2월의 회고록/",
+    "newUrl": "https://amaran-th.vercel.app/%ED%9A%8C%EA%B3%A0-2024%EB%85%84-1-2%EC%9B%94%EC%9D%98-%ED%9A%8C%EA%B3%A0%EB%A1%9D"
+  },
+  "CS/[OS] 시스템 콜(System Call)": {
+    "title": "[OS] 시스템 콜",
+    "slug": "os-시스템-콜",
+    "legacyUrl": "https://amaran-th.github.io/CS/[OS] 시스템 콜(System Call)/",
+    "newUrl": "https://amaran-th.vercel.app/os-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%BD%9C"
+  },
+  "주저리주저리/[회고] 번아웃 극복과 개발자로서의 결심": {
+    "title": "[회고] 번아웃 극복과 개발자로서의 결심",
+    "slug": "회고-번아웃-극복과-개발자로서의-결심",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[회고] 번아웃 극복과 개발자로서의 결심/",
+    "newUrl": "https://amaran-th.vercel.app/%ED%9A%8C%EA%B3%A0-%EB%B2%88%EC%95%84%EC%9B%83-%EA%B7%B9%EB%B3%B5%EA%B3%BC-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A1%9C%EC%84%9C%EC%9D%98-%EA%B2%B0%EC%8B%AC"
+  },
+  "CS/[OS] CPU 스케줄링 알고리즘": {
+    "title": "[OS] CPU 스케줄링 알고리즘",
+    "slug": "os-cpu-스케줄링-알고리즘",
+    "legacyUrl": "https://amaran-th.github.io/CS/[OS] CPU 스케줄링 알고리즘/",
+    "newUrl": "https://amaran-th.vercel.app/os-cpu-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98"
+  },
+  "JavaScript/웹페이지 빌드 과정(Critical Rendering Path, CRP)": {
+    "title": "웹페이지 빌드 과정(Critical Rendering Path, CRP)",
+    "slug": "웹페이지-빌드-과정-critical-rendering-path-crp",
+    "legacyUrl": "https://amaran-th.github.io/JavaScript/웹페이지 빌드 과정(Critical Rendering Path, CRP)/",
+    "newUrl": "https://amaran-th.vercel.app/%EC%9B%B9%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%B9%8C%EB%93%9C-%EA%B3%BC%EC%A0%95-critical-rendering-path-crp"
+  },
+  "JavaScript/호이스팅(hoisting)": {
+    "title": "호이스팅(hoisting)",
+    "slug": "호이스팅-hoisting",
+    "legacyUrl": "https://amaran-th.github.io/JavaScript/호이스팅(hoisting)/",
+    "newUrl": "https://amaran-th.vercel.app/%ED%98%B8%EC%9D%B4%EC%8A%A4%ED%8C%85-hoisting"
+  },
+  "React/Hot Module Replacement": {
+    "title": "Hot Module Replacement",
+    "slug": "hot-module-replacement",
+    "legacyUrl": "https://amaran-th.github.io/React/Hot Module Replacement/",
+    "newUrl": "https://amaran-th.vercel.app/hot-module-replacement"
+  },
+  "React/SSR(Server Side Rendering)과 CSR(Client Side Rendering)": {
+    "title": "SSR(Server Side Rendering)과 CSR(Client Side Rendering)",
+    "slug": "ssr-server-side-rendering-과-csr-client-side-rendering",
+    "legacyUrl": "https://amaran-th.github.io/React/SSR(Server Side Rendering)과 CSR(Client Side Rendering)/",
+    "newUrl": "https://amaran-th.vercel.app/ssr-server-side-rendering-%EA%B3%BC-csr-client-side-rendering"
+  },
+  "React/[Next.js] Server Component": {
+    "title": "[Next.js] Server Component",
+    "slug": "nextjs-server-component",
+    "legacyUrl": "https://amaran-th.github.io/React/[Next.js] Server Component/",
+    "newUrl": "https://amaran-th.vercel.app/nextjs-server-component"
+  },
+  "JavaScript/Websocket과 STOMP": {
+    "title": "Websocket과 STOMP",
+    "slug": "websocket과-stomp",
+    "legacyUrl": "https://amaran-th.github.io/JavaScript/Websocket과 STOMP/",
+    "newUrl": "https://amaran-th.vercel.app/websocket%EA%B3%BC-stomp"
+  },
+  "React/Websocket으로 서버와의 실시간 통신 구현하기": {
+    "title": "Websocket으로 서버와의 실시간 통신 구현하기",
+    "slug": "websocket으로-서버와의-실시간-통신-구현하기",
+    "legacyUrl": "https://amaran-th.github.io/React/Websocket으로 서버와의 실시간 통신 구현하기/",
+    "newUrl": "https://amaran-th.vercel.app/websocket%EC%9C%BC%EB%A1%9C-%EC%84%9C%EB%B2%84%EC%99%80%EC%9D%98-%EC%8B%A4%EC%8B%9C%EA%B0%84-%ED%86%B5%EC%8B%A0-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0"
+  },
+  "React/useEffect 제대로 이해하기(1)": {
+    "title": "useEffect 제대로 이해하기(1)",
+    "slug": "useeffect-제대로-이해하기-1",
+    "legacyUrl": "https://amaran-th.github.io/React/useEffect 제대로 이해하기(1)/",
+    "newUrl": "https://amaran-th.vercel.app/useeffect-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-1"
+  },
+  "React/TanStack Query(React Query)": {
+    "title": "TanStack Query(React Query)",
+    "slug": "tanstack-query-react-query",
+    "legacyUrl": "https://amaran-th.github.io/React/TanStack Query(React Query)/",
+    "newUrl": "https://amaran-th.vercel.app/tanstack-query-react-query"
+  },
+  "React/useEffect 제대로 이해하기(2)": {
+    "title": "useEffect 제대로 이해하기(2)",
+    "slug": "useeffect-제대로-이해하기-2",
+    "legacyUrl": "https://amaran-th.github.io/React/useEffect 제대로 이해하기(2)/",
+    "newUrl": "https://amaran-th.vercel.app/useeffect-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-2"
+  },
+  "주저리주저리/[회고] 2024년 중간 회고": {
+    "title": "[회고] 2024년 중간 회고",
+    "slug": "회고-2024년-중간-회고",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[회고] 2024년 중간 회고/",
+    "newUrl": "https://amaran-th.vercel.app/%ED%9A%8C%EA%B3%A0-2024%EB%85%84-%EC%A4%91%EA%B0%84-%ED%9A%8C%EA%B3%A0"
+  },
+  "React/[Next.js] Image 컴포넌트를 통한 이미지 최적화": {
+    "title": "[Next.js] Image 컴포넌트를 통한 이미지 최적화",
+    "slug": "nextjs-image-컴포넌트를-통한-이미지-최적화",
+    "legacyUrl": "https://amaran-th.github.io/React/[Next.js] Image 컴포넌트를 통한 이미지 최적화/",
+    "newUrl": "https://amaran-th.vercel.app/nextjs-image-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EB%A5%BC-%ED%86%B5%ED%95%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%B5%9C%EC%A0%81%ED%99%94"
+  },
+  "주저리주저리/[SW-CSS] 파일 관리 방식에 대한 고민": {
+    "title": "[SW-CSS] 파일 관리 방식에 대한 고민...",
+    "slug": "sw-css-파일-관리-방식에-대한-고민",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[SW-CSS] 파일 관리 방식에 대한 고민/",
+    "newUrl": "https://amaran-th.vercel.app/sw-css-%ED%8C%8C%EC%9D%BC-%EA%B4%80%EB%A6%AC-%EB%B0%A9%EC%8B%9D%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B3%A0%EB%AF%BC"
+  },
+  "React/모달창 구현에 필요한 커스텀 훅 만들기": {
+    "title": "모달창 구현에 필요한 커스텀 훅 만들기",
+    "slug": "모달창-구현에-필요한-커스텀-훅-만들기",
+    "legacyUrl": "https://amaran-th.github.io/React/모달창 구현에 필요한 커스텀 훅 만들기/",
+    "newUrl": "https://amaran-th.vercel.app/%EB%AA%A8%EB%8B%AC%EC%B0%BD-%EA%B5%AC%ED%98%84%EC%97%90-%ED%95%84%EC%9A%94%ED%95%9C-%EC%BB%A4%EC%8A%A4%ED%85%80-%ED%9B%85-%EB%A7%8C%EB%93%A4%EA%B8%B0"
+  },
+  "React/[Next.js] zustand+persist로 인증정보를 관리할 시 딜레이가 발생하는 문제": {
+    "title": "[Next.js] zustand+persist로 인증정보를 관리할 시 딜레이가 발생하는 문제",
+    "slug": "nextjs-zustand-persist로-인증정보를-관리할-시-딜레이가-발생하는-문제",
+    "legacyUrl": "https://amaran-th.github.io/React/[Next.js] zustand+persist로 인증정보를 관리할 시 딜레이가 발생하는 문제/",
+    "newUrl": "https://amaran-th.vercel.app/nextjs-zustand-persist%EB%A1%9C-%EC%9D%B8%EC%A6%9D%EC%A0%95%EB%B3%B4%EB%A5%BC-%EA%B4%80%EB%A6%AC%ED%95%A0-%EC%8B%9C-%EB%94%9C%EB%A0%88%EC%9D%B4%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%EB%AC%B8%EC%A0%9C"
+  },
+  "React/[Next.js] 라이브러리로 마크다운 뷰어 구현하기": {
+    "title": "[Next.js] Tiptap 라이브러리로 마크다운 뷰어 구현하기",
+    "slug": "nextjs-tiptap-라이브러리로-마크다운-뷰어-구현하기",
+    "legacyUrl": "https://amaran-th.github.io/React/[Next.js] 라이브러리로 마크다운 뷰어 구현하기/",
+    "newUrl": "https://amaran-th.vercel.app/nextjs-tiptap-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%EB%A1%9C-%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4-%EB%B7%B0%EC%96%B4-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0"
+  },
+  "주저리주저리/[회고] 개발자 강연을 듣고 '나'를 탐구하는 시간 갖기": {
+    "title": "[회고] 개발자 강연을 듣고 '나'를 탐구하는 시간 갖기",
+    "slug": "회고-개발자-강연을-듣고-나를-탐구하는-시간-갖기",
+    "legacyUrl": "https://amaran-th.github.io/주저리주저리/[회고] 개발자 강연을 듣고 '나'를 탐구하는 시간 갖기/",
+    "newUrl": "https://amaran-th.vercel.app/%ED%9A%8C%EA%B3%A0-%EA%B0%9C%EB%B0%9C%EC%9E%90-%EA%B0%95%EC%97%B0%EC%9D%84-%EB%93%A3%EA%B3%A0-%EB%82%98%EB%A5%BC-%ED%83%90%EA%B5%AC%ED%95%98%EB%8A%94-%EC%8B%9C%EA%B0%84-%EA%B0%96%EA%B8%B0"
+  },
+  "React/[Next.js] next-auth로 백엔드 없이 카카오 로그인 구현하기": {
+    "title": "[Next.js] next-auth로 백엔드 없이 카카오 로그인 구현하기",
+    "slug": "nextjs-next-auth로-백엔드-없이-카카오-로그인-구현하기",
+    "legacyUrl": "https://amaran-th.github.io/React/[Next.js] next-auth로 백엔드 없이 카카오 로그인 구현하기/",
+    "newUrl": "https://amaran-th.vercel.app/nextjs-next-auth%EB%A1%9C-%EB%B0%B1%EC%97%94%EB%93%9C-%EC%97%86%EC%9D%B4-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0"
+  },
+  "React/[Next.js] 다국어 처리 라이브러리 i18next 사용해보기": {
+    "title": "[Next.js] 다국어 처리 라이브러리 i18next 사용해보기",
+    "slug": "nextjs-다국어-처리-라이브러리-i18next-사용해보기",
+    "legacyUrl": "https://amaran-th.github.io/React/[Next.js] 다국어 처리 라이브러리 i18next 사용해보기/",
+    "newUrl": "https://amaran-th.vercel.app/nextjs-%EB%8B%A4%EA%B5%AD%EC%96%B4-%EC%B2%98%EB%A6%AC-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-i18next-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0"
+  }
+}
