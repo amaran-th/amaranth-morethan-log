@@ -6,12 +6,19 @@ class MyDocument extends Document {
     return (
       <Html lang={CONFIG.lang}>
         <Head>
-          <link rel="icon" href="/favicon.svg" />
+          <link rel="icon" href="/favicon.ico" sizes="48x48" />
+          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="/favicon-96x96.png"
+          />
           <link
             rel="apple-touch-icon"
-            sizes="192x192"
-            href="/favicon.svg"
-          ></link>
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+          />
           <link
             rel="alternate"
             type="application/rss+xml"
