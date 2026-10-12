@@ -18,7 +18,11 @@ import SeriesList from "./SeriesList"
 import ServiceCard from "./ServiceCard"
 import TagList from "./TagList"
 
-const HEADER_HEIGHT = 73
+// The sticky sidebars must fit the viewport below the 3rem header and the
+// grid's 2rem top/bottom padding, or the page always scrolls a little.
+const HEADER_HEIGHT = 48
+const GRID_PADDING = 32
+const SIDEBAR_HEIGHT = `calc(100vh - ${HEADER_HEIGHT + GRID_PADDING * 2}px)`
 
 const Feed: React.FC<FeedProps> = ({
   posts,
@@ -41,7 +45,7 @@ const Feed: React.FC<FeedProps> = ({
       <div
         className="lt"
         css={{
-          height: `calc(100vh - ${HEADER_HEIGHT}px)`,
+          height: SIDEBAR_HEIGHT,
         }}
       >
         <SeriesList series={series} current={filter.series} />
@@ -72,7 +76,7 @@ const Feed: React.FC<FeedProps> = ({
       <div
         className="rt"
         css={{
-          height: `calc(100vh - ${HEADER_HEIGHT}px)`,
+          height: SIDEBAR_HEIGHT,
         }}
       >
         <ProfileCard />
@@ -105,7 +109,7 @@ const StyledWrapper = styled.div`
     display: none;
     position: sticky;
     grid-column: span 2 / span 2;
-    top: ${HEADER_HEIGHT - 10}px;
+    top: ${HEADER_HEIGHT + GRID_PADDING}px;
     padding-bottom: 1rem;
 
     @media (min-width: 1024px) {
@@ -169,7 +173,7 @@ const StyledWrapper = styled.div`
     display: none;
     overflow: scroll;
     position: sticky;
-    top: ${HEADER_HEIGHT - 10}px;
+    top: ${HEADER_HEIGHT + GRID_PADDING}px;
 
     @media (min-width: 1024px) {
       display: block;
