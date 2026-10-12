@@ -3,7 +3,6 @@ import Image from "next/image"
 import Link from "next/link"
 import React from "react"
 import { CONFIG } from "site.config"
-import { getColorClassByName } from "src/components/Category"
 import { TPostCard, categorySlug } from "src/libs/feed"
 import { ViewMode } from "src/libs/feed/viewMode"
 import { formatDate } from "src/libs/utils"
@@ -13,8 +12,6 @@ type Props = {
   posts: TPostCard[]
   view: ViewMode
 }
-
-const EMOJI = /^\p{Extended_Pictographic}️?/u
 
 const postHref = (post: TPostCard) => `/${encodeURIComponent(post.slug)}`
 const postDate = (post: TPostCard) => formatDate(post.date?.start_date || post.createdTime, CONFIG.lang)
@@ -28,17 +25,6 @@ const Meta: React.FC<{ post: TPostCard; titleLines: number }> = ({ post, titleLi
         {post.title}
       </p>
       <p className="date">{postDate(post)}</p>
-    </div>
-  )
-}
-
-// Square stand-in for posts without a thumbnail: the category's colour and emoji.
-const Placeholder: React.FC<{ post: TPostCard }> = ({ post }) => {
-  const category = post.category?.[0] ?? ""
-  return (
-    <div className="placeholder" style={{ backgroundColor: getColorClassByName(category) }}>
-      <span className="emoji">{category.match(EMOJI)?.[0] ?? "📝"}</span>
-      <span className="placeholder-title">{post.title}</span>
     </div>
   )
 }
@@ -89,7 +75,7 @@ const PostCollection: React.FC<Props> = ({ posts, view }) => {
                   css={{ objectFit: "cover" }}
                 />
               ) : (
-                <Placeholder post={post} />
+                <div className="placeholder" aria-hidden />
               )}
             </div>
             <Meta post={post} titleLines={2} />
@@ -132,6 +118,9 @@ const StyledList = styled.ul`
     display: flex;
     align-items: center;
     gap: 1rem;
+    box-sizing: border-box;
+    /* Same height whether or not the row has a thumbnail. */
+    min-height: 7.5rem;
     margin: 0 -0.5rem;
     padding: 0.75rem 0.5rem;
     border-radius: 0.5rem;
@@ -192,26 +181,15 @@ const StyledGallery = styled.ul`
       transition: transform 0.2s ease;
     }
   }
+  /* Posts without a thumbnail get one shared soft gradient. */
   .placeholder {
     position: absolute;
     inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0.875rem;
-    .emoji {
-      font-size: 1.75rem;
-    }
-    .placeholder-title {
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      font-size: 0.9375rem;
-      font-weight: 700;
-      line-height: 1.3;
-      color: rgba(0, 0, 0, 0.75);
-    }
+    background: linear-gradient(
+      135deg,
+      ${({ theme }) => theme.colors.blue4},
+      ${({ theme }) => theme.colors.blue7}
+    );
   }
   .category,
   .date {
