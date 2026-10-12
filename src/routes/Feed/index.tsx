@@ -43,7 +43,9 @@ const Feed: React.FC<FeedProps> = ({
         }}
       >
         <ProfileCard />
-        <TagList tags={tags} current={filter.tag} />
+        <div className="lt-tags">
+          <TagList tags={tags} current={filter.tag} />
+        </div>
       </div>
       <div className="mid">
         <MobileProfileCard />
@@ -94,19 +96,37 @@ const StyledWrapper = styled.div`
 
   > .lt {
     display: none;
-    overflow: scroll;
     position: sticky;
-    grid-column: span 2 / span 2;
+    grid-column: span 3 / span 3;
     top: ${HEADER_HEIGHT - 10}px;
-
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    &::-webkit-scrollbar {
-      display: none;
-    }
+    padding-bottom: 1rem;
 
     @media (min-width: 1024px) {
-      display: block;
+      /* The profile keeps its size; only the tag list scrolls inside the
+         remaining height, so the sidebar itself never scrolls. */
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    > .lt-tags {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+
+      > div {
+        flex: 1;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+      }
+      .list {
+        flex: 1;
+        min-height: 0;
+        margin-bottom: 0;
+        overflow-y: auto;
+      }
     }
   }
 
@@ -114,7 +134,7 @@ const StyledWrapper = styled.div`
     grid-column: span 12 / span 12;
 
     @media (min-width: 1024px) {
-      grid-column: span 7 / span 7;
+      grid-column: span 6 / span 6;
     }
 
     > .mobile-only {
