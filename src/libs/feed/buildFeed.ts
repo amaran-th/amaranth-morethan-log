@@ -60,8 +60,6 @@ export function buildFeed(posts: TPost[], params: FeedParams): FeedResult {
           ? p.series?.includes(filter.series)
           : true
   )
-  // A series is read in order, so its page lists the oldest post first.
-  if (filter.series) matching.reverse()
   const sliced = paginate(matching, page)
   if (!sliced) return { kind: "notFound" }
 
