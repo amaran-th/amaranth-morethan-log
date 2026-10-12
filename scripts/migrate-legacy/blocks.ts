@@ -1,5 +1,5 @@
 import { markdownToBlocks } from "@tryfabric/martian"
-import { IMAGE_SENTINEL_PREFIX } from "./markdown"
+import { CALLOUT_CLOSE, CALLOUT_OPEN, IMAGE_SENTINEL_PREFIX } from "./markdown"
 import { OLD_BLOG_URL } from "./config"
 
 export type Block = { type: string; [key: string]: any }
@@ -58,6 +58,61 @@ function liftQuoteHead(block: Block): Block {
   return { ...block, quote: { ...quote, rich_text: first.paragraph.rich_text, children: rest } }
 }
 
+const markerOf = (block: Block): string | undefined => {
+  if (block.type !== "paragraph") return undefined
+  const content = (block.paragraph.rich_text ?? []).map((r: any) => r.text?.content ?? "").join("").trim()
+  return content === CALLOUT_OPEN || content === CALLOUT_CLOSE ? content : undefined
+}
+
+const LEADING_EMOJI = /^\s*(\p{Extended_Pictographic}\uFE0F?)\s*/u
+
+// The first paragraph becomes the callout's text, minus a leading emoji that
+// Notion's export kept as plain text; without one, Notion's default 💡 is used.
+function toCallout(body: Block[]): Block {
+  let [first, ...rest] = body
+  let icon = "💡"
+  let richText: any[] = []
+  if (first?.type === "paragraph") {
+    richText = [...(first.paragraph.rich_text ?? [])]
+    const head = richText[0]?.text?.content as string | undefined
+    const emoji = head?.match(LEADING_EMOJI)
+    if (emoji) {
+      // Notion rejects bare text-style symbols such as "⚠" as icons.
+      icon = /\p{Emoji_Presentation}|\uFE0F/u.test(emoji[1]) ? emoji[1] : `${emoji[1]}\uFE0F`
+      richText[0] = { ...richText[0], text: { ...richText[0].text, content: head!.slice(emoji[0].length) } }
+      if (!richText[0].text.content) richText.shift()
+    }
+    rest = [...(first.paragraph.children ?? []), ...rest]
+  } else if (first) {
+    rest = body
+  }
+  return {
+    object: "block",
+    type: "callout",
+    callout: { icon: { type: "emoji", emoji: icon }, rich_text: richText, ...(rest.length ? { children: rest } : {}) },
+  }
+}
+
+// Folds marker paragraphs at one nesting level into callouts. An open marker
+// without its close wraps the rest of the level; a stray close is dropped.
+function foldCallouts(blocks: Block[]): Block[] {
+  const out: Block[] = []
+  const stack: Block[][] = []
+  for (const block of blocks) {
+    const marker = markerOf(block)
+    if (marker === CALLOUT_OPEN) stack.push([])
+    else if (marker === CALLOUT_CLOSE) {
+      const body = stack.pop()
+      if (body) (stack.at(-1) ?? out).push(toCallout(body))
+    } else (stack.at(-1) ?? out).push(block)
+  }
+  while (stack.length) {
+    const callout = toCallout(stack.pop()!)
+    ;(stack.at(-1) ?? out).push(callout)
+  }
+  return out
+}
+
 export async function postprocessBlocks(
   blocks: Block[],
   resolveImage: (index: number) => Promise<Block>
@@ -76,5 +131,5 @@ export async function postprocessBlocks(
     }
     out.push(block)
   }
-  return out
+  return foldCallouts(out)
 }

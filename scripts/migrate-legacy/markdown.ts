@@ -1,8 +1,38 @@
+import { normalizeCodeFences } from "./codeLanguage"
+
 export type ImageSource = { kind: "local"; src: string } | { kind: "remote"; url: string }
 
 // martian only emits image blocks for URLs that look like images, so the
 // sentinel needs a real-looking host and an image extension.
 export const IMAGE_SENTINEL_PREFIX = "https://migrate.example.com/img/"
+
+// Notion exports callouts as <aside>; CommonMark treats the first paragraph
+// after <aside> as raw HTML and martian drops it. Markers survive conversion
+// as plain paragraphs and postprocessBlocks (blocks.ts) folds them into callouts.
+export const CALLOUT_OPEN = "MIGRATE_CALLOUT_OPEN"
+export const CALLOUT_CLOSE = "MIGRATE_CALLOUT_CLOSE"
+
+const FENCE_LINE = /^[ \t]*(`{3,}|~{3,})/
+const ASIDE_LINE = /^([ \t]*)(<aside>)?(.*?)(<\/aside>)?[ \t]*$/i
+
+function convertAsides(md: string): string {
+  let fence: string | undefined
+  return md
+    .split("\n")
+    .map((line) => {
+      const marker = line.match(FENCE_LINE)?.[1]
+      if (marker && (!fence || (marker[0] === fence[0] && marker.length >= fence.length))) {
+        fence = fence ? undefined : marker
+        return line
+      }
+      const m = line.match(ASIDE_LINE)
+      if (fence || !m || (!m[2] && !m[4])) return line
+      const [, indent, open, body, close] = m
+      const pieces = [open && CALLOUT_OPEN, body.trim(), close && CALLOUT_CLOSE].filter(Boolean)
+      return `\n${pieces.map((piece) => indent + piece).join("\n\n")}\n`
+    })
+    .join("\n")
+}
 
 const FENCE = /^(```|~~~)[^\n]*\n[\s\S]*?^\1[ \t]*$/gm
 const INLINE_CODE = /(`+)[^`\n]+?\1/g
@@ -55,7 +85,7 @@ function separateImageLines(text: string): string {
 
 export function preprocessMarkdown(md: string): { markdown: string; images: ImageSource[] } {
   const images: ImageSource[] = []
-  const transformed = mapOutside(md, FENCE, (prose) =>
+  const transformed = mapOutside(convertAsides(normalizeCodeFences(md)), FENCE, (prose) =>
     mapOutside(prose, INLINE_CODE, (text) => transformText(text, images))
   )
   // Sentinels only exist outside code, so a second pass over prose is safe.

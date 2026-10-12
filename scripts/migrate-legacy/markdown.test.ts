@@ -1,6 +1,6 @@
 import { test } from "node:test"
 import assert from "node:assert/strict"
-import { IMAGE_SENTINEL_PREFIX, preprocessMarkdown } from "./markdown"
+import { CALLOUT_CLOSE, CALLOUT_OPEN, IMAGE_SENTINEL_PREFIX, preprocessMarkdown } from "./markdown"
 
 const S = (n: number) => `${IMAGE_SENTINEL_PREFIX}${n}.png`
 
@@ -49,4 +49,23 @@ test("fenced and inline code are left untouched", () => {
   const { markdown, images } = preprocessMarkdown(md)
   assert.equal(markdown, md)
   assert.deepEqual(images, [])
+})
+
+test("code fence languages are normalised for notion", () => {
+  assert.equal(preprocessMarkdown("```jsx\n<A/>\n```").markdown, "```javascript\n<A/>\n```")
+})
+
+test("aside tags become callout marker paragraphs, keeping list indentation", () => {
+  const { markdown } = preprocessMarkdown("a\n<aside>\n💡 tip\n\n```java\n<aside>\n```\n</aside>\n\n- item\n\n    <aside>\n    ⚠️ warn\n    </aside>")
+  assert.equal(
+    markdown,
+    `a\n\n${CALLOUT_OPEN}\n\n💡 tip\n\n\`\`\`java\n<aside>\n\`\`\`\n\n${CALLOUT_CLOSE}\n\n\n- item\n\n\n    ${CALLOUT_OPEN}\n\n    ⚠️ warn\n\n    ${CALLOUT_CLOSE}\n`
+  )
+})
+
+test("a one-line aside is split into marker, body and marker", () => {
+  assert.equal(
+    preprocessMarkdown("<aside>  💡 x  </aside>").markdown,
+    `\n${CALLOUT_OPEN}\n\n💡 x\n\n${CALLOUT_CLOSE}\n`
+  )
 })

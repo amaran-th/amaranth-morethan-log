@@ -1,8 +1,8 @@
 import { test } from "node:test"
 import assert from "node:assert/strict"
-import { IMAGE_SENTINEL_PREFIX } from "./markdown"
+import { CALLOUT_CLOSE, CALLOUT_OPEN, IMAGE_SENTINEL_PREFIX, preprocessMarkdown } from "./markdown"
 import {
-  markdownToNotionBlocks, missingImageBlock, noticeCallout, postprocessBlocks, uploadedImageBlock,
+  Block, markdownToNotionBlocks, missingImageBlock, noticeCallout, postprocessBlocks, uploadedImageBlock,
 } from "./blocks"
 
 const text = (rt: any[]) => rt.map((r) => r.text?.content ?? "").join("")
@@ -58,4 +58,50 @@ test("notice callout links the old blog", () => {
   assert.equal(block.callout.icon.emoji, "📌")
   assert.equal(text(block.callout.rich_text), "이 글은 이전 블로그(Gatsby)를 만들던 당시 작성한 글입니다. → 이전 블로그")
   assert.equal(block.callout.rich_text[1].text.link.url, "https://amaran-th.github.io")
+})
+
+const noImages = async () => {
+  throw new Error("no images")
+}
+
+test("aside markers become a callout with the leading emoji as icon", async () => {
+  const md = preprocessMarkdown("before\n\n<aside>\n⚠️ 첫 문단\n\n```java\nany()\n```\n\n둘째\n</aside>\n\nafter").markdown
+  const out = await postprocessBlocks(markdownToNotionBlocks(md), noImages)
+  assert.deepEqual(out.map((b) => b.type), ["paragraph", "callout", "paragraph"])
+  const callout = out[1].callout
+  assert.deepEqual(callout.icon, { type: "emoji", emoji: "⚠️" })
+  assert.equal(text(callout.rich_text), "첫 문단")
+  assert.deepEqual(callout.children.map((b: Block) => b.type), ["code", "paragraph"])
+})
+
+test("a callout without a leading emoji gets the notion default icon", async () => {
+  const md = preprocessMarkdown("<aside>\n\n```java\nx\n```\n</aside>").markdown
+  const [callout] = await postprocessBlocks(markdownToNotionBlocks(md), noImages)
+  assert.equal(callout.type, "callout")
+  assert.deepEqual(callout.callout.icon, { type: "emoji", emoji: "💡" })
+  assert.deepEqual(callout.callout.rich_text, [])
+  assert.equal(callout.callout.children[0].type, "code")
+})
+
+test("asides inside list items become callouts inside the item", async () => {
+  const md = preprocessMarkdown("- item\n\n    <aside>\n    💡 tip\n    </aside>\n\n- next").markdown
+  const out = await postprocessBlocks(markdownToNotionBlocks(md), noImages)
+  assert.equal(out.length, 2)
+  const [child] = out[0].bulleted_list_item.children
+  assert.equal(child.type, "callout")
+  assert.equal(text(child.callout.rich_text), "tip")
+})
+
+test("unmatched markers never leak into the page", async () => {
+  const md = `a\n\n${CALLOUT_CLOSE}\n\n${CALLOUT_OPEN}\n\nb`
+  const out = await postprocessBlocks(markdownToNotionBlocks(md), noImages)
+  assert.ok(!JSON.stringify(out).includes("MIGRATE_CALLOUT"))
+  assert.deepEqual(out.map((b) => b.type), ["paragraph", "callout"])
+})
+
+test("text-style symbols get the emoji variation selector notion expects", async () => {
+  const md = preprocessMarkdown("<aside>\n⚠ 경고\n</aside>\n\n<aside>\n↔**bold**\n</aside>").markdown
+  const out = await postprocessBlocks(markdownToNotionBlocks(md), noImages)
+  assert.deepEqual(out.map((b) => b.callout.icon.emoji), ["⚠️", "↔️"])
+  assert.equal(text(out[1].callout.rich_text), "bold")
 })
