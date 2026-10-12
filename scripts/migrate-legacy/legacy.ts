@@ -1,7 +1,7 @@
 import fs from "node:fs"
 import path from "node:path"
 import matter from "gray-matter"
-import { OLD_BLOG_URL } from "./config"
+import { OLD_BLOG_URL, THUMBNAIL_FIXES } from "./config"
 
 export type LegacyPost = {
   legacyPath: string
@@ -46,6 +46,7 @@ export function parseLegacyPost(contentRoot: string, file: string): LegacyPost {
     .split(path.sep)
     .join("/")
     .normalize("NFC")
+  const thumbnail = THUMBNAIL_FIXES[legacyPath] ?? (data.thumbnailImg ? String(data.thumbnailImg) : undefined)
   const text = (v: unknown) => (v == null ? "" : String(v).normalize("NFC").trim())
   return {
     legacyPath,
@@ -56,7 +57,7 @@ export function parseLegacyPost(contentRoot: string, file: string): LegacyPost {
     section: text(data.section),
     category: text(data.category),
     tags: parseTags(data.tags),
-    thumbnailImg: data.thumbnailImg ? resolveThumbnail(dir, String(data.thumbnailImg)) : undefined,
+    thumbnailImg: thumbnail ? resolveThumbnail(dir, thumbnail) : undefined,
     body: content,
   }
 }

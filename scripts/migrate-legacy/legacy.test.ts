@@ -95,3 +95,9 @@ test("parseLegacyPost keeps a remote thumbnail url as is", () => {
   const root = makeTree({ "Java/R/index.md": POST.replace('"../thumbnail.jpg"', `"${url}"`) })
   assert.equal(parseLegacyPost(root, path.join(root, "Java/R/index.md")).thumbnailImg, url)
 })
+
+test("parseLegacyPost applies known thumbnail typo fixes", () => {
+  const legacyPath = "React/SSR(Server Side Rendering)과 CSR(Client Side Rendering)"
+  const root = makeTree({ [`${legacyPath}/index.md`]: POST.replace('"../thumbnail.jpg"', '"./scr.png"') })
+  assert.equal(parseLegacyPost(root, path.join(root, legacyPath, "index.md")).thumbnailImg, path.join(root, legacyPath, "csr.png"))
+})
