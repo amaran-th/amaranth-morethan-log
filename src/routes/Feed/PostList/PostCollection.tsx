@@ -16,7 +16,11 @@ type Props = {
 const postHref = (post: TPostCard) => `/${encodeURIComponent(post.slug)}`
 const postDate = (post: TPostCard) => formatDate(post.date?.start_date || post.createdTime, CONFIG.lang)
 
-const Meta: React.FC<{ post: TPostCard; titleLines: number }> = ({ post, titleLines }) => {
+const Meta: React.FC<{ post: TPostCard; titleLines: number; showTags?: boolean }> = ({
+  post,
+  titleLines,
+  showTags = false,
+}) => {
   const category = post.category?.[0]
   return (
     <div className="meta">
@@ -24,7 +28,16 @@ const Meta: React.FC<{ post: TPostCard; titleLines: number }> = ({ post, titleLi
       <p className="title" style={{ WebkitLineClamp: titleLines }}>
         {post.title}
       </p>
-      <p className="date">{postDate(post)}</p>
+      <div className="sub">
+        <span className="date">{postDate(post)}</span>
+        {/* Plain labels: the whole row is already a link to the post. */}
+        {showTags &&
+          post.tags?.map((tag) => (
+            <span key={tag} className="tag">
+              {tag}
+            </span>
+          ))}
+      </div>
     </div>
   )
 }
@@ -47,7 +60,7 @@ const PostCollection: React.FC<Props> = ({ posts, view }) => {
         {posts.map((post) => (
           <li key={post.id}>
             <Link href={postHref(post)}>
-              <Meta post={post} titleLines={2} />
+              <Meta post={post} titleLines={2} showTags />
               {post.thumbnail && (
                 <div className="thumb">
                   <Image src={post.thumbnail} alt="" fill sizes="96px" css={{ objectFit: "cover" }} />
@@ -105,6 +118,14 @@ const metaStyles = `
     margin: 0.125rem 0;
     font-weight: 500;
   }
+  .sub {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 `
 
 const StyledList = styled.ul`
@@ -137,6 +158,15 @@ const StyledList = styled.ul`
     font-size: 1rem;
     line-height: 1.5rem;
     color: ${({ theme }) => theme.colors.gray12};
+  }
+  .tag {
+    flex-shrink: 0;
+    padding: 0.0625rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.6875rem;
+    line-height: 1rem;
+    color: ${({ theme }) => theme.colors.gray11};
+    background-color: ${({ theme }) => theme.colors.gray5};
   }
   .thumb {
     position: relative;

@@ -29,7 +29,7 @@ const PostList: React.FC<Props> = ({ posts, q, view }) => {
   }
   const shown = searching ? searchPosts(index ?? posts, q) : posts
 
-  if (!shown.length) return <p className="my-2 text-gray-500 dark:text-gray-300">Nothing! 😺</p>
+  if (!shown.length) return <p className="my-2 text-gray-500 dark:text-gray-300">게시된 글이 없어요! 😺</p>
   return <PostCollection posts={shown} view={view} />
 }
 
