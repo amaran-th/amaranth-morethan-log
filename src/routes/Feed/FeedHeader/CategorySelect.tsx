@@ -29,7 +29,11 @@ const CategorySelect: React.FC<Props> = ({ categories: data, filter }) => {
             <Link
               className="item"
               key={idx}
-              href={key === DEFAULT_CATEGORY ? "/" : feedPath({ category: key }, 1)}
+              // Keeps the current tag or series and swaps only the category.
+              href={feedPath(
+                { tag: filter.tag, series: filter.series, category: key === DEFAULT_CATEGORY ? undefined : key },
+                1
+              )}
             >
               {`${key} (${data[key]})`}
             </Link>

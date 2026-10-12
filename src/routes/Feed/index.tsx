@@ -48,9 +48,9 @@ const Feed: React.FC<FeedProps> = ({
           height: SIDEBAR_HEIGHT,
         }}
       >
-        <SeriesList series={series} current={filter.series} />
+        <SeriesList series={series} current={filter.series} category={filter.category} />
         <div className="lt-tags">
-          <TagList tags={tags} current={filter.tag} />
+          <TagList tags={tags} current={filter.tag} category={filter.category} />
         </div>
       </div>
       <div className="mid">
@@ -58,7 +58,7 @@ const Feed: React.FC<FeedProps> = ({
         {!searching && <PinnedPosts posts={pinned} view={view} />}
         <ActivityCalendar postDates={postDates} />
         <div className="tags">
-          <TagList tags={tags} current={filter.tag} />
+          <TagList tags={tags} current={filter.tag} category={filter.category} />
         </div>
         <FeedHeader
           categories={categories}

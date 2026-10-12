@@ -75,3 +75,26 @@ test("series pages list the series newest first and every page carries series co
   assert.deepEqual(s.props.posts.map((p) => p.id), ["1", "2"])
   assert.equal(buildFeed(withSeries, { series: "없음" }).kind, "notFound")
 })
+
+test("a tag or series combines with a category, and category counts follow the tag", () => {
+  const mixed = [
+    post(1, { tags: ["Spring"], category: ["💻 개발"] }),
+    post(2, { tags: ["Spring"], category: ["✍️ 회고"] }),
+    post(3, { tags: ["Java"], category: ["💻 개발"] }),
+    post(4, { tags: ["Spring"], category: ["💻 개발"], series: ["S"] }),
+  ] as any[]
+  const r = buildFeed(mixed, { tag: "Spring", category: "개발" })
+  assert.ok(r.kind === "props")
+  if (r.kind !== "props") return
+  assert.deepEqual(r.props.filter, { tag: "Spring", category: "💻 개발" })
+  assert.deepEqual(r.props.posts.map((p) => p.id), ["1", "4"])
+  assert.deepEqual(r.props.categories, { "📂 All": 3, "💻 개발": 2, "✍️ 회고": 1 })
+  const s = buildFeed(mixed, { series: "S", category: "개발" })
+  assert.ok(s.kind === "props" && s.props.posts.length === 1)
+  assert.equal(buildFeed(mixed, { tag: "Java", category: "회고" }).kind, "props")
+  assert.equal(buildFeed(mixed, { tag: "Spring", category: "없음" }).kind, "notFound")
+  assert.deepEqual(buildFeed(mixed, { tag: "Spring", category: "개발", page: "1" }), {
+    kind: "redirect",
+    destination: "/tag/Spring/category/%EA%B0%9C%EB%B0%9C",
+  })
+})

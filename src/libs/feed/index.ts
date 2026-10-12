@@ -22,14 +22,14 @@ export const categorySlug = (category: string) => category.replace(LEADING_EMOJI
 export const resolveCategory = (categories: string[], slug: string) =>
   categories.find((c) => categorySlug(c).normalize("NFC") === slug.normalize("NFC"))
 
+// A category can narrow a tag or series list: /tag/Spring/category/개발.
 export function feedPath({ category, tag, series }: FeedFilter, page: number): string {
-  const base = category
-    ? `/category/${encodeURIComponent(categorySlug(category))}`
-    : tag
-      ? `/tag/${encodeURIComponent(tag)}`
-      : series
-        ? `/series/${encodeURIComponent(series)}`
-        : ""
+  const scope = tag
+    ? `/tag/${encodeURIComponent(tag)}`
+    : series
+      ? `/series/${encodeURIComponent(series)}`
+      : ""
+  const base = scope + (category ? `/category/${encodeURIComponent(categorySlug(category))}` : "")
   if (page > 1) return `${base}/page/${page}`
   return base || "/"
 }

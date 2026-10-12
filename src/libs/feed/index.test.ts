@@ -81,3 +81,12 @@ test("feedPath builds series urls", () => {
   assert.equal(feedPath({ series: "기술 부채" }, 1), "/series/%EA%B8%B0%EC%88%A0%20%EB%B6%80%EC%B1%84")
   assert.equal(feedPath({ series: "UX 개선안" }, 2), "/series/UX%20%EA%B0%9C%EC%84%A0%EC%95%88/page/2")
 })
+
+test("feedPath nests a category under a tag or series", () => {
+  assert.equal(feedPath({ tag: "Spring", category: "💻 개발" }, 1), "/tag/Spring/category/%EA%B0%9C%EB%B0%9C")
+  assert.equal(
+    feedPath({ series: "S", category: "💻 개발" }, 2),
+    "/series/S/category/%EA%B0%9C%EB%B0%9C/page/2"
+  )
+  assert.equal(feedPath({ category: "💻 개발" }, 1), "/category/%EA%B0%9C%EB%B0%9C")
+})

@@ -7,10 +7,12 @@ import { feedPath } from "src/libs/feed"
 type Props = {
   series: Record<string, number>
   current?: string
+  category?: string
 }
 
-// Series names with their post counts; each links to the series' list page.
-const SeriesList: React.FC<Props> = ({ series, current }) => {
+// Series names with their post counts; each links to the series' list page,
+// keeping the chosen category. Clicking the active series clears it.
+const SeriesList: React.FC<Props> = ({ series, current, category }) => {
   const names = Object.keys(series).sort((a, b) => series[b] - series[a] || a.localeCompare(b))
   if (!names.length) return null
   return (
@@ -21,7 +23,10 @@ const SeriesList: React.FC<Props> = ({ series, current }) => {
       <ul className="list">
         {names.map((name) => (
           <li key={name}>
-            <Link href={name === current ? "/" : feedPath({ series: name }, 1)} data-active={name === current}>
+            <Link
+              href={feedPath({ series: name === current ? undefined : name, category }, 1)}
+              data-active={name === current}
+            >
               <span className="name">{name}</span>
               <span className="count">{series[name]}</span>
             </Link>

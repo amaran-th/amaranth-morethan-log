@@ -8,9 +8,10 @@ import { TTags } from "src/types"
 type Props = {
   tags: TTags
   current?: string
+  category?: string
 }
 
-const TagList: React.FC<Props> = ({ tags: data, current: currentTag }) => {
+const TagList: React.FC<Props> = ({ tags: data, current: currentTag, category }) => {
   return (
     <StyledWrapper>
       <div className="top">
@@ -21,8 +22,8 @@ const TagList: React.FC<Props> = ({ tags: data, current: currentTag }) => {
           <Link
             key={key}
             data-active={key === currentTag}
-            // Clicking the active tag clears the filter.
-            href={key === currentTag ? "/" : feedPath({ tag: key }, 1)}
+            // Keeps the chosen category; clicking the active tag clears the tag.
+            href={feedPath({ tag: key === currentTag ? undefined : key, category }, 1)}
           >
             {key}
           </Link>
