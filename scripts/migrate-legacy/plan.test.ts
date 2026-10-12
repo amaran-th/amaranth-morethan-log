@@ -1,6 +1,6 @@
 import { test } from "node:test"
 import assert from "node:assert/strict"
-import { buildUrlMap, planPosts, renderMappingReport } from "./index"
+import { buildUrlMap, planPosts, renderMappingReport, selectPosts } from "./index"
 import type { LegacyPost } from "./legacy"
 
 const post = (over: Partial<LegacyPost>): LegacyPost => ({
@@ -40,4 +40,11 @@ test("url map and report use encoded new URLs and list every post", () => {
   })
   const report = renderMappingReport(planned)
   assert.match(report, /\| 2023-01-01 \| \[DB\] 트랜잭션 \| `db-트랜잭션` \| 💻 개발 \| Java \|  \|/)
+})
+
+test("selectPosts picks every planned post with --all, else the named ones", () => {
+  const planned = planPosts([post({ legacyPath: "a/1", title: "One" }), post({ legacyPath: "a/2", title: "Two" })], new Set())
+  assert.deepEqual(selectPosts(planned, { all: true, pilot: false, only: [] }).map((p) => p.post.legacyPath), ["a/1", "a/2"])
+  assert.deepEqual(selectPosts(planned, { all: false, pilot: false, only: ["a/2"] }).map((p) => p.post.legacyPath), ["a/2"])
+  assert.throws(() => selectPosts(planned, { all: false, pilot: false, only: ["nope"] }), /Unknown legacy paths: nope/)
 })
