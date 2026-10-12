@@ -1,14 +1,12 @@
 import styled from "@emotion/styled"
-import { useRouter } from "next/router"
 import React from "react"
 
 type Props = {}
 
+// Moving between posts is done by PostNavigation under the comments.
 const Footer: React.FC<Props> = () => {
-  const router = useRouter()
   return (
     <StyledWrapper>
-      <a onClick={() => router.push("/")}>← Back</a>
       <a onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
         ↑ Top
       </a>
@@ -20,7 +18,7 @@ export default Footer
 
 const StyledWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   font-weight: 500;
   color: ${({ theme }) => theme.colors.gray10};
   a {

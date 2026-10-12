@@ -2,9 +2,6 @@ import { CONFIG } from "site.config"
 import { useEffect } from "react"
 import styled from "@emotion/styled"
 import useScheme from "src/hooks/useScheme"
-import { useRouter } from "next/router"
-
-//TODO: useRef?
 
 type Props = {
   issueTerm: string
@@ -12,7 +9,6 @@ type Props = {
 
 const Utterances: React.FC<Props> = ({ issueTerm }) => {
   const [scheme] = useScheme()
-  const router = useRouter()
 
   useEffect(() => {
     const theme = `github-${scheme}`
@@ -29,16 +25,21 @@ const Utterances: React.FC<Props> = ({ issueTerm }) => {
     Object.keys(config).forEach((key) => {
       script.setAttribute(key, config[key])
     })
-    anchor.appendChild(script)
+    // utterances' client.js inserts its iframe next to its own <script> tag
+    // once it runs. If cleanup detaches a script that is still loading (theme
+    // settling after mount, or moving to another post), it throws "The element
+    // has no parent". Keep each script inside its own wrapper and remove the
+    // wrapper instead, so the script always has a parent.
+    const container = document.createElement("div")
+    container.appendChild(script)
+    anchor.appendChild(container)
     return () => {
-      anchor.innerHTML = ""
+      container.remove()
     }
-  }, [scheme, router])
+  }, [scheme, issueTerm])
   return (
     <>
-      <StyledWrapper id="comments">
-        <div className="utterances-frame"></div>
-      </StyledWrapper>
+      <StyledWrapper id="comments" />
     </>
   )
 }

@@ -9,6 +9,10 @@ const nextConfig = {
     ]
   },
   images: {
+    // Locally the image optimizer fetches Notion with Node's user agent, which
+    // Notion's Cloudflare answers with 403; let the browser load images directly
+    // in development. Vercel's optimizer is not blocked.
+    unoptimized: process.env.NODE_ENV === "development",
     remotePatterns: [
       {
         protocol: "https",
