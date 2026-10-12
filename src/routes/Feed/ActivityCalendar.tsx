@@ -162,11 +162,9 @@ const ActivityCalendar: React.FC<Props> = ({ postDates }) => {
           onBlur={scheduleClose}
         >
           <div className="popup-head">
-            <span>
-              {formatDate(range.start, CONFIG.lang)} ~ {formatDate(range.end, CONFIG.lang)}
-            </span>
-            <span className="count">글 {popup.count}개</span>
+            {formatDate(range.start, CONFIG.lang)} ~ {formatDate(range.end, CONFIG.lang)}
           </div>
+          <div className="popup-label">글 목록 ({popup.count})</div>
           {!index && <p className="muted">불러오는 중…</p>}
           <ul>
             {weekPosts.map((post) => (
@@ -294,16 +292,14 @@ const StyledWrapper = styled.div`
     font-size: 0.8125rem;
 
     .popup-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 0.5rem;
-      margin-bottom: 0.375rem;
       color: ${({ theme }) => theme.colors.gray10};
-      .count {
-        flex-shrink: 0;
-        font-weight: 700;
-        color: ${({ theme }) => theme.colors.blue11};
-      }
+    }
+    .popup-label {
+      margin: 0.5rem 0 0.25rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid ${({ theme }) => theme.colors.gray5};
+      font-weight: 700;
+      color: ${({ theme }) => theme.colors.blue11};
     }
     .muted {
       color: ${({ theme }) => theme.colors.gray10};
