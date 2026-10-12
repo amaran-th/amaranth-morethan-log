@@ -69,3 +69,7 @@ test("a one-line aside is split into marker, body and marker", () => {
     `\n${CALLOUT_OPEN}\n\n💡 x\n\n${CALLOUT_CLOSE}\n`
   )
 })
+
+test("the malformed </br> is treated like <br>", () => {
+  assert.equal(preprocessMarkdown("a</br>b\n| x</br>y |").markdown, "a\nb\n| x y |")
+})

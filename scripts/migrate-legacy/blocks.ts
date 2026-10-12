@@ -58,6 +58,19 @@ function liftQuoteHead(block: Block): Block {
   return { ...block, quote: { ...quote, rich_text: first.paragraph.rich_text, children: rest } }
 }
 
+// Notion rejects rows whose cell count differs from table_width, while GFM
+// pads short rows; widen to the longest row so no cell is lost.
+function padTable(block: Block): Block {
+  const rows: Block[] = block.table.children ?? []
+  const width = Math.max(block.table.table_width ?? 0, ...rows.map((r) => r.table_row.cells.length))
+  const children = rows.map((r) => {
+    const cells = [...r.table_row.cells]
+    while (cells.length < width) cells.push([])
+    return { ...r, table_row: { ...r.table_row, cells } }
+  })
+  return { ...block, table: { ...block.table, table_width: width, children } }
+}
+
 const markerOf = (block: Block): string | undefined => {
   if (block.type !== "paragraph") return undefined
   const content = (block.paragraph.rich_text ?? []).map((r: any) => r.text?.content ?? "").join("").trim()
@@ -124,7 +137,8 @@ export async function postprocessBlocks(
       out.push(await resolveImage(index))
       continue
     }
-    let block = original.type === "quote" ? liftQuoteHead(original) : original
+    let block =
+      original.type === "quote" ? liftQuoteHead(original) : original.type === "table" ? padTable(original) : original
     const children = block[block.type]?.children
     if (Array.isArray(children) && children.length && block.type !== "table") {
       block = { ...block, [block.type]: { ...block[block.type], children: await postprocessBlocks(children, resolveImage) } }

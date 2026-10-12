@@ -58,7 +58,7 @@ function transformText(text: string, images: ImageSource[]): string {
     )
     .split("\n")
     .map((line) =>
-      line.replace(/<br\s*\/?>/gi, line.trimStart().startsWith("|") ? " " : "\n")
+      line.replace(/<\/?br\s*\/?>/gi, line.trimStart().startsWith("|") ? " " : "\n")
     )
     .join("\n")
     .replace(LAYOUT_TAGS, "")

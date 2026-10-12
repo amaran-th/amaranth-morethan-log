@@ -105,3 +105,11 @@ test("text-style symbols get the emoji variation selector notion expects", async
   assert.deepEqual(out.map((b) => b.callout.icon.emoji), ["⚠️", "↔️"])
   assert.equal(text(out[1].callout.rich_text), "bold")
 })
+
+test("ragged table rows are padded to the widest row", async () => {
+  const [table] = await postprocessBlocks(markdownToNotionBlocks("| a | b |\n|---|---|\n| x |\n| p | q | r |"), noImages)
+  assert.equal(table.table.table_width, 3)
+  assert.deepEqual(table.table.children.map((r: Block) => r.table_row.cells.map(text)), [
+    ["a", "b", ""], ["x", "", ""], ["p", "q", "r"],
+  ])
+})
