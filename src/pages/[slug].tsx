@@ -18,13 +18,21 @@ const filter: FilterPostsOptions = {
   acceptType: ["Paper", "Post", "Page"],
 }
 
+// Prerendering every post (230+) at build time makes Notion rate-limit the
+// build until pages pass Next's 60s limit and the deploy fails. Prerender only
+// the newest listed posts; the rest render on first request and are then
+// cached by ISR. "blocking" serves full HTML on that first request instead of
+// an empty fallback page.
+const PRERENDER_COUNT = 20
+
 export const getStaticPaths = async () => {
   const posts = await getPosts()
-  const filteredPost = filterPosts(posts, filter)
 
   return {
-    paths: filteredPost.map((row) => `/${row.slug}`),
-    fallback: true,
+    paths: filterPosts(posts)
+      .slice(0, PRERENDER_COUNT)
+      .map((row) => `/${row.slug}`),
+    fallback: "blocking",
   }
 }
 
