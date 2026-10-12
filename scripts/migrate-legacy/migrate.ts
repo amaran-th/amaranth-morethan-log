@@ -64,7 +64,8 @@ export async function migratePost(deps: Deps, { post, props }: PlannedPost) {
   cache[post.legacyPath] = { pageId, slug: props.slug, state: "creating" }
   deps.saveCache()
 
-  const { markdown, images } = preprocessMarkdown(post.body)
+  const { markdown, images, escapedHtml } = preprocessMarkdown(post.body)
+  if (escapedHtml.length) log(`html kept as text in ${post.legacyPath}: ${escapedHtml.join(" ")}`)
   const blocks = await postprocessBlocks(markdownToNotionBlocks(markdown), async (i) => {
     const id = await upload(images[i])
     const source = images[i]

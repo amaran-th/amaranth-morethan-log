@@ -1,6 +1,6 @@
 import { test } from "node:test"
 import assert from "node:assert/strict"
-import { CALLOUT_CLOSE, CALLOUT_OPEN, IMAGE_SENTINEL_PREFIX, imageSource, preprocessMarkdown } from "./markdown"
+import { CALLOUT_CLOSE, CALLOUT_OPEN, DIVIDER, IMAGE_SENTINEL_PREFIX, imageSource, preprocessMarkdown } from "./markdown"
 
 const S = (n: number) => `${IMAGE_SENTINEL_PREFIX}${n}.png`
 
@@ -90,4 +90,28 @@ test("img tags without src stay as text, shown as inline code", () => {
 test("imageSource tells remote urls from local paths", () => {
   assert.deepEqual(imageSource("https://blog.kakaocdn.net/a/img.png"), { kind: "remote", url: "https://blog.kakaocdn.net/a/img.png" })
   assert.deepEqual(imageSource("./ex1.png"), { kind: "local", src: "./ex1.png" })
+})
+
+test("bold html tags become markdown bold and nav is unwrapped", () => {
+  assert.equal(preprocessMarkdown("📝 <b>메소드 체이닝</b> 과 <strong>속성</strong>").markdown, "📝 **메소드 체이닝** 과 **속성**")
+  assert.equal(preprocessMarkdown("<nav> 참고 게시글").markdown, " 참고 게시글")
+})
+
+test("other tag-like text in prose is escaped so it survives as text, and reported", () => {
+  const { markdown, escapedHtml } = preprocessMarkdown(
+    "List<Student> 형, <head> 태그와 </body> 태그\n\n[<Spring> 강의](https://x.com)\n\n[a](<https://x.com/a b>) and `List<X>`"
+  )
+  assert.equal(
+    markdown,
+    "List\\<Student> 형, \\<head> 태그와 \\</body> 태그\n\n[\\<Spring> 강의](https://x.com)\n\n[a](<https://x.com/a b>) and `List<X>`"
+  )
+  assert.deepEqual(escapedHtml, ["<Student>", "<head>", "</body>", "<Spring>"])
+})
+
+test("thematic breaks become divider markers; setext underlines stay headings", () => {
+  assert.equal(preprocessMarkdown("a\n\n---\n\nb").markdown, `a\n\n\n${DIVIDER}\n\n\nb`)
+  assert.equal(preprocessMarkdown("a\n\n- item\n\n  ***\n").markdown, `a\n\n- item\n\n\n  ${DIVIDER}\n\n`)
+  assert.equal(preprocessMarkdown("Title\n---\n").markdown, "Title\n---\n")
+  assert.equal(preprocessMarkdown("```\n\n---\n```").markdown, "```\n\n---\n```")
+  assert.equal(preprocessMarkdown("| a |\n|---|\n| b |").markdown, "| a |\n|---|\n| b |")
 })

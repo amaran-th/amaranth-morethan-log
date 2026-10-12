@@ -113,3 +113,16 @@ test("ragged table rows are padded to the widest row", async () => {
     ["a", "b", ""], ["x", "", ""], ["p", "q", "r"],
   ])
 })
+
+test("divider markers become notion divider blocks", async () => {
+  const md = preprocessMarkdown("a\n\n---\n\nb\n\n- item\n\n  ---\n").markdown
+  const out = await postprocessBlocks(markdownToNotionBlocks(md), noImages)
+  assert.deepEqual(out.map((b) => b.type), ["paragraph", "divider", "paragraph", "bulleted_list_item"])
+  assert.deepEqual(out[1], { object: "block", type: "divider", divider: {} })
+  assert.equal(out[3].bulleted_list_item.children[0].type, "divider")
+})
+
+test("escaped tag text reaches notion as literal text", async () => {
+  const out = await postprocessBlocks(markdownToNotionBlocks(preprocessMarkdown("List<Student> 형").markdown), noImages)
+  assert.equal(text(out[0].paragraph.rich_text), "List<Student> 형")
+})

@@ -1,5 +1,5 @@
 import { markdownToBlocks } from "@tryfabric/martian"
-import { CALLOUT_CLOSE, CALLOUT_OPEN, IMAGE_SENTINEL_PREFIX } from "./markdown"
+import { CALLOUT_CLOSE, CALLOUT_OPEN, DIVIDER, IMAGE_SENTINEL_PREFIX } from "./markdown"
 import { OLD_BLOG_URL } from "./config"
 
 export type Block = { type: string; [key: string]: any }
@@ -71,9 +71,13 @@ function padTable(block: Block): Block {
   return { ...block, table: { ...block.table, table_width: width, children } }
 }
 
+const paragraphText = (block: Block): string | undefined =>
+  block.type === "paragraph"
+    ? (block.paragraph.rich_text ?? []).map((r: any) => r.text?.content ?? "").join("").trim()
+    : undefined
+
 const markerOf = (block: Block): string | undefined => {
-  if (block.type !== "paragraph") return undefined
-  const content = (block.paragraph.rich_text ?? []).map((r: any) => r.text?.content ?? "").join("").trim()
+  const content = paragraphText(block)
   return content === CALLOUT_OPEN || content === CALLOUT_CLOSE ? content : undefined
 }
 
@@ -135,6 +139,10 @@ export async function postprocessBlocks(
     const index = sentinelIndex(original)
     if (index !== undefined) {
       out.push(await resolveImage(index))
+      continue
+    }
+    if (paragraphText(original) === DIVIDER) {
+      out.push({ object: "block", type: "divider", divider: {} })
       continue
     }
     let block =
