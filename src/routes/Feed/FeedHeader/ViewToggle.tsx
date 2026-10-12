@@ -48,10 +48,10 @@ const StyledWrapper = styled.div`
     padding: 0;
     border-radius: 0.5rem;
     font-size: 1.125rem;
-    color: ${({ theme }) => theme.colors.gray8};
+    color: ${({ theme }) => theme.colors.gray10};
     transition: color 0.15s ease;
     :hover {
-      color: ${({ theme }) => theme.colors.gray11};
+      color: ${({ theme }) => theme.colors.gray12};
     }
     /* The selected mode is marked by its icon colour alone. */
     &[data-active="true"] {
