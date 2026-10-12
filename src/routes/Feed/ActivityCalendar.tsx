@@ -97,7 +97,7 @@ const ActivityCalendar: React.FC<Props> = ({ postDates }) => {
     <StyledWrapper ref={wrapperRef}>
       <div className="top">
         <span>
-          <Emoji>🌱</Emoji> Posts
+          <Emoji>🌱</Emoji> Posts <span className="total">({row.total})</span>
         </span>
         <div className="year-nav">
           <button
@@ -118,7 +118,6 @@ const ActivityCalendar: React.FC<Props> = ({ postDates }) => {
             <MdChevronRight />
           </button>
         </div>
-        <span className="total">{row.total}개의 글</span>
       </div>
       <div className="scroll" onScroll={() => setPopup(null)}>
         <div className="chart">
@@ -226,9 +225,6 @@ const StyledWrapper = styled.div`
       }
     }
     .total {
-      min-width: 4.5rem;
-      text-align: right;
-      font-size: 0.8125rem;
       color: ${({ theme }) => theme.colors.gray10};
     }
   }
