@@ -21,9 +21,11 @@ const PostDetail: React.FC<Props> = () => {
 
   const category = (data.category && data.category?.[0]) || undefined
 
+  const showToc = data.type[0] === "Post" && toc.length >= 2
+
   return (
-    <StyledWrapper>
-      {data.type[0] === "Post" && toc.length >= 2 && (
+    <StyledWrapper data-toc={showToc}>
+      {showToc && (
         <aside className="toc">
           <TableOfContents items={toc} />
         </aside>
@@ -69,8 +71,9 @@ const StyledWrapper = styled.div`
   margin: 0 auto;
   position: relative;
 
-  /* The outline sits in the free space right of the post card, only where
-     the screen is wide enough to hold both. */
+  /* The outline sits right of the post card. From 1440px it fits in the
+     free space beside the centred card; between 1024px and 1440px the card
+     moves left and gives up 14.5rem so the outline fits inside the layout. */
   > .toc {
     display: none;
     position: absolute;
@@ -79,8 +82,18 @@ const StyledWrapper = styled.div`
     left: calc(100% + 2rem);
     width: 14rem;
 
-    @media (min-width: 1440px) {
+    @media (min-width: 1024px) {
       display: block;
+    }
+    @media (min-width: 1024px) and (max-width: 1439px) {
+      left: calc(100% + 1.5rem);
+      width: 13rem;
+    }
+  }
+  @media (min-width: 1024px) and (max-width: 1439px) {
+    &[data-toc="true"] {
+      margin-left: 0;
+      margin-right: 14.5rem;
     }
   }
   > article {

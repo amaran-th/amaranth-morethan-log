@@ -11,7 +11,8 @@ type Props = {
 }
 
 // Posts of the current post's series as a horizontal, snapping card strip.
-// The current post's card starts centred; arrows move one card at a time.
+// The current post's card is marked by colour and starts in view; arrows move
+// one card at a time.
 const SeriesCarousel: React.FC<Props> = ({ series }) => {
   const trackRef = useRef<HTMLOListElement>(null)
 
@@ -52,7 +53,7 @@ const SeriesCarousel: React.FC<Props> = ({ series }) => {
           return (
             <li key={post.slug} className="card" data-current={current}>
               <Link href={`/${encodeURIComponent(post.slug)}`} aria-current={current ? "page" : undefined}>
-                <span className="order">{current ? "지금 읽는 글" : `${i + 1}편`}</span>
+                <span className="order">{i + 1}편</span>
                 <span className="title">{post.title}</span>
                 <span className="date">{formatDate(post.date, CONFIG.lang)}</span>
               </Link>
