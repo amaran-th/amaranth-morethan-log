@@ -15,14 +15,13 @@ type Props = {
 const CategorySelect: React.FC<Props> = ({ categories: data, filter }) => {
   const [dropdownRef, opened, handleOpen] = useDropdown()
 
-  const currentCategory =
-    filter.category ??
-    (filter.tag ? `#${filter.tag}` : filter.series ? `📚 ${filter.series}` : DEFAULT_CATEGORY)
+  // Shows the category only; tag and series filters live in the sidebar.
+  const currentCategory = filter.category ?? DEFAULT_CATEGORY
 
   return (
     <StyledWrapper>
       <div ref={dropdownRef} className="wrapper" onClick={handleOpen}>
-        {currentCategory} Posts <MdExpandMore />
+        {currentCategory} <MdExpandMore />
       </div>
       {opened && (
         <div className="content">
