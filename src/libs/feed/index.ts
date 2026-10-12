@@ -12,7 +12,7 @@ const CARD_KEYS = ["id", "slug", "title", "date", "createdTime", "category", "ta
 export const toCard = (post: TPost): TPostCard =>
   Object.fromEntries(CARD_KEYS.filter((k) => post[k] !== undefined).map((k) => [k, post[k]])) as TPostCard
 
-export type FeedFilter = { category?: string; tag?: string }
+export type FeedFilter = { category?: string; tag?: string; series?: string }
 
 const LEADING_EMOJI = /^[\p{Extended_Pictographic}️‍\s]+/u
 
@@ -22,12 +22,14 @@ export const categorySlug = (category: string) => category.replace(LEADING_EMOJI
 export const resolveCategory = (categories: string[], slug: string) =>
   categories.find((c) => categorySlug(c).normalize("NFC") === slug.normalize("NFC"))
 
-export function feedPath({ category, tag }: FeedFilter, page: number): string {
+export function feedPath({ category, tag, series }: FeedFilter, page: number): string {
   const base = category
     ? `/category/${encodeURIComponent(categorySlug(category))}`
     : tag
       ? `/tag/${encodeURIComponent(tag)}`
-      : ""
+      : series
+        ? `/series/${encodeURIComponent(series)}`
+        : ""
   if (page > 1) return `${base}/page/${page}`
   return base || "/"
 }

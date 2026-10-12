@@ -15,7 +15,9 @@ type Props = {
 const CategorySelect: React.FC<Props> = ({ categories: data, filter }) => {
   const [dropdownRef, opened, handleOpen] = useDropdown()
 
-  const currentCategory = filter.category ?? (filter.tag ? `#${filter.tag}` : DEFAULT_CATEGORY)
+  const currentCategory =
+    filter.category ??
+    (filter.tag ? `#${filter.tag}` : filter.series ? `📚 ${filter.series}` : DEFAULT_CATEGORY)
 
   return (
     <StyledWrapper>

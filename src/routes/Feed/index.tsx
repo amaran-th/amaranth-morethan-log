@@ -13,6 +13,7 @@ import PinnedPosts from "./PostList/PinnedPosts"
 import Pagination from "./Pagination"
 import ProfileCard from "./ProfileCard"
 import SearchInput from "./SearchInput"
+import SeriesList from "./SeriesList"
 import ServiceCard from "./ServiceCard"
 import TagList from "./TagList"
 
@@ -27,6 +28,7 @@ const Feed: React.FC<FeedProps> = ({
   tags,
   pinned,
   postDates,
+  series,
 }) => {
   const [q, setQ] = useState("")
   const searching = q.trim() !== ""
@@ -40,6 +42,7 @@ const Feed: React.FC<FeedProps> = ({
           height: `calc(100vh - ${HEADER_HEIGHT}px)`,
         }}
       >
+        <SeriesList series={series} current={filter.series} />
         <div className="lt-tags">
           <TagList tags={tags} current={filter.tag} />
         </div>

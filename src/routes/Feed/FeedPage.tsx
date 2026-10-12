@@ -15,7 +15,13 @@ const websiteJsonLd = {
 }
 
 function feedTitle({ filter, page }: FeedProps) {
-  const base = filter.category ? categorySlug(filter.category) : filter.tag ? `#${filter.tag}` : undefined
+  const base = filter.category
+    ? categorySlug(filter.category)
+    : filter.tag
+      ? `#${filter.tag}`
+      : filter.series
+        ? `${filter.series} 시리즈`
+        : undefined
   if (page > 1) return `${base ?? "전체 글"} - ${page}페이지`
   return base ?? CONFIG.blog.title
 }

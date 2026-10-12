@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
 import Link from "next/link"
 import React, { useEffect, useRef } from "react"
+import { MdChevronLeft, MdChevronRight } from "react-icons/md"
 import { CONFIG } from "site.config"
 import { TSeries } from "src/libs/feed/series"
 import { formatDate } from "src/libs/utils"
@@ -38,10 +39,10 @@ const SeriesCarousel: React.FC<Props> = ({ series }) => {
         </span>
         <div className="arrows">
           <button type="button" aria-label="이전 카드" onClick={() => move(-1)}>
-            ‹
+            <MdChevronLeft />
           </button>
           <button type="button" aria-label="다음 카드" onClick={() => move(1)}>
-            ›
+            <MdChevronRight />
           </button>
         </div>
       </div>
@@ -85,11 +86,14 @@ const StyledWrapper = styled.section`
       gap: 0.25rem;
       margin-left: auto;
       button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 2rem;
         height: 2rem;
+        padding: 0;
         border-radius: 9999px;
-        font-size: 1.125rem;
-        line-height: 1;
+        font-size: 1.25rem;
         color: ${({ theme }) => theme.colors.gray11};
         background-color: ${({ theme }) => theme.colors.gray3};
         :hover {

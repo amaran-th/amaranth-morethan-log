@@ -56,3 +56,22 @@ test("every list page carries all listed post dates for the activity calendar", 
   assert.equal(r.props.postDates.length, 14)
   assert.ok(r.props.postDates.every((d) => /^\d{4}-\d{2}-\d{2}$/.test(d)))
 })
+
+test("series pages list the series oldest first and every page carries series counts", () => {
+  const withSeries = [
+    post(1, { series: ["S"], date: { start_date: "2024-03-01" } }),
+    post(2, { series: ["S"], date: { start_date: "2024-01-01" } }),
+    post(3, { series: ["T"] }),
+    post(4),
+  ] as any[]
+  const home = buildFeed(withSeries, {})
+  assert.ok(home.kind === "props")
+  if (home.kind !== "props") return
+  assert.deepEqual(home.props.series, { S: 2, T: 1 })
+  const s = buildFeed(withSeries, { series: "S" })
+  assert.ok(s.kind === "props")
+  if (s.kind !== "props") return
+  assert.deepEqual(s.props.filter, { series: "S" })
+  assert.deepEqual(s.props.posts.map((p) => p.id), ["2", "1"])
+  assert.equal(buildFeed(withSeries, { series: "없음" }).kind, "notFound")
+})

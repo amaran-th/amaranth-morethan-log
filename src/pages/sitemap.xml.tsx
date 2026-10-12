@@ -12,7 +12,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     (post) => post.slug && post.slug.trim() !== ""
   )
 
-  // First page of every category and tag list; later pages are reached by
+  // First page of every category, tag and series list; later pages are reached by
   // following the pagination links.
   const listPaths = [
     ...new Set(validPosts.flatMap((post) => post.category ?? [])),
@@ -21,6 +21,11 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     .concat(
       [...new Set(validPosts.flatMap((post) => post.tags ?? []))].map((tag) =>
         feedPath({ tag }, 1)
+      )
+    )
+    .concat(
+      [...new Set(validPosts.flatMap((post) => post.series ?? []))].map(
+        (series) => feedPath({ series }, 1)
       )
     )
 

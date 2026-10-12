@@ -76,3 +76,8 @@ test("toCard omits missing fields so next can serialize the props", () => {
   assert.ok(Object.values(result).every((v) => v !== undefined))
   assert.deepEqual(Object.keys(result).sort(), ["createdTime", "date", "id", "slug", "title"])
 })
+
+test("feedPath builds series urls", () => {
+  assert.equal(feedPath({ series: "기술 부채" }, 1), "/series/%EA%B8%B0%EC%88%A0%20%EB%B6%80%EC%B1%84")
+  assert.equal(feedPath({ series: "UX 개선안" }, 2), "/series/UX%20%EA%B0%9C%EC%84%A0%EC%95%88/page/2")
+})
