@@ -2,8 +2,8 @@ const CONFIG = {
   profile: {
     name: "amaranth",
     image: "/jellyfish.png",
-    role: "프론트엔드 개발자",
-    bio: "인생을 좋아하는 것으로 가득 채우자",
+    role: "개발자",
+    bio: "후회없는 오늘을 위해 최선을 다하자",
     email: "songsy405@naver.com",
     linkedin: "seyeon-song",
     github: "amaran-th",
@@ -40,7 +40,6 @@ const CONFIG = {
   since: 2025,
   lang: "ko-KR",
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
-
   // notion configuration (required)
   notionConfig: {
     pageId: process.env.NOTION_PAGE_ID,

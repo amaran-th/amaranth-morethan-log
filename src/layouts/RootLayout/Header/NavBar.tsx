@@ -2,7 +2,9 @@ import styled from "@emotion/styled"
 import Link from "next/link"
 
 const NavBar: React.FC = () => {
-  const links = [{ id: 1, name: "About", to: "/about" }]
+  // About is hidden for now; restore the entry below to show it again.
+  // { id: 1, name: "About", to: "/about" }
+  const links: { id: number; name: string; to: string }[] = []
   return (
     <StyledWrapper className="">
       <ul>
