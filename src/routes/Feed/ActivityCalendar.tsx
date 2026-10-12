@@ -272,9 +272,9 @@ const StyledWrapper = styled.div`
     &[data-level="0"] {
       cursor: default;
     }
+    /* Drawn inside the bar: an outline would be clipped by the scroll box. */
     &[data-active="true"] {
-      outline: 2px solid ${({ theme }) => theme.colors.gray12};
-      outline-offset: 1px;
+      box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.gray12};
     }
   }
 
