@@ -13,6 +13,7 @@ import usePostQuery from "src/hooks/usePostQuery"
 import { FilterPostsOptions } from "src/libs/utils/notion/filterPosts"
 import { findAdjacentPosts } from "src/libs/feed/adjacent"
 import { findSeries } from "src/libs/feed/series"
+import { slimRecordMap } from "src/libs/utils/notion/slimRecordMap"
 
 const filter: FilterPostsOptions = {
   acceptStatus: ["Public", "PublicOnDetail"],
@@ -49,7 +50,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const detailPosts = filterPosts(posts, filter)
   const postDetail = detailPosts.find((t: any) => t.slug === slug)
   if (!postDetail) return { notFound: true }
-  const recordMap = await getRecordMap(postDetail.id)
+  // Only what the renderer needs goes into the page's data.
+  const recordMap = slimRecordMap(await getRecordMap(postDetail.id))
 
   const isPost = postDetail.type[0] === "Post"
   const listed = filterPosts(posts)
