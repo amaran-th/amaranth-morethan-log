@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { FeedProps } from "src/libs/feed/buildFeed"
 
 import styled from "@emotion/styled"
 import { FeedHeader } from "./FeedHeader"
@@ -8,6 +9,7 @@ import MobileProfileCard from "./MobileProfileCard"
 import OldBlogCard from "./OldBlogCard"
 import PostList from "./PostList"
 import PinnedPosts from "./PostList/PinnedPosts"
+import Pagination from "./Pagination"
 import ProfileCard from "./ProfileCard"
 import SearchInput from "./SearchInput"
 import ServiceCard from "./ServiceCard"
@@ -15,10 +17,9 @@ import TagList from "./TagList"
 
 const HEADER_HEIGHT = 73
 
-type Props = {}
-
-const Feed: React.FC<Props> = () => {
+const Feed: React.FC<FeedProps> = ({ posts, page, totalPages, filter, categories, tags, pinned }) => {
   const [q, setQ] = useState("")
+  const searching = q.trim() !== ""
 
   return (
     <StyledWrapper>
@@ -28,17 +29,18 @@ const Feed: React.FC<Props> = () => {
           height: `calc(100vh - ${HEADER_HEIGHT}px)`,
         }}
       >
-        <TagList />
+        <TagList tags={tags} current={filter.tag} />
       </div>
       <div className="mid">
         <MobileProfileCard />
-        <PinnedPosts q={q} />
+        {!searching && <PinnedPosts posts={pinned} />}
         <SearchInput value={q} onChange={(e) => setQ(e.target.value)} />
         <div className="tags">
-          <TagList />
+          <TagList tags={tags} current={filter.tag} />
         </div>
-        <FeedHeader />
-        <PostList q={q} />
+        <FeedHeader categories={categories} filter={filter} />
+        <PostList posts={posts} q={q} />
+        {!searching && <Pagination filter={filter} page={page} totalPages={totalPages} />}
         <div className="footer">
           <Footer />
         </div>
@@ -51,7 +53,7 @@ const Feed: React.FC<Props> = () => {
       >
         <ProfileCard />
         <ServiceCard />
-        <FriendCard/>
+        <FriendCard />
         <OldBlogCard />
         <div className="footer">
           <Footer />

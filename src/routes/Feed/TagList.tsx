@@ -1,37 +1,16 @@
 import styled from "@emotion/styled"
-import { useRouter } from "next/router"
+import Link from "next/link"
 import React from "react"
 import { Emoji } from "src/components/Emoji"
-import { useTagsQuery } from "src/hooks/useTagsQuery"
+import { feedPath } from "src/libs/feed"
+import { TTags } from "src/types"
 
-type Props = {}
+type Props = {
+  tags: TTags
+  current?: string
+}
 
-const TagList: React.FC<Props> = () => {
-  const router = useRouter()
-  const currentTag = router.query.tag || undefined
-  const data = useTagsQuery()
-
-  const handleClickTag = (value: any) => {
-    // delete
-    if (currentTag === value) {
-      router.push({
-        query: {
-          ...router.query,
-          tag: undefined,
-        },
-      })
-    }
-    // add
-    else {
-      router.push({
-        query: {
-          ...router.query,
-          tag: value,
-        },
-      })
-    }
-  }
-
+const TagList: React.FC<Props> = ({ tags: data, current: currentTag }) => {
   return (
     <StyledWrapper>
       <div className="top">
@@ -39,13 +18,14 @@ const TagList: React.FC<Props> = () => {
       </div>
       <div className="list">
         {Object.keys(data).map((key) => (
-          <a
+          <Link
             key={key}
             data-active={key === currentTag}
-            onClick={() => handleClickTag(key)}
+            // Clicking the active tag clears the filter.
+            href={key === currentTag ? "/" : feedPath({ tag: key }, 1)}
           >
             {key}
-          </a>
+          </Link>
         ))}
       </div>
     </StyledWrapper>

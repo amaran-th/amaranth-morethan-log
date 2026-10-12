@@ -5,10 +5,10 @@ import { CONFIG } from "site.config"
 import { formatDate } from "src/libs/utils"
 import Category from "../../../components/Category"
 import Tag from "../../../components/Tag"
-import { TPost } from "../../../types"
+import { TPostCard } from "src/libs/feed"
 
 type Props = {
-  data: TPost
+  data: TPostCard
 }
 
 const PostCard: React.FC<Props> = ({ data }) => {

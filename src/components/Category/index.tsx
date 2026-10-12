@@ -3,6 +3,8 @@ import React from "react"
 import { COLOR_SET } from "./constants"
 import styled from "@emotion/styled"
 import { colors } from "src/styles"
+import { DEFAULT_CATEGORY } from "src/constants"
+import { feedPath } from "src/libs/feed"
 
 export const getColorClassByName = (name: string): string => {
   try {
@@ -27,7 +29,7 @@ const Category: React.FC<Props> = ({ readOnly = false, children }) => {
 
   const handleClick = (value: string) => {
     if (readOnly) return
-    router.push(`/?category=${value}`)
+    router.push(value === DEFAULT_CATEGORY ? "/" : feedPath({ category: value }, 1))
   }
   return (
     <StyledWrapper

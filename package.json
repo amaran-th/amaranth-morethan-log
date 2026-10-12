@@ -10,7 +10,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-"lint": "next lint"
+    "lint": "next lint",
+    "test": "node --import tsx --test \"src/**/*.test.ts\""
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -45,6 +46,7 @@
     "prettier-plugin-tailwindcss": "^0.6.13",
     "prismjs": "^1.29.0",
     "tailwindcss": "^4.1.11",
+    "tsx": "^4.20.3",
     "typescript": "^4.9.4"
   }
 }

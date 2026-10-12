@@ -2,6 +2,7 @@ import { GetServerSideProps } from "next"
 import { CONFIG } from "site.config"
 import { getPosts } from "../apis/notion-client/getPosts"
 import { filterPosts } from "src/libs/utils/notion/filterPosts"
+import { feedPath } from "src/libs/feed"
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const posts = await getPosts()
@@ -10,6 +11,18 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const validPosts = filterPosts(posts).filter(
     (post) => post.slug && post.slug.trim() !== ""
   )
+
+  // First page of every category and tag list; later pages are reached by
+  // following the pagination links.
+  const listPaths = [
+    ...new Set(validPosts.flatMap((post) => post.category ?? [])),
+  ]
+    .map((category) => feedPath({ category }, 1))
+    .concat(
+      [...new Set(validPosts.flatMap((post) => post.tags ?? []))].map((tag) =>
+        feedPath({ tag }, 1)
+      )
+    )
 
   const urls = [
     `<url>
@@ -22,6 +35,11 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
         <lastmod>${new Date(
           post.date?.start_date || post.createdTime
         ).toISOString()}</lastmod>
+      </url>`
+    ),
+    ...listPaths.map(
+      (path) => `<url>
+        <loc>${CONFIG.link}${path}</loc>
       </url>`
     ),
   ]

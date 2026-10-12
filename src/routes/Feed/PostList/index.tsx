@@ -1,66 +1,39 @@
-import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
+import { TPostCard, searchPosts } from "src/libs/feed"
 import PostCard from "src/routes/Feed/PostList/PostCard"
-import { DEFAULT_CATEGORY } from "src/constants"
-import usePostsQuery from "src/hooks/usePostsQuery"
 
 type Props = {
+  posts: TPostCard[]
   q: string
 }
 
-const PostList: React.FC<Props> = ({ q }) => {
-  const router = useRouter()
-  const data = usePostsQuery()
-  const [filteredPosts, setFilteredPosts] = useState(data)
-
-  const currentTag = `${router.query.tag || ``}` || undefined
-  const currentCategory = `${router.query.category || ``}` || DEFAULT_CATEGORY
-  const currentOrder = `${router.query.order || ``}` || "desc"
+// Search covers every post, not just this page: the index of all cards is
+// fetched on the first keystroke and results are shown on one screen.
+const PostList: React.FC<Props> = ({ posts, q }) => {
+  const searching = q.trim() !== ""
+  const [index, setIndex] = useState<TPostCard[] | null>(null)
+  const [failed, setFailed] = useState(false)
 
   useEffect(() => {
-    setFilteredPosts(() => {
-      let newFilteredPosts = data
-      // keyword
-      newFilteredPosts = newFilteredPosts.filter((post) => {
-        const tagContent = post.tags ? post.tags.join(" ") : ""
-        const searchContent = post.title + post.summary + tagContent
-        return searchContent.toLowerCase().includes(q.toLowerCase())
-      })
+    if (!searching || index || failed) return
+    fetch("/api/search-index")
+      .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
+      .then(setIndex)
+      .catch(() => setFailed(true))
+  }, [searching, index, failed])
 
-      // tag
-      if (currentTag) {
-        newFilteredPosts = newFilteredPosts.filter(
-          (post) => post && post.tags && post.tags.includes(currentTag)
-        )
-      }
-
-      // category
-      if (currentCategory !== DEFAULT_CATEGORY) {
-        newFilteredPosts = newFilteredPosts.filter(
-          (post) =>
-            post && post.category && post.category.includes(currentCategory)
-        )
-      }
-      // order
-      if (currentOrder !== "desc") {
-        newFilteredPosts = newFilteredPosts.reverse()
-      }
-
-      return newFilteredPosts
-    })
-  }, [q, currentTag, currentCategory, currentOrder, setFilteredPosts])
+  if (searching && !index && !failed) {
+    return <p className="my-2 text-gray-500 dark:text-gray-300">Searching…</p>
+  }
+  const shown = searching ? searchPosts(index ?? posts, q) : posts
 
   return (
-    <>
-      <div className="my-2">
-        {!filteredPosts.length && (
-          <p className="text-gray-500 dark:text-gray-300">Nothing! 😺</p>
-        )}
-        {filteredPosts.map((post) => (
-          <PostCard key={post.id} data={post} />
-        ))}
-      </div>
-    </>
+    <div className="my-2">
+      {!shown.length && <p className="text-gray-500 dark:text-gray-300">Nothing! 😺</p>}
+      {shown.map((post) => (
+        <PostCard key={post.id} data={post} />
+      ))}
+    </div>
   )
 }
 

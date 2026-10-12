@@ -7,9 +7,8 @@ import { getRecordMap, getPosts } from "src/apis"
 import MetaConfig from "src/components/MetaConfig"
 import { GetStaticProps } from "next"
 import Head from "next/head"
-import { queryClient } from "src/libs/react-query"
 import { queryKey } from "src/constants/queryKey"
-import { dehydrate } from "@tanstack/react-query"
+import { QueryClient, dehydrate } from "@tanstack/react-query"
 import usePostQuery from "src/hooks/usePostQuery"
 import { FilterPostsOptions } from "src/libs/utils/notion/filterPosts"
 
@@ -32,8 +31,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const slug = context.params?.slug
 
   const posts = await getPosts()
-  const feedPosts = filterPosts(posts)
-  await queryClient.prefetchQuery(queryKey.posts(), () => feedPosts)
+  // A fresh client per page: the shared module-level client kept every post
+  // rendered earlier in the same process and dehydrated all of them into this
+  // page's props.
+  const queryClient = new QueryClient()
 
   const detailPosts = filterPosts(posts, filter)
   const postDetail = detailPosts.find((t: any) => t.slug === slug)

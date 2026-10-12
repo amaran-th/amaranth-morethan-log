@@ -1,16 +1,18 @@
 import { TCategories } from "src/types"
 import React from "react"
 import CategorySelect from "./CategorySelect"
-import OrderButtons from "./OrderButtons"
 import styled from "@emotion/styled"
+import { FeedFilter } from "src/libs/feed"
 
-type Props = {}
+type Props = {
+  categories: TCategories
+  filter: FeedFilter
+}
 
-const FeedHeader: React.FC<Props> = () => {
+const FeedHeader: React.FC<Props> = ({ categories, filter }) => {
   return (
     <StyledWrapper>
-      <CategorySelect />
-      <OrderButtons />
+      <CategorySelect categories={categories} filter={filter} />
     </StyledWrapper>
   )
 }

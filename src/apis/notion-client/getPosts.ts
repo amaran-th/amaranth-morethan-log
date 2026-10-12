@@ -5,13 +5,13 @@ import { idToUuid } from "notion-utils"
 import getAllPageIds from "src/libs/utils/notion/getAllPageIds"
 import getPageProperties from "src/libs/utils/notion/getPageProperties"
 import { TPosts } from "src/types"
+import { memoizeAsync } from "src/libs/utils/memoize"
 
 /**
  * @param {{ includePages: boolean }} - false: posts only / true: include pages
  */
 
-// TODO: react query를 사용해서 처음 불러온 뒤로는 해당데이터만 사용하도록 수정
-export const getPosts = async () => {
+const fetchPosts = async () => {
   let id = CONFIG.notionConfig.pageId as string
   const api = createNotionAPI()
 
@@ -85,3 +85,8 @@ export const getPosts = async () => {
     return posts
   }
 }
+
+// Every list page, post page and the sitemap call getPosts; during a build that
+// is hundreds of full database reads, which invites Notion's rate limit (429).
+// Share one read per server process for a short window instead.
+export const getPosts = memoizeAsync(fetchPosts, 30_000)
