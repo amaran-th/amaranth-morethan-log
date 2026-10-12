@@ -89,3 +89,9 @@ test("loadLegacyPosts applies exclusions and sorts by date", () => {
 test("real legacy blog yields exactly 200 posts", { skip: !fs.existsSync(LEGACY_CONTENT) }, () => {
   assert.equal(loadLegacyPosts(LEGACY_CONTENT).length, 200)
 })
+
+test("parseLegacyPost keeps a remote thumbnail url as is", () => {
+  const url = "https://blog.kakaocdn.net/dn/x/img.png"
+  const root = makeTree({ "Java/R/index.md": POST.replace('"../thumbnail.jpg"', `"${url}"`) })
+  assert.equal(parseLegacyPost(root, path.join(root, "Java/R/index.md")).thumbnailImg, url)
+})

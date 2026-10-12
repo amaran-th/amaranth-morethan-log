@@ -1,6 +1,6 @@
 import { test } from "node:test"
 import assert from "node:assert/strict"
-import { CALLOUT_CLOSE, CALLOUT_OPEN, IMAGE_SENTINEL_PREFIX, preprocessMarkdown } from "./markdown"
+import { CALLOUT_CLOSE, CALLOUT_OPEN, IMAGE_SENTINEL_PREFIX, imageSource, preprocessMarkdown } from "./markdown"
 
 const S = (n: number) => `${IMAGE_SENTINEL_PREFIX}${n}.png`
 
@@ -79,4 +79,15 @@ test("longer and indented fences protect their contents", () => {
   const { markdown, images } = preprocessMarkdown(md)
   assert.deepEqual(images, [{ kind: "local", src: "out.png" }])
   assert.ok(markdown.includes("![a](in.png)") && markdown.includes("![c](in2.png)"))
+})
+
+test("img tags without src stay as text, shown as inline code", () => {
+  const { markdown, images } = preprocessMarkdown("<img/> 태그와 <img> 태그")
+  assert.equal(markdown, "`<img/>` 태그와 `<img>` 태그")
+  assert.deepEqual(images, [])
+})
+
+test("imageSource tells remote urls from local paths", () => {
+  assert.deepEqual(imageSource("https://blog.kakaocdn.net/a/img.png"), { kind: "remote", url: "https://blog.kakaocdn.net/a/img.png" })
+  assert.deepEqual(imageSource("./ex1.png"), { kind: "local", src: "./ex1.png" })
 })

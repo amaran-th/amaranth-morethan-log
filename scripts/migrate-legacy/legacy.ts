@@ -36,6 +36,8 @@ function parseTags(raw: unknown): string[] {
   return list.map((t) => String(t).normalize("NFC").trim()).filter(Boolean)
 }
 
+const resolveThumbnail = (dir: string, src: string) => (/^https?:\/\//i.test(src) ? src : path.resolve(dir, src))
+
 export function parseLegacyPost(contentRoot: string, file: string): LegacyPost {
   const { data, content } = matter(fs.readFileSync(file, "utf8"))
   const dir = path.dirname(file)
@@ -54,7 +56,7 @@ export function parseLegacyPost(contentRoot: string, file: string): LegacyPost {
     section: text(data.section),
     category: text(data.category),
     tags: parseTags(data.tags),
-    thumbnailImg: data.thumbnailImg ? path.resolve(dir, String(data.thumbnailImg)) : undefined,
+    thumbnailImg: data.thumbnailImg ? resolveThumbnail(dir, String(data.thumbnailImg)) : undefined,
     body: content,
   }
 }

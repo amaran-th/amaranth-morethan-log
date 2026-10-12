@@ -1,7 +1,7 @@
 import type { LegacyPost } from "./legacy"
 import type { PageCache } from "./cache"
 import { buildProperties, type PageProps } from "./properties"
-import { preprocessMarkdown } from "./markdown"
+import { imageSource, preprocessMarkdown } from "./markdown"
 import {
   markdownToNotionBlocks, missingImageBlock, noticeCallout, postprocessBlocks, uploadedImageBlock,
 } from "./blocks"
@@ -45,7 +45,7 @@ export async function migratePost(deps: Deps, { post, props }: PlannedPost) {
 
   // Uploads must be attached within an hour, so upload right before writing.
   const thumbnailUploadId = post.thumbnailImg
-    ? await upload({ kind: "local", src: post.thumbnailImg })
+    ? await upload(imageSource(post.thumbnailImg))
     : undefined
   const properties = buildProperties({ ...props, thumbnailUploadId })
 

@@ -45,14 +45,18 @@ function attr(tag: string, name: string): string {
   return tag.match(new RegExp(`${name}\\s*=\\s*["']([^"']*)["']`, "i"))?.[1] ?? ""
 }
 
+export const imageSource = (src: string): ImageSource =>
+  /^https?:\/\//i.test(src) ? { kind: "remote", url: src } : { kind: "local", src }
+
 function transformText(text: string, images: ImageSource[]): string {
   const register = (alt: string, src: string) => {
-    images.push(/^https?:\/\//i.test(src) ? { kind: "remote", url: src } : { kind: "local", src })
+    images.push(imageSource(src))
     return `![${alt}](${IMAGE_SENTINEL_PREFIX}${images.length - 1}.png)`
   }
   return text
     .replace(COMMENT, "")
-    .replace(HTML_IMG, (tag) => register(attr(tag, "alt"), attr(tag, "src")))
+    // A src-less tag is prose naming the tag ("<img> 태그"), not an image.
+    .replace(HTML_IMG, (tag) => (attr(tag, "src") ? register(attr(tag, "alt"), attr(tag, "src")) : `\`${tag}\``))
     .replace(MD_IMAGE, (whole, alt: string, src: string) =>
       src.startsWith(IMAGE_SENTINEL_PREFIX) ? whole : register(alt, src)
     )
