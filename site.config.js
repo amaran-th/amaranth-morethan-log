@@ -37,7 +37,7 @@ const CONFIG = {
   },
   // CONFIG configration (required)
   link: "https://amaran-th.vercel.app",
-  since: 2025,
+  since: 2022,
   lang: "ko-KR",
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
   // notion configuration (required)
