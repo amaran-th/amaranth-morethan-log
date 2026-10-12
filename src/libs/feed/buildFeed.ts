@@ -10,6 +10,8 @@ export type FeedProps = {
   categories: TCategories
   tags: TTags
   pinned: TPostCard[]
+  // "YYYY-MM-DD" of every listed post, for the weekly activity calendar
+  postDates: string[]
 }
 
 export type FeedParams = { category?: string; tag?: string; page?: string }
@@ -61,6 +63,7 @@ export function buildFeed(posts: TPost[], params: FeedParams): FeedResult {
       categories: { [DEFAULT_CATEGORY]: posts.length, ...categoryCounts },
       tags,
       pinned: isHome ? posts.filter((p) => p.tags?.includes("Pinned")).map(toCard) : [],
+      postDates: posts.map((p) => (p.date?.start_date || new Date(p.createdTime).toISOString()).slice(0, 10)),
     },
   }
 }

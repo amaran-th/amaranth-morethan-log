@@ -3,6 +3,7 @@ import { AppProps } from "next/app"
 import { ExtendedRecordMap } from "notion-types"
 import { ReactElement, ReactNode } from "react"
 import type { TAdjacentPosts } from "src/libs/feed/adjacent"
+import type { TSeries } from "src/libs/feed/series"
 
 // TODO: refactor types
 export type NextPageWithLayout<PageProps = {}> = NextPage<PageProps> & {
@@ -23,6 +24,7 @@ export type TPost = {
   slug: string
   tags?: string[]
   category?: string[]
+  series?: string[]
   summary?: string
   author?: {
     id: string
@@ -39,6 +41,7 @@ export type TPost = {
 export type PostDetail = TPost & {
   recordMap: ExtendedRecordMap
   adjacent?: TAdjacentPosts
+  seriesNav?: TSeries | null
 }
 
 export type TPosts = TPost[]

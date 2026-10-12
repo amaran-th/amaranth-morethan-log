@@ -2,6 +2,7 @@ import { useState } from "react"
 import { FeedProps } from "src/libs/feed/buildFeed"
 
 import styled from "@emotion/styled"
+import ActivityCalendar from "./ActivityCalendar"
 import { FeedHeader } from "./FeedHeader"
 import Footer from "./Footer"
 import FriendCard from "./FriendCard"
@@ -17,9 +18,21 @@ import TagList from "./TagList"
 
 const HEADER_HEIGHT = 73
 
-const Feed: React.FC<FeedProps> = ({ posts, page, totalPages, filter, categories, tags, pinned }) => {
+const Feed: React.FC<FeedProps> = ({
+  posts,
+  page,
+  totalPages,
+  filter,
+  categories,
+  tags,
+  pinned,
+  postDates,
+}) => {
   const [q, setQ] = useState("")
   const searching = q.trim() !== ""
+  // One input, rendered in the right sidebar on wide screens and above the
+  // list on mobile, where the sidebars are hidden.
+  const search = <SearchInput value={q} onChange={(e) => setQ(e.target.value)} />
 
   return (
     <StyledWrapper>
@@ -29,12 +42,14 @@ const Feed: React.FC<FeedProps> = ({ posts, page, totalPages, filter, categories
           height: `calc(100vh - ${HEADER_HEIGHT}px)`,
         }}
       >
+        <ProfileCard />
         <TagList tags={tags} current={filter.tag} />
       </div>
       <div className="mid">
         <MobileProfileCard />
+        <div className="mobile-only">{search}</div>
         {!searching && <PinnedPosts posts={pinned} />}
-        <SearchInput value={q} onChange={(e) => setQ(e.target.value)} />
+        <ActivityCalendar postDates={postDates} />
         <div className="tags">
           <TagList tags={tags} current={filter.tag} />
         </div>
@@ -51,7 +66,7 @@ const Feed: React.FC<FeedProps> = ({ posts, page, totalPages, filter, categories
           height: `calc(100vh - ${HEADER_HEIGHT}px)`,
         }}
       >
-        <ProfileCard />
+        {search}
         <ServiceCard />
         <FriendCard />
         <OldBlogCard />
@@ -100,6 +115,12 @@ const StyledWrapper = styled.div`
 
     @media (min-width: 1024px) {
       grid-column: span 7 / span 7;
+    }
+
+    > .mobile-only {
+      @media (min-width: 1024px) {
+        display: none;
+      }
     }
 
     > .tags {

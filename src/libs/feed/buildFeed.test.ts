@@ -48,3 +48,11 @@ test("an explicit page 1 redirects to the list's first page", () => {
     kind: "redirect", destination: "/category/%ED%9A%8C%EA%B3%A0",
   })
 })
+
+test("every list page carries all listed post dates for the activity calendar", () => {
+  const r = buildFeed(posts, { tag: "회고" })
+  assert.ok(r.kind === "props")
+  if (r.kind !== "props") return
+  assert.equal(r.props.postDates.length, 14)
+  assert.ok(r.props.postDates.every((d) => /^\d{4}-\d{2}-\d{2}$/.test(d)))
+})

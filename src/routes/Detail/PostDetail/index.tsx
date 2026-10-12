@@ -3,6 +3,7 @@ import PostHeader from "./PostHeader"
 import Footer from "./PostFooter"
 import CommentBox from "./CommentBox"
 import PostNavigation from "./PostNavigation"
+import SeriesCarousel from "./SeriesCarousel"
 import Category from "src/components/Category"
 import styled from "@emotion/styled"
 import NotionRenderer from "../components/NotionRenderer"
@@ -35,6 +36,7 @@ const PostDetail: React.FC<Props> = () => {
           <>
             <Footer />
             <CommentBox data={data} />
+            {data.seriesNav && <SeriesCarousel series={data.seriesNav} />}
             <PostNavigation adjacent={data.adjacent} />
           </>
         )}
