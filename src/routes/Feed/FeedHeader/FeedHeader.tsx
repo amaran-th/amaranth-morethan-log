@@ -7,12 +7,14 @@ import { FeedFilter } from "src/libs/feed"
 type Props = {
   categories: TCategories
   filter: FeedFilter
+  search: React.ReactNode
 }
 
-const FeedHeader: React.FC<Props> = ({ categories, filter }) => {
+const FeedHeader: React.FC<Props> = ({ categories, filter, search }) => {
   return (
     <StyledWrapper>
       <CategorySelect categories={categories} filter={filter} />
+      {search}
     </StyledWrapper>
   )
 }
@@ -21,6 +23,8 @@ export default FeedHeader
 
 const StyledWrapper = styled.div`
   display: flex;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   justify-content: space-between;
   align-items: center;

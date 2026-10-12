@@ -304,6 +304,13 @@ const StyledWrapper = styled.div`
     .muted {
       color: ${({ theme }) => theme.colors.gray10};
     }
+    ul {
+      padding-left: 1.125rem;
+      list-style: disc;
+    }
+    li::marker {
+      color: ${({ theme }) => theme.colors.blue9};
+    }
     li a {
       display: block;
       padding: 0.25rem 0;

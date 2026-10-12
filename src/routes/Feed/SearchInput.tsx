@@ -1,45 +1,44 @@
 import styled from "@emotion/styled"
 import React, { InputHTMLAttributes } from "react"
-import { Emoji } from "src/components/Emoji"
+import { MdSearch } from "react-icons/md"
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {}
 
+// Compact search field that sits at the right end of the list header row.
 const SearchInput: React.FC<Props> = ({ ...props }) => {
   return (
     <StyledWrapper>
-      <div className="top">
-        <Emoji>🔎</Emoji> Search
-      </div>
-      <input
-        className="mid"
-        type="text"
-        placeholder="Search Keyword..."
-        {...props}
-      />
+      <MdSearch className="icon" aria-hidden />
+      <input type="search" placeholder="Search" aria-label="글 검색" {...props} />
     </StyledWrapper>
   )
 }
 
 export default SearchInput
 
-const StyledWrapper = styled.div`
-  margin-bottom: 1rem;
+const StyledWrapper = styled.label`
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 13rem;
+  max-width: 50%;
 
-  @media (min-width: 768px) {
-    margin-bottom: 2rem;
+  > .icon {
+    position: absolute;
+    left: 0.75rem;
+    font-size: 1rem;
+    color: ${({ theme }) => theme.colors.gray10};
+    pointer-events: none;
   }
-  > .top {
-    padding: 0.25rem;
-    margin-bottom: 0.75rem;
-  }
-  > .mid {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    border-radius: 1rem;
-    outline-style: none;
+  > input {
     width: 100%;
+    padding: 0.375rem 0.75rem 0.375rem 2.25rem;
+    border-radius: 9999px;
+    outline-style: none;
+    font-size: 0.875rem;
     background-color: ${({ theme }) => theme.colors.blue4};
+    ::placeholder {
+      color: ${({ theme }) => theme.colors.gray10};
+    }
   }
 `

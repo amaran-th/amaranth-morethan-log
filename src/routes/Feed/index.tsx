@@ -30,8 +30,6 @@ const Feed: React.FC<FeedProps> = ({
 }) => {
   const [q, setQ] = useState("")
   const searching = q.trim() !== ""
-  // One input, rendered in the right sidebar on wide screens and above the
-  // list on mobile, where the sidebars are hidden.
   const search = <SearchInput value={q} onChange={(e) => setQ(e.target.value)} />
 
   return (
@@ -49,13 +47,12 @@ const Feed: React.FC<FeedProps> = ({
       </div>
       <div className="mid">
         <MobileProfileCard />
-        <div className="mobile-only">{search}</div>
         {!searching && <PinnedPosts posts={pinned} />}
         <ActivityCalendar postDates={postDates} />
         <div className="tags">
           <TagList tags={tags} current={filter.tag} />
         </div>
-        <FeedHeader categories={categories} filter={filter} />
+        <FeedHeader categories={categories} filter={filter} search={search} />
         <PostList posts={posts} q={q} />
         {!searching && <Pagination filter={filter} page={page} totalPages={totalPages} />}
         <div className="footer">
@@ -68,7 +65,6 @@ const Feed: React.FC<FeedProps> = ({
           height: `calc(100vh - ${HEADER_HEIGHT}px)`,
         }}
       >
-        {search}
         <ServiceCard />
         <FriendCard />
         <OldBlogCard />
@@ -135,12 +131,6 @@ const StyledWrapper = styled.div`
 
     @media (min-width: 1024px) {
       grid-column: span 6 / span 6;
-    }
-
-    > .mobile-only {
-      @media (min-width: 1024px) {
-        display: none;
-      }
     }
 
     > .tags {
