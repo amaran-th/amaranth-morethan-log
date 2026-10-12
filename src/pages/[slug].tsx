@@ -11,6 +11,7 @@ import { queryKey } from "src/constants/queryKey"
 import { QueryClient, dehydrate } from "@tanstack/react-query"
 import usePostQuery from "src/hooks/usePostQuery"
 import { FilterPostsOptions } from "src/libs/utils/notion/filterPosts"
+import { findAdjacentPosts } from "src/libs/feed/adjacent"
 
 const filter: FilterPostsOptions = {
   acceptStatus: ["Public", "PublicOnDetail"],
@@ -41,9 +42,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
   if (!postDetail) return { notFound: true }
   const recordMap = await getRecordMap(postDetail.id)
 
+  const adjacent =
+    postDetail.type[0] === "Post" ? findAdjacentPosts(filterPosts(posts), postDetail) : {}
+
   await queryClient.prefetchQuery(queryKey.post(`${slug}`), () => ({
     ...postDetail,
     recordMap,
+    adjacent,
   }))
 
   return {

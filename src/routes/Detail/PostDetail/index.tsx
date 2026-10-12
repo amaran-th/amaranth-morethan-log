@@ -2,6 +2,7 @@ import React from "react"
 import PostHeader from "./PostHeader"
 import Footer from "./PostFooter"
 import CommentBox from "./CommentBox"
+import PostNavigation from "./PostNavigation"
 import Category from "src/components/Category"
 import styled from "@emotion/styled"
 import NotionRenderer from "../components/NotionRenderer"
@@ -34,6 +35,7 @@ const PostDetail: React.FC<Props> = () => {
           <>
             <Footer />
             <CommentBox data={data} />
+            <PostNavigation adjacent={data.adjacent} />
           </>
         )}
       </article>
