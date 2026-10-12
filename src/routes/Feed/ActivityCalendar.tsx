@@ -122,7 +122,12 @@ const ActivityCalendar: React.FC<Props> = ({ postDates }) => {
       </div>
       <div className="scroll" onScroll={() => setPopup(null)}>
         <div className="chart">
-          <div className="weeks" role="row" aria-label={`${row.year}년 주별 글 수`}>
+          <div
+            className="weeks"
+            role="row"
+            aria-label={`${row.year}년 주별 글 수`}
+            data-focused={popup !== null}
+          >
             {row.weeks.map((count, week) => (
               <button
                 key={week}
@@ -259,6 +264,7 @@ const StyledWrapper = styled.div`
     border-radius: 3px;
     background-color: ${({ theme }) => theme.colors.gray4};
     cursor: pointer;
+    transition: opacity 0.15s ease;
 
     &[data-level="1"] {
       background-color: ${({ theme }) => theme.colors.blue6};
@@ -272,10 +278,11 @@ const StyledWrapper = styled.div`
     &[data-level="0"] {
       cursor: default;
     }
-    /* Drawn inside the bar: an outline would be clipped by the scroll box. */
-    &[data-active="true"] {
-      box-shadow: inset 0 0 0 2px ${({ theme }) => theme.colors.gray12};
-    }
+  }
+  /* While a week is open, every other bar fades toward the background (a
+     white veil in light mode) so the hovered week stands out. */
+  .weeks[data-focused="true"] .bar[data-active="false"] {
+    opacity: 0.25;
   }
 
   > .popup {
