@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { FeedProps } from "src/libs/feed/buildFeed"
+import useViewMode from "src/hooks/useViewMode"
 
 import styled from "@emotion/styled"
 import ActivityCalendar from "./ActivityCalendar"
@@ -31,6 +32,7 @@ const Feed: React.FC<FeedProps> = ({
   series,
 }) => {
   const [q, setQ] = useState("")
+  const [view, setView] = useViewMode()
   const searching = q.trim() !== ""
   const search = <SearchInput value={q} onChange={(e) => setQ(e.target.value)} />
 
@@ -49,13 +51,19 @@ const Feed: React.FC<FeedProps> = ({
       </div>
       <div className="mid">
         <MobileProfileCard />
-        {!searching && <PinnedPosts posts={pinned} />}
+        {!searching && <PinnedPosts posts={pinned} view={view} />}
         <ActivityCalendar postDates={postDates} />
         <div className="tags">
           <TagList tags={tags} current={filter.tag} />
         </div>
-        <FeedHeader categories={categories} filter={filter} search={search} />
-        <PostList posts={posts} q={q} />
+        <FeedHeader
+          categories={categories}
+          filter={filter}
+          search={search}
+          view={view}
+          onViewChange={setView}
+        />
+        <PostList posts={posts} q={q} view={view} />
         {!searching && <Pagination filter={filter} page={page} totalPages={totalPages} />}
         <div className="footer">
           <Footer />

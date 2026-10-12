@@ -21,7 +21,8 @@ const StyledWrapper = styled.label`
   display: flex;
   align-items: center;
   width: 13rem;
-  max-width: 50%;
+  min-width: 0;
+  flex-shrink: 1;
 
   > .icon {
     position: absolute;

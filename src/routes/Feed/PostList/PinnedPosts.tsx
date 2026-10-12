@@ -1,13 +1,15 @@
-import PostCard from "src/routes/Feed/PostList/PostCard"
+import PostCollection from "./PostCollection"
+import { ViewMode } from "src/libs/feed/viewMode"
 import React from "react"
 import styled from "@emotion/styled"
 import { TPostCard } from "src/libs/feed"
 
 type Props = {
   posts: TPostCard[]
+  view: ViewMode
 }
 
-const PinnedPosts: React.FC<Props> = ({ posts: filteredPosts }) => {
+const PinnedPosts: React.FC<Props> = ({ posts: filteredPosts, view }) => {
   if (filteredPosts.length === 0) return null
 
   return (
@@ -15,11 +17,7 @@ const PinnedPosts: React.FC<Props> = ({ posts: filteredPosts }) => {
       <div className="wrapper">
         <div className="header">📌 Pinned Posts</div>
       </div>
-      <div className="my-2">
-        {filteredPosts.map((post) => (
-          <PostCard key={post.slug} data={post} />
-        ))}
-      </div>
+      <PostCollection posts={filteredPosts} view={view} />
     </StyledWrapper>
   )
 }
