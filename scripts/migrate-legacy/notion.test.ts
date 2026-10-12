@@ -78,3 +78,28 @@ test("clearChildren deletes every child block", async () => {
   await clearChildren(api, createThrottle({ minIntervalMs: 0, sleep: noSleep }), "page")
   assert.deepEqual(calls.map((c) => c.parent), ["delete:old1", "delete:old2"])
 })
+
+test("writes that create something are retried only when Notion surely rejected them", async () => {
+  const run = createThrottle({ minIntervalMs: 0, sleep: noSleep })
+  const serverError = new APIResponseError({ code: APIErrorCode.InternalServerError, status: 500, message: "x", headers: {}, rawBodyText: "" } as any)
+  let attempts = 0
+  await assert.rejects(run(async () => { attempts++; throw serverError }, { idempotent: false }))
+  assert.equal(attempts, 1)
+  attempts = 0
+  const value = await run(async () => {
+    if (++attempts < 2) throw rateLimited()
+    return "ok"
+  }, { idempotent: false })
+  assert.equal(value, "ok")
+})
+
+test("appendBlocks marks its appends as non-idempotent", async () => {
+  const { api } = fakeApi()
+  const seen: (boolean | undefined)[] = []
+  const run: any = (fn: () => Promise<unknown>, options?: { idempotent?: boolean }) => {
+    seen.push(options?.idempotent)
+    return fn()
+  }
+  await appendBlocks(api, run, "page", [para("a", [para("b")])])
+  assert.deepEqual(seen, [false, false])
+})

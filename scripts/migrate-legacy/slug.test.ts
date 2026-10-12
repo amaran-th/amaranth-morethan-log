@@ -34,3 +34,14 @@ test("assignSlugs avoids taken slugs and duplicates", () => {
     ["c", "기존-글-2"],
   ])
 })
+
+test("assignSlugs keeps slugs already given to migrated posts", () => {
+  const posts = [
+    { legacyPath: "x/new", title: "Spring IoC" },
+    { legacyPath: "x/old", title: "Spring IoC" },
+  ]
+  const pinned = new Map([["x/old", "spring-ioc"]])
+  const result = assignSlugs(posts, new Set(), pinned)
+  assert.equal(result.get("x/old"), "spring-ioc")
+  assert.equal(result.get("x/new"), "spring-ioc-2")
+})

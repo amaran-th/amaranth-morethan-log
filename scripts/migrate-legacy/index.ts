@@ -13,14 +13,18 @@ import { createThrottle, ensureSeriesProperty, listDatabasePages } from "./notio
 import { readCache, writeCache } from "./cache"
 import { migratePost, type PlannedPost } from "./migrate"
 
-export function planPosts(posts: LegacyPost[], takenSlugs: Set<string>): PlannedPost[] {
+export function planPosts(
+  posts: LegacyPost[],
+  takenSlugs: Set<string>,
+  pinnedSlugs: Map<string, string> = new Map()
+): PlannedPost[] {
   const mapped = posts.map((p) => {
     const m = mapRawTags(p.category, p.tags)
     if (m.unknown.length) throw new Error(`Unknown tags in ${p.legacyPath}: ${m.unknown.join(", ")}`)
     return m
   })
   const counts = countTags(mapped.map((m) => m.tags))
-  const slugs = assignSlugs(posts, takenSlugs)
+  const slugs = assignSlugs(posts, takenSlugs, pinnedSlugs)
   return posts.map((post, i) => ({
     post,
     props: {
@@ -67,6 +71,17 @@ export function renderMappingReport(planned: PlannedPost[]): string {
   ].join("\n")
 }
 
+// A skipped post was not converted this run, so its earlier entry stays.
+export function recordMissingImages(
+  report: Record<string, string[]>,
+  legacyPath: string,
+  result: { skipped: boolean; missingImages: string[] }
+) {
+  if (result.skipped) return
+  if (result.missingImages.length) report[legacyPath] = result.missingImages
+  else delete report[legacyPath]
+}
+
 export function selectPosts(
   planned: PlannedPost[],
   args: { all: boolean; pilot: boolean; only: string[] }
@@ -108,7 +123,8 @@ async function main() {
   const authorId = dbPages.find((p) => p.authorId)?.authorId
 
   const posts = loadLegacyPosts(LEGACY_CONTENT)
-  const planned = planPosts(posts, takenSlugs)
+  const pinnedSlugs = new Map(Object.entries(cache).map(([legacyPath, c]) => [legacyPath, c.slug]))
+  const planned = planPosts(posts, takenSlugs, pinnedSlugs)
   fs.writeFileSync(path.join(REPO_ROOT, "docs/legacy-mapping.md"), renderMappingReport(planned))
   fs.writeFileSync(path.join(__dirname, "url-map.json"), JSON.stringify(buildUrlMap(planned), null, 2) + "\n")
   console.log(`planned ${planned.length} posts; wrote docs/legacy-mapping.md and url-map.json`)
@@ -151,14 +167,12 @@ async function main() {
       console.error(`  FAILED: ${err instanceof Error ? err.message : err}`)
       continue
     }
-    if (result.missingImages.length) report[item.post.legacyPath] = result.missingImages
-    else delete report[item.post.legacyPath]
+    recordMissingImages(report, item.post.legacyPath, result)
     console.log(`  ${SITE_URL}/${encodeURIComponent(item.props.slug)}`)
   }
-  if (Object.keys(report).length) {
-    fs.writeFileSync(reportFile, JSON.stringify(report, null, 2))
-    console.log(`missing images recorded in ${reportFile}`)
-  }
+  // Always rewrite, so an empty report is not left stale on disk.
+  fs.writeFileSync(reportFile, JSON.stringify(report, null, 2))
+  if (Object.keys(report).length) console.log(`missing images recorded in ${reportFile}`)
   if (failures.length) {
     console.error(`${failures.length} post(s) failed; rerun to retry:\n${failures.join("\n")}`)
     process.exitCode = 1

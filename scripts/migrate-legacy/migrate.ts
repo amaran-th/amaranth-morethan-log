@@ -55,8 +55,9 @@ export async function migratePost(deps: Deps, { post, props }: PlannedPost) {
     await run(() => api.pages.update({ page_id: pageId, properties }))
     await clearChildren(api, run, pageId)
   } else {
-    const page = await run(() =>
-      api.pages.create({ parent: { database_id: deps.databaseId }, properties })
+    const page = await run(
+      () => api.pages.create({ parent: { database_id: deps.databaseId }, properties }),
+      { idempotent: false }
     )
     pageId = page.id
   }

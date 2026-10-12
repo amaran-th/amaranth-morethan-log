@@ -1,6 +1,6 @@
 import { test } from "node:test"
 import assert from "node:assert/strict"
-import { buildUrlMap, planPosts, renderMappingReport, selectPosts } from "./index"
+import { buildUrlMap, planPosts, recordMissingImages, renderMappingReport, selectPosts } from "./index"
 import type { LegacyPost } from "./legacy"
 
 const post = (over: Partial<LegacyPost>): LegacyPost => ({
@@ -47,4 +47,12 @@ test("selectPosts picks every planned post with --all, else the named ones", () 
   assert.deepEqual(selectPosts(planned, { all: true, pilot: false, only: [] }).map((p) => p.post.legacyPath), ["a/1", "a/2"])
   assert.deepEqual(selectPosts(planned, { all: false, pilot: false, only: ["a/2"] }).map((p) => p.post.legacyPath), ["a/2"])
   assert.throws(() => selectPosts(planned, { all: false, pilot: false, only: ["nope"] }), /Unknown legacy paths: nope/)
+})
+
+test("recordMissingImages keeps entries of skipped posts and clears fixed ones", () => {
+  const report = { "a/1": ["x.png"], "a/2": ["y.png"] }
+  recordMissingImages(report, "a/1", { skipped: true, missingImages: [] })
+  recordMissingImages(report, "a/2", { skipped: false, missingImages: [] })
+  recordMissingImages(report, "a/3", { skipped: false, missingImages: ["z.png"] })
+  assert.deepEqual(report, { "a/1": ["x.png"], "a/3": ["z.png"] })
 })

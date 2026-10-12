@@ -111,3 +111,15 @@ test("notice callout is prepended when requested", async () => {
   await migratePost(deps(api, {}, { withNotice: true }), planned)
   assert.equal(appended[0].type, "callout")
 })
+
+test("a page create that fails with a server error is not retried into a duplicate", async () => {
+  const { api } = fakeApi()
+  let creates = 0
+  api.pages.create = async () => {
+    creates++
+    const { APIErrorCode, APIResponseError } = await import("@notionhq/client")
+    throw new APIResponseError({ code: APIErrorCode.InternalServerError, status: 502, message: "bad gateway", headers: {}, rawBodyText: "" } as any)
+  }
+  await assert.rejects(migratePost(deps(api, {}), planned))
+  assert.equal(creates, 1)
+})

@@ -2,7 +2,12 @@ import { APIErrorCode, APIResponseError, Client } from "@notionhq/client"
 import type { Block } from "./blocks"
 import type { LoadedFile } from "./images"
 
-export type Run = <T>(fn: () => Promise<T>) => Promise<T>
+// A write that creates something (a page, appended blocks) is not idempotent:
+// after a timeout or 5xx Notion may already have applied it, and retrying would
+// duplicate it. Such calls pass { idempotent: false } and are retried only on
+// a rate limit, which Notion rejects before applying.
+export type RunOptions = { idempotent?: boolean }
+export type Run = <T>(fn: () => Promise<T>, options?: RunOptions) => Promise<T>
 export type NotionApi = Pick<Client, "blocks" | "pages" | "fileUploads" | "databases">
 
 const defaultSleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))
@@ -21,7 +26,7 @@ export function createThrottle({
 }: { minIntervalMs?: number; maxRetries?: number; baseDelayMs?: number; sleep?: (ms: number) => Promise<void> } = {}): Run {
   let last = 0
   let chain: Promise<unknown> = Promise.resolve()
-  return <T>(fn: () => Promise<T>) => {
+  return <T>(fn: () => Promise<T>, { idempotent = true }: RunOptions = {}) => {
     const task = chain.then(async () => {
       for (let attempt = 0; ; attempt++) {
         const wait = last + minIntervalMs - Date.now()
@@ -30,7 +35,10 @@ export function createThrottle({
         try {
           return await fn()
         } catch (err) {
-          if (attempt >= maxRetries || !isRetryable(err)) throw err
+          const retryable = idempotent
+            ? isRetryable(err)
+            : APIResponseError.isAPIResponseError(err) && err.code === APIErrorCode.RateLimited
+          if (attempt >= maxRetries || !retryable) throw err
           await sleep(baseDelayMs * 2 ** attempt)
         }
       }
@@ -56,8 +64,9 @@ function withoutChildren(b: Block): Block {
 export async function appendBlocks(api: NotionApi, run: Run, parentId: string, blocks: Block[]): Promise<void> {
   for (let i = 0; i < blocks.length; i += 100) {
     const chunk = blocks.slice(i, i + 100)
-    const res = await run(() =>
-      api.blocks.children.append({ block_id: parentId, children: chunk.map(withoutChildren) as any })
+    const res = await run(
+      () => api.blocks.children.append({ block_id: parentId, children: chunk.map(withoutChildren) as any }),
+      { idempotent: false }
     )
     if (res.results.length !== chunk.length) {
       throw new Error(`Notion returned ${res.results.length} blocks for ${chunk.length} appended`)

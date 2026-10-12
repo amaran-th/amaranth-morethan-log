@@ -15,13 +15,21 @@ export function toSlug(title: string): string {
   return slug
 }
 
+// `pinned` holds slugs already written to Notion (from the migration cache).
+// They never change on a rerun, so url-map.json keeps matching the live pages.
 export function assignSlugs(
   posts: { legacyPath: string; title: string }[],
-  taken: Set<string>
+  taken: Set<string>,
+  pinned: Map<string, string> = new Map()
 ): Map<string, string> {
-  const used = new Set(taken)
+  const used = new Set([...taken, ...pinned.values()])
   const result = new Map<string, string>()
   for (const post of posts) {
+    const fixed = pinned.get(post.legacyPath)
+    if (fixed) {
+      result.set(post.legacyPath, fixed)
+      continue
+    }
     const base = toSlug(post.title)
     let slug = base
     for (let n = 2; used.has(slug); n++) slug = `${base}-${n}`
