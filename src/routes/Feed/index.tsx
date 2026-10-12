@@ -40,7 +40,6 @@ const Feed: React.FC<FeedProps> = ({
           height: `calc(100vh - ${HEADER_HEIGHT}px)`,
         }}
       >
-        <ProfileCard />
         <div className="lt-tags">
           <TagList tags={tags} current={filter.tag} />
         </div>
@@ -65,6 +64,7 @@ const Feed: React.FC<FeedProps> = ({
           height: `calc(100vh - ${HEADER_HEIGHT}px)`,
         }}
       >
+        <ProfileCard />
         <ServiceCard />
         <FriendCard />
         <OldBlogCard />
@@ -93,13 +93,12 @@ const StyledWrapper = styled.div`
   > .lt {
     display: none;
     position: sticky;
-    grid-column: span 3 / span 3;
+    grid-column: span 2 / span 2;
     top: ${HEADER_HEIGHT - 10}px;
     padding-bottom: 1rem;
 
     @media (min-width: 1024px) {
-      /* The profile keeps its size; only the tag list scrolls inside the
-         remaining height, so the sidebar itself never scrolls. */
+      /* Only the tag list scrolls, inside the sidebar's height. */
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -130,7 +129,7 @@ const StyledWrapper = styled.div`
     grid-column: span 12 / span 12;
 
     @media (min-width: 1024px) {
-      grid-column: span 6 / span 6;
+      grid-column: span 7 / span 7;
     }
 
     > .tags {
