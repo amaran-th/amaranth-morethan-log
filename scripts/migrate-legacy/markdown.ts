@@ -34,7 +34,7 @@ function convertAsides(md: string): string {
     .join("\n")
 }
 
-const FENCE = /^(```|~~~)[^\n]*\n[\s\S]*?^\1[ \t]*$/gm
+const FENCE = /^([ \t]*)(`{3,}|~{3,})[^\n]*\n[\s\S]*?^[ \t]*\2[ \t]*$/gm
 const INLINE_CODE = /(`+)[^`\n]+?\1/g
 const MD_IMAGE = /!\[([^\]]*)\]\(\s*<?([^)\s>]+)>?(?:\s+["'][^"']*["'])?\s*\)/g
 const HTML_IMG = /<img\b[^>]*>/gi

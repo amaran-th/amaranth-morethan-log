@@ -73,3 +73,10 @@ test("a one-line aside is split into marker, body and marker", () => {
 test("the malformed </br> is treated like <br>", () => {
   assert.equal(preprocessMarkdown("a</br>b\n| x</br>y |").markdown, "a\nb\n| x y |")
 })
+
+test("longer and indented fences protect their contents", () => {
+  const md = "````markdown\n```mermaid\nA\n```\n![a](in.png)\n````\n\n![b](out.png)\n\n- item\n\n  ```md\n  ![c](in2.png)\n  ```"
+  const { markdown, images } = preprocessMarkdown(md)
+  assert.deepEqual(images, [{ kind: "local", src: "out.png" }])
+  assert.ok(markdown.includes("![a](in.png)") && markdown.includes("![c](in2.png)"))
+})
