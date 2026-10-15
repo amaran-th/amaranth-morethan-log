@@ -42,6 +42,7 @@ export type PostDetail = TPost & {
   recordMap: ExtendedRecordMap
   adjacent?: TAdjacentPosts
   seriesNav?: TSeries | null
+  metaDescription?: string
 }
 
 export type TPosts = TPost[]

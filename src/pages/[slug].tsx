@@ -14,6 +14,7 @@ import { FilterPostsOptions } from "src/libs/utils/notion/filterPosts"
 import { findAdjacentPosts } from "src/libs/feed/adjacent"
 import { findSeries } from "src/libs/feed/series"
 import { slimRecordMap } from "src/libs/utils/notion/slimRecordMap"
+import { buildExcerpt, pickDescription } from "src/libs/utils/notion/excerpt"
 
 const filter: FilterPostsOptions = {
   acceptStatus: ["Public", "PublicOnDetail"],
@@ -63,6 +64,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
     recordMap,
     adjacent,
     seriesNav,
+    // Search results show this; stub or empty summaries get the post's opening.
+    metaDescription: pickDescription(postDetail.summary, buildExcerpt(recordMap, postDetail.id)),
   }))
 
   return {
@@ -89,7 +92,7 @@ const DetailPage: NextPageWithLayout = () => {
     title: post.title,
     date: new Date(date).toISOString(),
     image: image,
-    description: post.summary || "",
+    description: post.metaDescription ?? post.summary ?? "",
     type: isArticle ? "article" : "website",
     url: `${CONFIG.link}/${encodeURIComponent(post.slug)}`,
   } as const
