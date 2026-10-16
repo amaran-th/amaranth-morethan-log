@@ -25,7 +25,7 @@ const CONFIG = {
     link:"https://vvony.vercel.app"
   }],
   blog: {
-    title: "세록세록",
+    title: "amaranth.log",
     description: "개발 기록",
     image: "https://amaran-th.vercel.app/jellyfish.png",
     scheme: "light", // 'light' | 'dark' | 'system'

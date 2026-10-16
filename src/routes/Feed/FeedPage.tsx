@@ -10,7 +10,7 @@ const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: CONFIG.blog.title,
-  alternateName: [`${CONFIG.profile.name} 블로그`, CONFIG.profile.name],
+  alternateName: ["아마란스 로그", `${CONFIG.profile.name} 블로그`, new URL(CONFIG.link).host],
   url: `${CONFIG.link}/`,
 }
 
