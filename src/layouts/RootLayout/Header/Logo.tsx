@@ -21,7 +21,7 @@ const StyledWrapper = styled(Link)`
 
   .icon {
     width: auto;
-    height: 1.75rem;
+    height: 1.25rem;
   }
   .text {
     width: auto;
